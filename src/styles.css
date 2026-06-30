@@ -116,26 +116,6 @@
   color: transparent;
 }
 
-@utility terra-divider {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-@utility terra-divider::before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background-image: linear-gradient(to right, transparent, var(--terracotta));
-}
-
-@utility terra-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background-image: linear-gradient(to left, transparent, var(--terracotta));
-}
-
 @utility line-divider {
   height: 1px;
   background-image: linear-gradient(to right, transparent, var(--terracotta), transparent);
