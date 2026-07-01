@@ -20,17 +20,12 @@ export function Footer() {
         </div>
 
         <div className="mt-2 flex flex-col items-center gap-2 text-xs text-sand/40">
-          <p>© 2026 Victoria West. She / Her.</p>
-          <p>This is a fictional profile designed by</p>
-          <a
-            href="https://heauxdesigns.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-terracotta/40 transition-colors hover:text-terracotta"
-          >
-            Heaux Designs LLC
-          </a>
-          <p className="italic text-sand/25">Where luxury meets security.</p>
+          <p>© 2026 Victoria West.</p>
+          <p>This is profile designed by</p>
+          
+            Victoria West
+          
+          <p className="italic text-sand/25">Model and Consultant</p>
         </div>
       </div>
     </footer>

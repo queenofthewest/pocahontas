@@ -28,13 +28,13 @@ const verifyOptions = [
   },
   {
     id: "references",
-    label: "Provider References",
-    placeholder: "Two established providers — name, email, website, approximate date",
+    label: "References",
+    placeholder: "Two established — name, email, website, approximate date",
   },
   {
     id: "id",
     label: "Government ID",
-    placeholder: "Two forms of photo ID (one government-issued) + a selfie holding both",
+    placeholder: "Two forms of photo ID",
   },
 ] as const;
 
@@ -127,22 +127,22 @@ export function Contact() {
                   <label className={labelClass} htmlFor="location">Location</label>
                   <select id="location" name="location" className={inputClass} defaultValue="">
                     <option value="" disabled>Select…</option>
-                    <option value="scottsdale-incall">Scottsdale — Incall</option>
-                    <option value="scottsdale-outcall">Scottsdale — Outcall</option>
-                    <option value="phoenix-outcall">Phoenix — Outcall</option>
+                    <option value="scottsdale-incall">Scottsdale — Studio</option>
+                    <option value="scottsdale-outcall">Scottsdale — Business</option>
+                    <option value="phoenix-outcall">Phoenix — On Location</option>
                     <option value="sedona">Sedona</option>
-                    <option value="flytome">Fly Me To You</option>
+                    <option value="flytome">Travel</option>
                   </select>
                 </div>
                 <div>
                   <label className={labelClass} htmlFor="dateType">Type</label>
                   <select id="dateType" name="dateType" className={inputClass} defaultValue="">
                     <option value="" disabled>Select…</option>
-                    <option value="private">Private Time</option>
-                    <option value="social">Social / Dinner</option>
-                    <option value="event">Event Companion</option>
+                    <option value="private">Private Session</option>
+                    <option value="social">Private Event</option>
+                    <option value="event">Event Hosting</option>
                     <option value="travel">Travel</option>
-                    <option value="couple">Couple</option>
+                    <option value="couple">Consulting</option>
                   </select>
                 </div>
               </fieldset>

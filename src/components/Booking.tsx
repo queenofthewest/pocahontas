@@ -3,8 +3,8 @@ import { GeoDeco } from "@/components/GeoDeco";
 
 const tiers = [
   {
-    name: "Incall",
-    note: "Private residence — Scottsdale",
+    name: "Online Consulting",
+    note: "Worldwide",
     rates: [
       { label: "1 Hour", price: "$600" },
       { label: "90 Minutes", price: "$800" },
@@ -13,23 +13,23 @@ const tiers = [
     ],
   },
   {
-    name: "Outcall",
-    note: "Your hotel or residence — Phoenix Metro",
+    name: "Business Consulting",
+    note: "Scottsdale",
     rates: [
       { label: "2 Hours", price: "$1,300" },
       { label: "3 Hours", price: "$1,700" },
-      { label: "Dinner Date · 4 Hrs", price: "$2,100" },
-      { label: "Evening · 6 Hrs", price: "$2,600" },
+      { label: "Half-Day · 4 Hrs", price: "$2,100" },
+      { label: "Full-Day · 6 Hrs", price: "$2,600" },
     ],
   },
   {
-    name: "Extended",
-    note: "Overnight, travel & multi-day",
+    name: "Photo Shoot",
+    note: "Scottsdale / Phoenix",
     rates: [
-      { label: "Overnight · 12 Hrs", price: "$3,800" },
-      { label: "Full Day · 24 Hrs", price: "$6,500" },
-      { label: "Weekend · 48 Hrs", price: "$9,500" },
-      { label: "Fly Me To You", price: "From $4,500" },
+      { label: "1 Hour", price: "$600" },
+      { label: "90 Minutes", price: "$800" },
+      { label: "2 Hours", price: "$1,100" },
+      { label: "3 Hours", price: "$1,500" },
     ],
   },
 ];
@@ -39,7 +39,7 @@ export function Booking() {
     <section id="booking" className="bg-adobe-deep py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-8">
         <Reveal className="mb-16">
-          <p className="mb-3 text-[0.65rem] uppercase tracking-[0.4em] text-terracotta/80">Arrangements</p>
+          <p className="mb-3 text-[0.65rem] uppercase tracking-[0.4em] text-terracotta/80">Appointments</p>
           <h2 className="font-display text-4xl font-light text-sand md:text-5xl">Investment</h2>
           <div className="mt-5 h-px w-24 bg-gradient-to-r from-terracotta to-transparent" />
         </Reveal>
@@ -85,8 +85,8 @@ export function Booking() {
             Begin an Inquiry
           </a>
           <p className="text-sm text-sand/40">
-            A <span className="text-terracotta/80">30% deposit</span> confirms our time together.{" "}
-            Couples add 50%. Screening required for all new connections.
+            A <span className="text-terracotta/80">30% deposit</span> confirms our appointment.{" "}
+            Screening required for all new connections.
           </p>
         </Reveal>
       </div>

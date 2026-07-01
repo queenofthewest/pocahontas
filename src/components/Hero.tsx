@@ -42,7 +42,7 @@ export function Hero() {
           </div>
 
           <p className="max-w-sm font-serif text-base leading-relaxed text-sand/60 italic">
-            A considered presence in the desert light — for those who appreciate stillness, warmth, and the unhurried art of connection.
+            A considered consultation for pesonal and business entities.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -50,7 +50,7 @@ export function Hero() {
               href="#contact"
               className="border border-terracotta bg-terracotta px-8 py-3 text-[0.7rem] font-medium uppercase tracking-[0.25em] text-sand transition-all duration-300 hover:bg-transparent hover:text-terracotta"
             >
-              Request an Encounter
+              Request an Appointment or Photo Shoot
             </a>
             <a
               href="#portfolio"
@@ -73,7 +73,7 @@ export function Hero() {
             <div className="absolute inset-0 -translate-x-2 -translate-y-2 border border-ochre/15" />
             <img
               src={portrait}
-              alt="Victoria West, Arizona luxury companion"
+              alt="Victoria West, Arizona consultant and model"
               width={800}
               height={1000}
               className="relative aspect-[3/4] w-full object-cover shadow-2xl shadow-adobe-deep/80"

@@ -8,11 +8,11 @@ const policies = [
   },
   {
     title: "Confirmation",
-    body: "Dates are confirmed upon receipt of a 30% deposit. The remaining balance is settled discreetly at the start of our time together — placed in an envelope, no discussion needed. What happens between us stays between us.",
+    body: "Dates are confirmed upon receipt of a 30% deposit. The remaining balance is settled discreetly at the start of session.",
   },
   {
     title: "Etiquette",
-    body: "Arrive freshly groomed and in good spirits — I do the same. I ask for respectful communication, generosity in the truest sense, and patience. Our time is unhurried; please leave the clock at the door.",
+    body: "I ask for respectful communication, generosity in the truest sense, and patience.",
   },
   {
     title: "Cancellations",
