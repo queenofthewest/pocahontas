@@ -17,24 +17,24 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="overflow-x-hidden bg-adobe-deep">
+    <div className="overflow-x-hidden bg-sand">
       <Navbar />
       <main>
         <Hero />
-        <div className="bg-adobe">
+        <div className="bg-sand-deep">
           <About />
           <Profile />
         </div>
         <Gallery />
+        <Booking />
         <FeatureImage
           variant="one"
-          label="Desert Light"
-          caption="Golden hour in the Sonoran"
+          label="Editorial"
+          caption="Golden hour in the Sonoran desert"
         />
-        <Booking />
         <Policies />
         <Contact />
-        <FeatureImage variant="two" label="Evenings" caption="Where the desert meets the dark" />
+        <FeatureImage variant="two" label="Lifestyle" caption="Where warmth meets intention" />
       </main>
       <Footer />
       <Toaster position="top-center" />

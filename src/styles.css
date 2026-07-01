@@ -29,15 +29,15 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-adobe-deep: var(--adobe-deep);
-  --color-adobe: var(--adobe);
-  --color-adobe-soft: var(--adobe-soft);
+  --color-sand: var(--sand);
+  --color-sand-deep: var(--sand-deep);
+  --color-sand-soft: var(--sand-soft);
   --color-terracotta: var(--terracotta);
   --color-terracotta-soft: var(--terracotta-soft);
-  --color-sand: var(--sand);
   --color-sage: var(--sage);
-  --color-ochre: var(--ochre);
-  --color-sunset: var(--sunset);
+  --color-sage-soft: var(--sage-soft);
+  --color-espresso: var(--espresso);
+  --color-espresso-soft: var(--espresso-soft);
 
   --font-serif: "Lora", Georgia, serif;
   --font-display: "Fraunces", Georgia, serif;
@@ -45,36 +45,36 @@
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 
-  --adobe-deep: oklch(0.13 0.025 45);
-  --adobe: oklch(0.17 0.03 45);
-  --adobe-soft: oklch(0.21 0.035 48);
-  --terracotta: oklch(0.63 0.14 38);
-  --terracotta-soft: oklch(0.73 0.09 42);
-  --sand: oklch(0.92 0.025 75);
-  --sage: oklch(0.62 0.07 148);
-  --ochre: oklch(0.79 0.11 72);
-  --sunset: oklch(0.70 0.14 30);
+  --sand: oklch(0.93 0.03 78);
+  --sand-deep: oklch(0.87 0.035 72);
+  --sand-soft: oklch(0.97 0.015 80);
+  --terracotta: oklch(0.60 0.14 38);
+  --terracotta-soft: oklch(0.74 0.09 42);
+  --sage: oklch(0.58 0.09 148);
+  --sage-soft: oklch(0.80 0.06 148);
+  --espresso: oklch(0.22 0.025 45);
+  --espresso-soft: oklch(0.38 0.025 45);
 
-  --background: var(--adobe-deep);
-  --foreground: var(--sand);
-  --card: var(--adobe);
-  --card-foreground: var(--sand);
-  --popover: var(--adobe);
-  --popover-foreground: var(--sand);
+  --background: var(--sand);
+  --foreground: var(--espresso);
+  --card: var(--sand-soft);
+  --card-foreground: var(--espresso);
+  --popover: var(--sand-soft);
+  --popover-foreground: var(--espresso);
   --primary: var(--terracotta);
-  --primary-foreground: var(--sand);
-  --secondary: var(--adobe-soft);
-  --secondary-foreground: var(--sand);
-  --muted: var(--adobe-soft);
-  --muted-foreground: oklch(0.65 0.02 60);
+  --primary-foreground: var(--sand-soft);
+  --secondary: var(--sand-deep);
+  --secondary-foreground: var(--espresso);
+  --muted: var(--sand-deep);
+  --muted-foreground: var(--espresso-soft);
   --accent: var(--terracotta);
-  --accent-foreground: var(--sand);
-  --destructive: oklch(0.6 0.2 27);
-  --destructive-foreground: var(--sand);
-  --border: oklch(0.63 0.14 38 / 20%);
-  --input: oklch(0.63 0.14 38 / 25%);
+  --accent-foreground: var(--sand-soft);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: var(--sand-soft);
+  --border: oklch(0.60 0.14 38 / 20%);
+  --input: oklch(0.60 0.14 38 / 15%);
   --ring: var(--terracotta);
 }
 
@@ -110,23 +110,23 @@
 }
 
 @utility text-terra-gradient {
-  background-image: linear-gradient(135deg, var(--ochre), var(--terracotta), var(--sunset));
+  background-image: linear-gradient(135deg, var(--terracotta-soft), var(--terracotta), var(--terracotta-soft));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-@utility line-divider {
+@utility terra-divider {
   height: 1px;
   background-image: linear-gradient(to right, transparent, var(--terracotta), transparent);
 }
 
 @utility section-fade {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(40px);
   transition:
-    opacity 0.9s ease,
-    transform 0.9s ease;
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 @utility section-fade-in {
@@ -135,9 +135,9 @@
 }
 
 @utility badge-ring {
-  background: radial-gradient(circle at 30% 25%, oklch(0.22 0.04 45), oklch(0.15 0.03 45));
+  background: radial-gradient(circle at 30% 25%, oklch(0.88 0.035 72), oklch(0.93 0.03 78));
   box-shadow:
-    0 0 0 1px oklch(0.63 0.14 38 / 0.5),
-    0 8px 22px oklch(0.1 0.02 45 / 0.6),
-    inset 0 1px 0 oklch(0.73 0.09 42 / 0.3);
+    0 0 0 1px oklch(0.60 0.14 38 / 0.5),
+    0 8px 22px oklch(0.22 0.025 45 / 0.15),
+    inset 0 1px 0 oklch(0.97 0.015 80 / 0.8);
 }

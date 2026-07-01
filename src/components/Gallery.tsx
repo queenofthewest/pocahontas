@@ -9,12 +9,12 @@ const g5 = "/assets/victoria-gallery5.webp";
 const g6 = "/assets/victoria-gallery6.webp";
 
 const images = [
-  { src: g1, category: "Desert", title: "Golden Hour", span: "lg:col-span-2" },
-  { src: g2, category: "Portrait", title: "Still Life", span: "" },
-  { src: g3, category: "Editorial", title: "Adobe & Light", span: "" },
-  { src: g4, category: "Portrait", title: "Warm Study", span: "" },
-  { src: g5, category: "Lifestyle", title: "Desert Evening", span: "" },
-  { src: g6, category: "Editorial", title: "Terracotta", span: "lg:col-span-2" },
+  { src: g1, category: "Editorial", title: "Desert Light", span: "lg:row-span-2" },
+  { src: g5, category: "Lifestyle", title: "Warm Afternoon", span: "" },
+  { src: g3, category: "Editorial", title: "Sedona, Golden Hour", span: "" },
+  { src: g2, category: "Beauty", title: "Close Portrait", span: "lg:row-span-2" },
+  { src: g4, category: "Lifestyle", title: "Shadow & Sun", span: "" },
+  { src: g6, category: "Editorial", title: "The Terrace", span: "" },
 ];
 
 export function Gallery() {
@@ -40,25 +40,24 @@ export function Gallery() {
   }, [active, close, next, prev]);
 
   return (
-    <section id="portfolio" className="relative overflow-hidden bg-adobe-deep py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-8">
-        <Reveal className="mb-16">
-          <p className="mb-3 text-[0.65rem] uppercase tracking-[0.4em] text-terracotta/80">Portfolio</p>
-          <h2 className="font-display text-4xl font-light text-sand md:text-5xl">Gallery</h2>
-          <div className="mt-5 h-px w-24 bg-gradient-to-r from-terracotta to-transparent" />
+    <section id="portfolio" className="relative overflow-visible -mb-20 bg-sand py-24 md:py-32">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <Reveal className="mb-16 text-center">
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Enticements</p>
+          <h2 className="font-display text-4xl text-espresso md:text-5xl">Gallery</h2>
+          <div className="terra-divider mx-auto mt-6 w-32" />
         </Reveal>
 
-        {/* Grid with mixed spans — more editorial than Lexi's */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:auto-rows-[22rem] lg:grid-cols-4">
           {images.map((img, i) => (
             <Reveal
               key={img.title}
-              delay={(i % 3) * 100}
-              className={`${img.span} ${i === 1 || i === 4 ? "mt-8 lg:mt-0" : ""}`}
+              delay={(i % 4) * 80}
+              className={`h-full ${img.span} ${i % 2 === 1 ? "mt-10 lg:mt-0" : ""}`}
             >
               <button
                 onClick={() => setActive(i)}
-                className="group relative block h-full w-full overflow-hidden border border-terracotta/10 transition-all duration-500 hover:border-terracotta/50"
+                className="group relative block h-full w-full overflow-hidden rounded-xl border border-terracotta/20 transition-all duration-300 hover:border-terracotta/60"
               >
                 <img
                   src={img.src}
@@ -66,13 +65,8 @@ export function Gallery() {
                   loading="lazy"
                   width={800}
                   height={1000}
-                  className="aspect-[4/5] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 lg:aspect-auto"
-                  style={{ filter: "saturate(1.1) brightness(0.88)" }}
+                  className="aspect-[4/5] h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 lg:aspect-auto"
                 />
-                {/* Category label on hover */}
-                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-adobe-deep/90 to-transparent px-4 pb-4 pt-8 transition-transform duration-300 group-hover:translate-y-0">
-                  <p className="text-[0.6rem] uppercase tracking-[0.3em] text-terracotta/90">{img.category}</p>
-                </div>
               </button>
             </Reveal>
           ))}
@@ -81,12 +75,12 @@ export function Gallery() {
 
       {active !== null && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-adobe-deep/97 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-sand/95 p-4 backdrop-blur-sm"
           onClick={close}
         >
           <button
             aria-label="Close"
-            className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center border border-terracotta/40 text-lg text-terracotta transition-colors hover:border-terracotta hover:bg-terracotta hover:text-sand"
+            className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full border border-terracotta/40 bg-sand text-2xl text-terracotta transition-colors hover:border-terracotta hover:bg-terracotta hover:text-sand-soft"
             onClick={close}
           >
             ✕
@@ -94,7 +88,7 @@ export function Gallery() {
 
           <button
             aria-label="Previous"
-            className="absolute left-4 text-3xl text-terracotta hover:text-terracotta-soft md:left-10"
+            className="absolute left-4 text-4xl text-terracotta hover:text-terracotta-soft md:left-10"
             onClick={(e) => { e.stopPropagation(); prev(); }}
           >
             ‹
@@ -104,13 +98,13 @@ export function Gallery() {
             <img
               src={images[active].src}
               alt={images[active].title}
-              className="mx-auto max-h-[78vh] border border-terracotta/20 object-contain"
+              className="mx-auto max-h-[78vh] rounded-lg border border-terracotta/20 object-contain"
             />
           </figure>
 
           <button
             aria-label="Next"
-            className="absolute right-4 text-3xl text-terracotta hover:text-terracotta-soft md:right-10"
+            className="absolute right-4 text-4xl text-terracotta hover:text-terracotta-soft md:right-10"
             onClick={(e) => { e.stopPropagation(); next(); }}
           >
             ›

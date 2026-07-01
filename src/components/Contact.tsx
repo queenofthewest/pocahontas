@@ -2,7 +2,6 @@ import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
-import { GeoDeco } from "@/components/GeoDeco";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
@@ -17,24 +16,24 @@ const schema = z.object({
 });
 
 const inputClass =
-  "w-full border border-terracotta/20 bg-adobe-deep/60 px-4 py-3 text-sm text-sand placeholder:text-sand/30 outline-none transition-colors focus:border-terracotta font-sans";
-const labelClass = "mb-2 block text-[0.62rem] uppercase tracking-[0.25em] text-terracotta/70";
+  "w-full rounded-lg border border-terracotta/20 bg-sand/60 px-4 py-3 text-sm text-espresso placeholder:text-espresso/35 outline-none transition-colors focus:border-terracotta";
+const labelClass = "mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-terracotta/70";
 
 const verifyOptions = [
   {
     id: "employment",
     label: "Employment + Photo ID",
-    placeholder: "LinkedIn URL — have a selfie with photo ID ready",
+    placeholder: "Please type your LinkedIn URL and have a selfie with photo ID ready",
   },
   {
     id: "references",
-    label: "References",
-    placeholder: "Two established — name, email, website, approximate date",
+    label: "Provider References",
+    placeholder: "Two established providers you've seen (name, email, website/advertising link, approximate date seen)",
   },
   {
     id: "id",
     label: "Government ID",
-    placeholder: "Two forms of photo ID",
+    placeholder: "Please be ready with two forms of photo ID (one gov't) + a selfie holding both",
   },
 ] as const;
 
@@ -65,26 +64,22 @@ export function Contact() {
   const activeVerify = verifyOptions.find((r) => r.id === verification)!;
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-adobe-deep py-24 md:py-32">
-      {/* Subtle background geo */}
-      <GeoDeco variant="rays" className="pointer-events-none absolute left-0 top-0 -translate-x-1/2 -translate-y-1/4 opacity-5" />
-
-      <div className="relative z-10 mx-auto max-w-6xl px-8">
-        <Reveal className="mb-16">
-          <p className="mb-3 text-[0.65rem] uppercase tracking-[0.4em] text-terracotta/80">Start Here</p>
-          <h2 className="font-display text-4xl font-light text-sand md:text-5xl">Booking Inquiry</h2>
-          <div className="mt-5 h-px w-24 bg-gradient-to-r from-terracotta to-transparent" />
-          <p className="mt-6 max-w-lg font-serif text-sm italic leading-relaxed text-sand/50">
-            Share a few details and I'll respond personally within 48 hours. Screening is required for all new connections. Any information shared here is private and secure.
+    <section id="contact" className="relative overflow-visible bg-gradient-to-b from-sand to-sand-deep py-24 md:py-32">
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <Reveal className="mb-16 text-center">
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Start Here</p>
+          <h2 className="font-display text-4xl text-espresso md:text-5xl">Booking Inquiry</h2>
+          <div className="terra-divider mx-auto mt-6 w-32" />
+          <p className="mx-auto mt-6 max-w-lg text-sm text-espresso/55">
+            Share a few details and I'll respond personally within 48 hours. Screening is required for all new friends. Any information shared through this form is transferred privately and securely.
           </p>
         </Reveal>
 
         <Reveal>
-          <form onSubmit={onSubmit} noValidate className="border border-terracotta/20 bg-adobe/30 p-6 md:p-10">
+          <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-terracotta/20 bg-sand-soft/60 p-6 md:p-10">
             <div className="grid gap-10 lg:grid-cols-3">
-              {/* Personal */}
               <fieldset className="space-y-5">
-                <legend className="mb-5 font-display text-lg font-light text-terracotta/90">About You</legend>
+                <legend className="mb-4 font-display text-lg text-terracotta">About You</legend>
                 <div>
                   <label className={labelClass} htmlFor="name">Name</label>
                   <input id="name" name="name" className={inputClass} placeholder="Your name" />
@@ -101,9 +96,8 @@ export function Contact() {
                 </div>
               </fieldset>
 
-              {/* Date Details */}
               <fieldset className="space-y-5">
-                <legend className="mb-5 font-display text-lg font-light text-terracotta/90">Our Date</legend>
+                <legend className="mb-4 font-display text-lg text-terracotta">Our Date</legend>
                 <div>
                   <label className={labelClass} htmlFor="date">When</label>
                   <input id="date" name="date" type="date" className={inputClass} />
@@ -116,50 +110,49 @@ export function Contact() {
                     <option value="90min">90 Minutes</option>
                     <option value="2hours">2 Hours</option>
                     <option value="3hours">3 Hours</option>
-                    <option value="dinner">Dinner Event (4 hrs)</option>
+                    <option value="dinner">Dinner Date (4 hrs)</option>
                     <option value="evening">Evening (6 hrs)</option>
-                    <option value="overnight">Full-Day (12 hrs)</option>
-                    <option value="fullday">Travel (24 hrs)</option>
-                    <option value="weekend">Extended (48 hrs)</option>
+                    <option value="overnight">Overnight (12 hrs)</option>
+                    <option value="fullday">Full Day (24 hrs)</option>
+                    <option value="weekend">Weekend (48 hrs)</option>
                   </select>
                 </div>
                 <div>
                   <label className={labelClass} htmlFor="location">Location</label>
                   <select id="location" name="location" className={inputClass} defaultValue="">
                     <option value="" disabled>Select…</option>
-                    <option value="scottsdale-incall">Scottsdale — Studio</option>
-                    <option value="scottsdale-outcall">Scottsdale — Business</option>
-                    <option value="phoenix-outcall">Phoenix — On Location</option>
-                    <option value="sedona">Sedona</option>
-                    <option value="flytome">Travel</option>
+                    <option value="scottsdale-incall">Scottsdale — Incall</option>
+                    <option value="scottsdale-outcall">Scottsdale — Outcall</option>
+                    <option value="phoenix-outcall">Phoenix — Outcall</option>
+                    <option value="sedona-outcall">Sedona — Outcall</option>
+                    <option value="flytome">Fly Me To You</option>
                   </select>
                 </div>
                 <div>
                   <label className={labelClass} htmlFor="dateType">Type</label>
                   <select id="dateType" name="dateType" className={inputClass} defaultValue="">
                     <option value="" disabled>Select…</option>
-                    <option value="private">Private Session</option>
-                    <option value="social">Private Event</option>
-                    <option value="event">Event Hosting</option>
+                    <option value="private">Private Time</option>
+                    <option value="social">Social / Dinner</option>
+                    <option value="event">Event Companion</option>
                     <option value="travel">Travel</option>
-                    <option value="couple">Consulting</option>
+                    <option value="couple">Couple</option>
                   </select>
                 </div>
               </fieldset>
 
-              {/* Verification */}
               <fieldset className="space-y-5">
-                <legend className="mb-5 font-display text-lg font-light text-terracotta/90">Verification</legend>
+                <legend className="mb-4 font-display text-lg text-terracotta">Verification</legend>
                 <div>
                   <span className={labelClass}>Choose One</span>
                   <div className="space-y-2">
                     {verifyOptions.map((opt) => (
                       <label
                         key={opt.id}
-                        className={`flex cursor-pointer items-center gap-3 border px-4 py-3 text-sm transition-colors ${
+                        className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-2.5 text-sm transition-colors ${
                           verification === opt.id
-                            ? "border-terracotta bg-terracotta/10 text-sand"
-                            : "border-terracotta/15 text-sand/50 hover:border-terracotta/40"
+                            ? "border-terracotta bg-terracotta/10 text-espresso"
+                            : "border-terracotta/15 text-espresso/60 hover:border-terracotta/40"
                         }`}
                       >
                         <input
@@ -175,9 +168,7 @@ export function Contact() {
                   </div>
                 </div>
                 <div>
-                  <label className={labelClass} htmlFor="verificationDetail">
-                    {activeVerify.label}
-                  </label>
+                  <label className={labelClass} htmlFor="verificationDetail">{activeVerify.label}</label>
                   <textarea
                     id="verificationDetail"
                     name="verificationDetail"
@@ -185,9 +176,7 @@ export function Contact() {
                     className={inputClass}
                     placeholder={activeVerify.placeholder}
                   />
-                  {errors.verificationDetail && (
-                    <p className="mt-1 text-xs text-destructive">{errors.verificationDetail}</p>
-                  )}
+                  {errors.verificationDetail && <p className="mt-1 text-xs text-destructive">{errors.verificationDetail}</p>}
                 </div>
               </fieldset>
             </div>
@@ -195,13 +184,13 @@ export function Contact() {
             <div className="mt-10 flex flex-col items-center gap-4">
               <button
                 type="submit"
-                className="border border-terracotta bg-terracotta px-12 py-3.5 text-[0.7rem] font-medium uppercase tracking-[0.3em] text-sand transition-all duration-300 hover:bg-transparent hover:text-terracotta"
+                className="rounded-full bg-terracotta px-12 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-sand-soft transition-transform hover:scale-105"
               >
                 Send Inquiry
               </button>
-              <p className="text-sm text-sand/40">
+              <p className="text-sm text-espresso/45">
                 Or email directly:{" "}
-                <a href="mailto:hello@victoriawesst.com" className="text-terracotta/70 hover:text-terracotta transition-colors">
+                <a href="mailto:hello@victoriawest.com" className="text-terracotta hover:text-terracotta-soft">
                   hello@victoriawest.com
                 </a>
               </p>

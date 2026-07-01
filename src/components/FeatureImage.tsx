@@ -12,7 +12,7 @@ export function FeatureImage({
   variant,
   caption,
   label,
-  heightClass = "h-[35vh] md:h-[50vh]",
+  heightClass = "h-[40vh] md:h-[55vh]",
 }: {
   variant: "one" | "two";
   caption: string;
@@ -20,10 +20,10 @@ export function FeatureImage({
   heightClass?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-adobe-deep py-10 md:py-16">
-      <div className="mx-auto max-w-6xl px-8">
+    <section className="relative overflow-hidden bg-sand py-12 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <figure className="relative overflow-hidden border border-terracotta/20">
+          <figure className="relative overflow-hidden rounded-[1.5rem] border border-terracotta/20">
             <img
               src={images[variant]}
               alt={caption}
@@ -31,12 +31,7 @@ export function FeatureImage({
               width={1536}
               height={864}
               className={`w-full object-cover ${heightClass}`}
-              style={{ filter: "saturate(1.1) brightness(0.85)" }}
             />
-            {/* Label overlay — bottom left, minimal */}
-            <div className="absolute bottom-4 left-5">
-              <p className="text-[0.6rem] uppercase tracking-[0.4em] text-terracotta/80">{label}</p>
-            </div>
           </figure>
         </Reveal>
       </div>
