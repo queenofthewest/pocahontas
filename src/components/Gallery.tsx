@@ -25,6 +25,7 @@ const galleries = {
     { src: `${LV}/IseeSexy_OliviaC_WEB_23.webp`, title: "Vegas XVI" },
     { src: `${LV}/VicWest6_2.webp`, title: "Vegas XVII" },
     { src: `${LV}/VWest21.webp`, title: "Vegas XVIII" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jan23_WEB_7.webp`, title: "Vegas XIX" },
   ],
   "Phoenix": [
     { src: `${PHX}/DSC04466.webp`, title: "Phoenix I" },
@@ -110,7 +111,7 @@ export function Gallery() {
         ))}
       </div>
 
-      {/* Masonry columns — natural aspect ratios, no cropping */}
+      {/* Masonry columns — 2:3 portrait crop on mobile, natural aspect ratios from md up */}
       <div className="px-4 sm:px-6">
         <div className="columns-2 gap-2 sm:gap-3 md:columns-3 lg:columns-4">
           {images.map((img, i) => (
@@ -123,7 +124,7 @@ export function Gallery() {
                   src={img.src}
                   alt={img.title}
                   loading="lazy"
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="aspect-[2/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:aspect-auto"
                 />
               </button>
             </div>
