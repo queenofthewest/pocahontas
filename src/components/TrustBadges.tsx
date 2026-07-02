@@ -32,7 +32,7 @@ export function TrustBadges() {
                   className="mb-1 text-[0.6rem] uppercase tracking-[0.3em] text-sand-soft"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
-                  Read review at
+                  Reviews at
                 </span>
                 <span
                   className="font-['Helvetica',_sans-serif] text-lg italic text-sand-soft md:text-2xl"
