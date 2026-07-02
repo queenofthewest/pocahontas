@@ -25,17 +25,17 @@ export function About() {
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Meet Victoria</p>
             <h2 className="font-display text-4xl text-espresso md:text-5xl">
-              The Art of <span className="text-terra-gradient italic">Presence.</span>
+              Hey there, <span className="text-terra-gradient italic">Handsome.</span>
             </h2>
             <div className="mt-8 space-y-5 font-serif text-lg leading-relaxed text-espresso/65">
               <p>
-                I grew up between the red rocks and the open sky, and I've spent years learning what it means to be fully in a room — whether that's a quiet dinner in Old Town, a weekend escape to Sedona, or an unhurried afternoon with nowhere particular to be.
+                It's lovely to meet you. My name is Victoria and I am a Southern California transplant in the beautiful desert of Arizona I now call my home. Let me tell you a little bit about myself.   
               </p>
               <p>
-                People often notice the warmth first. I move at a slow pace by nature. I ask real questions and I remember the answers. I believe the most memorable connections happen in the in-between moments — a comfortable silence, a shared laugh, the kind of ease that can't be manufactured.
+               I move at a slow pace by nature. I ask real questions and I remember the answers. I believe the most memorable connections happen in the in-between moments — a comfortable silence, a shared laugh, the kind of ease that can't be manufactured.
               </p>
               <p>
-                I keep my calendar intentionally light. Not because I'm hard to reach, but because I think genuine presence is a gift worth protecting — for both of us. No rushing, no performance, just two people genuinely enjoying each other's company.
+                I keep my calendar intentionally light because I think genuine presence is a gift worth protecting — for both of us. No rushing, no performance, just two people genuinely enjoying each other's company.
               </p>
               <p>
                 If you're looking for something transactional, I'm not the right fit. But if you want warmth, unhurried conversation, and the rare pleasure of feeling truly at ease — I think we'll get along beautifully.
