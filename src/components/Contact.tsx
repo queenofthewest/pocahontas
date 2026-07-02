@@ -1,29 +1,30 @@
-import { useState, type FormEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
+
+const LONG_DURATIONS = ["dinner", "evening", "overnight", "fullday", "weekend", "custom"];
+const DETAIL_LOCATIONS = ["touring", "flytome"];
 
 const schema = z
   .object({
     name: z.string().trim().min(2, "Please enter your name").max(100),
     email: z.string().trim().email("Enter a valid email").max(255),
-    phone: z.string().trim().min(7, "Please enter your phone number").max(40),
+    phone: z.string().trim().max(20).optional().or(z.literal("")),
     date: z.string().trim().max(40).optional().or(z.literal("")),
+    locationType: z.enum(["phoenix-incall", "phoenix-outcall", "touring", "flytome"]).optional().or(z.literal("")),
+    locationDetail: z.string().trim().max(120).optional().or(z.literal("")),
     duration: z.string().trim().max(60).optional().or(z.literal("")),
-    locationType: z.enum(["incall", "outcall"]).optional().or(z.literal("")),
-    outcallType: z.string().trim().max(60).optional().or(z.literal("")),
-    outcallLocation: z.string().trim().max(120).optional().or(z.literal("")),
+    durationDetail: z.string().trim().max(500).optional().or(z.literal("")),
     verification: z.enum(["employment", "references", "id", "p411"]),
     verificationDetail: z.string().trim().min(2, "Please add verification details").max(500),
   })
   .superRefine((data, ctx) => {
-    if (data.locationType === "outcall") {
-      if (!data.outcallType) {
-        ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["outcallType"], message: "Please select an outcall type" });
-      }
-      if (!data.outcallLocation) {
-        ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["outcallLocation"], message: "Please add a location" });
-      }
+    if (DETAIL_LOCATIONS.includes(data.locationType ?? "") && !data.locationDetail) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["locationDetail"], message: "Please add a location" });
+    }
+    if (LONG_DURATIONS.includes(data.duration ?? "") && !data.durationDetail) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["durationDetail"], message: "Please describe your request" });
     }
   });
 
@@ -54,11 +55,25 @@ const verifyOptions = [
   },
 ] as const;
 
+function formatPhone(raw: string) {
+  const digits = raw.replace(/\D/g, "").slice(0, 10);
+  if (digits.length === 0) return "";
+  if (digits.length < 4) return `(${digits}`;
+  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 export function Contact() {
   const [verification, setVerification] = useState<(typeof verifyOptions)[number]["id"]>("employment");
-  const [locationType, setLocationType] = useState<"" | "incall" | "outcall">("");
+  const [locationType, setLocationType] = useState("");
+  const [duration, setDuration] = useState("");
+  const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
+
+  const onPhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPhone(formatPhone(e.target.value));
+  };
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -86,6 +101,8 @@ export function Contact() {
       form.reset();
       setVerification("employment");
       setLocationType("");
+      setDuration("");
+      setPhone("");
       toast.success("Inquiry received — I'll respond within 48 hours.");
     } catch (err) {
       const message = err instanceof Error ? err.message : "Something went wrong sending your inquiry. Please try emailing directly.";
@@ -127,7 +144,14 @@ export function Contact() {
                 </div>
                 <div>
                   <label className={labelClass} htmlFor="phone">Phone</label>
-                  <input id="phone" name="phone" className={inputClass} placeholder="(555) 555-5555" />
+                  <input
+                    id="phone"
+                    name="phone"
+                    className={inputClass}
+                    placeholder="(555) 555-5555"
+                    value={phone}
+                    onChange={onPhoneChange}
+                  />
                   {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone}</p>}
                 </div>
               </fieldset>
@@ -139,8 +163,42 @@ export function Contact() {
                   <input id="date" name="date" type="date" className={inputClass} />
                 </div>
                 <div>
+                  <label className={labelClass} htmlFor="locationType">Location</label>
+                  <select
+                    id="locationType"
+                    name="locationType"
+                    className={inputClass}
+                    value={locationType}
+                    onChange={(e) => setLocationType(e.target.value)}
+                  >
+                    <option value="" disabled>Select…</option>
+                    <option value="phoenix-incall">Phoenix Local - Incall</option>
+                    <option value="phoenix-outcall">Phoenix Local - Outcall</option>
+                    <option value="touring">Touring Request</option>
+                    <option value="flytome">Fly Me To You</option>
+                  </select>
+                </div>
+                {DETAIL_LOCATIONS.includes(locationType) && (
+                  <div>
+                    <label className={labelClass} htmlFor="locationDetail">Location (City, State)</label>
+                    <input
+                      id="locationDetail"
+                      name="locationDetail"
+                      className={inputClass}
+                      placeholder="City, State"
+                    />
+                    {errors.locationDetail && <p className="mt-1 text-xs text-destructive">{errors.locationDetail}</p>}
+                  </div>
+                )}
+                <div>
                   <label className={labelClass} htmlFor="duration">Duration</label>
-                  <select id="duration" name="duration" className={inputClass} defaultValue="">
+                  <select
+                    id="duration"
+                    name="duration"
+                    className={inputClass}
+                    value={duration}
+                    onChange={(e) => setDuration(e.target.value)}
+                  >
                     <option value="" disabled>Select…</option>
                     <option value="1hour">1 Hour</option>
                     <option value="90min">90 Minutes</option>
@@ -151,45 +209,21 @@ export function Contact() {
                     <option value="overnight">Overnight (12 hrs)</option>
                     <option value="fullday">Full Day (24 hrs)</option>
                     <option value="weekend">Weekend (48 hrs)</option>
+                    <option value="custom">Custom Request</option>
                   </select>
                 </div>
-                <div>
-                  <label className={labelClass} htmlFor="locationType">Location</label>
-                  <select
-                    id="locationType"
-                    name="locationType"
-                    className={inputClass}
-                    value={locationType}
-                    onChange={(e) => setLocationType(e.target.value as "" | "incall" | "outcall")}
-                  >
-                    <option value="" disabled>Select…</option>
-                    <option value="incall">Incall</option>
-                    <option value="outcall">Outcall</option>
-                  </select>
-                </div>
-                {locationType === "outcall" && (
-                  <>
-                    <div>
-                      <label className={labelClass} htmlFor="outcallType">Outcall Type</label>
-                      <select id="outcallType" name="outcallType" className={inputClass} defaultValue="">
-                        <option value="" disabled>Select…</option>
-                        <option value="hotel">Hotel</option>
-                        <option value="residence">Private Residence</option>
-                        <option value="flytome">Fly Me To You</option>
-                      </select>
-                      {errors.outcallType && <p className="mt-1 text-xs text-destructive">{errors.outcallType}</p>}
-                    </div>
-                    <div>
-                      <label className={labelClass} htmlFor="outcallLocation">Location</label>
-                      <input
-                        id="outcallLocation"
-                        name="outcallLocation"
-                        className={inputClass}
-                        placeholder="City / area"
-                      />
-                      {errors.outcallLocation && <p className="mt-1 text-xs text-destructive">{errors.outcallLocation}</p>}
-                    </div>
-                  </>
+                {LONG_DURATIONS.includes(duration) && (
+                  <div>
+                    <label className={labelClass} htmlFor="durationDetail">Details</label>
+                    <textarea
+                      id="durationDetail"
+                      name="durationDetail"
+                      rows={3}
+                      className={inputClass}
+                      placeholder="Please describe your request"
+                    />
+                    {errors.durationDetail && <p className="mt-1 text-xs text-destructive">{errors.durationDetail}</p>}
+                  </div>
                 )}
               </fieldset>
 

@@ -51,9 +51,9 @@ $email = clean($_POST["email"] ?? "");
 $phone = clean($_POST["phone"] ?? "");
 $date = clean($_POST["date"] ?? "");
 $duration = clean($_POST["duration"] ?? "");
+$durationDetail = trim($_POST["durationDetail"] ?? "");
 $locationType = clean($_POST["locationType"] ?? "");
-$outcallType = clean($_POST["outcallType"] ?? "");
-$outcallLocation = clean($_POST["outcallLocation"] ?? "");
+$locationDetail = clean($_POST["locationDetail"] ?? "");
 $verificationType = clean($_POST["verificationType"] ?? "");
 $verificationDetail = trim($_POST["verificationDetail"] ?? "");
 
@@ -63,7 +63,7 @@ if (!empty($_POST["website"] ?? "")) {
     exit;
 }
 
-if ($name === "" || $email === "" || $phone === "" || !filter_var($email, FILTER_VALIDATE_EMAIL) || $verificationDetail === "") {
+if ($name === "" || $email === "" || !filter_var($email, FILTER_VALIDATE_EMAIL) || $verificationDetail === "") {
     http_response_code(422);
     echo json_encode(["ok" => false, "error" => "Missing or invalid required fields"]);
     exit;
@@ -78,13 +78,15 @@ $subject = "New Booking Inquiry — $name";
 $body = "New booking inquiry received:\n\n";
 $body .= "Name: $name\n";
 $body .= "Email: $email\n";
-$body .= "Phone: $phone\n";
+$body .= "Phone: " . ($phone !== "" ? $phone : "-") . "\n";
 $body .= "Preferred date: " . ($date !== "" ? $date : "-") . "\n";
-$body .= "Duration: " . ($duration !== "" ? $duration : "-") . "\n";
 $body .= "Location: " . ($locationType !== "" ? $locationType : "-") . "\n";
-if ($locationType === "outcall") {
-    $body .= "Outcall type: " . ($outcallType !== "" ? $outcallType : "-") . "\n";
-    $body .= "Outcall location: " . ($outcallLocation !== "" ? $outcallLocation : "-") . "\n";
+if ($locationDetail !== "") {
+    $body .= "Location detail: $locationDetail\n";
+}
+$body .= "Duration: " . ($duration !== "" ? $duration : "-") . "\n";
+if ($durationDetail !== "") {
+    $body .= "Duration detail:\n$durationDetail\n";
 }
 $body .= "Verification method: " . ($verificationType !== "" ? $verificationType : "-") . "\n";
 $body .= "Verification details:\n" . $verificationDetail . "\n";
