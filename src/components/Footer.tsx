@@ -7,6 +7,9 @@ export function Footer() {
         </a>
         <div className="terra-divider w-40" />
         <div className="mt-2 flex flex-col items-center gap-2 text-sm text-espresso/50">
+          <a href="mailto:victoriawestvip@gmail.com" className="text-terracotta hover:text-terracotta-soft">
+            victoriawestvip@gmail.com
+          </a>
           <p>© 2026 Victoria West</p>
         </div>
       </div>

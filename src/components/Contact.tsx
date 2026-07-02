@@ -275,12 +275,6 @@ export function Contact() {
               >
                 {submitting ? "Sending…" : "Send Inquiry"}
               </button>
-              <p className="text-sm text-espresso/45">
-                Or email directly:{" "}
-                <a href="mailto:victoriawestvip@gmail.com" className="text-terracotta hover:text-terracotta-soft">
-                  victoriawestvip@gmail.com
-                </a>
-              </p>
             </div>
           </form>
         </Reveal>
