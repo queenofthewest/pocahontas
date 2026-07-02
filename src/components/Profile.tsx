@@ -15,7 +15,7 @@ const stats = [
 export function Profile() {
   return (
     <section id="profile" className="relative overflow-hidden bg-sand-deep py-12 md:py-16">
-      <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:px-12 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-10 md:grid-cols-[40%_60%]">
 
         {/* Stat list — second on mobile, first on desktop */}
         <Reveal className="order-2 md:order-1">
