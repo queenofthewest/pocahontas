@@ -36,7 +36,7 @@ const verifyOptions = [
   {
     id: "employment",
     label: "Employment + Photo ID",
-    placeholder: "Please type your LinkedIn URL and have a selfie with photo ID ready",
+    placeholder: "Please type your LinkedIn URL and have a selfie with photo ID ready, along with your cell phone number",
   },
   {
     id: "references",
@@ -46,7 +46,7 @@ const verifyOptions = [
   {
     id: "id",
     label: "Government ID",
-    placeholder: "Please list the two forms of photo ID you will submit and be ready to send a photo of you holding them up",
+    placeholder: "Please list the two forms of photo ID you will submit and be ready to send a photo of you holding them up, along with your cell phone number",
   },
   {
     id: "p411",
