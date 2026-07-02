@@ -3,17 +3,29 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
 
-const schema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(100),
-  email: z.string().trim().email("Enter a valid email").max(255),
-  phone: z.string().trim().min(7, "Please enter your phone number").max(40),
-  date: z.string().trim().max(40).optional().or(z.literal("")),
-  duration: z.string().trim().max(60).optional().or(z.literal("")),
-  location: z.string().trim().max(120).optional().or(z.literal("")),
-  dateType: z.string().trim().max(60).optional().or(z.literal("")),
-  verification: z.enum(["employment", "references", "id"]),
-  verificationDetail: z.string().trim().min(2, "Please add verification details").max(500),
-});
+const schema = z
+  .object({
+    name: z.string().trim().min(2, "Please enter your name").max(100),
+    email: z.string().trim().email("Enter a valid email").max(255),
+    phone: z.string().trim().min(7, "Please enter your phone number").max(40),
+    date: z.string().trim().max(40).optional().or(z.literal("")),
+    duration: z.string().trim().max(60).optional().or(z.literal("")),
+    locationType: z.enum(["incall", "outcall"]).optional().or(z.literal("")),
+    outcallType: z.string().trim().max(60).optional().or(z.literal("")),
+    outcallLocation: z.string().trim().max(120).optional().or(z.literal("")),
+    verification: z.enum(["employment", "references", "id", "p411"]),
+    verificationDetail: z.string().trim().min(2, "Please add verification details").max(500),
+  })
+  .superRefine((data, ctx) => {
+    if (data.locationType === "outcall") {
+      if (!data.outcallType) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["outcallType"], message: "Please select an outcall type" });
+      }
+      if (!data.outcallLocation) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["outcallLocation"], message: "Please add a location" });
+      }
+    }
+  });
 
 const inputClass =
   "w-full rounded-lg border border-terracotta/20 bg-sand/60 px-4 py-3 text-sm text-espresso placeholder:text-espresso/35 outline-none transition-colors focus:border-terracotta";
@@ -35,10 +47,16 @@ const verifyOptions = [
     label: "Government ID",
     placeholder: "Please be ready with two forms of photo ID (one gov't) + a selfie holding both",
   },
+  {
+    id: "p411",
+    label: "P411",
+    placeholder: "Please send me a request through P411 to be verified.",
+  },
 ] as const;
 
 export function Contact() {
   const [verification, setVerification] = useState<(typeof verifyOptions)[number]["id"]>("employment");
+  const [locationType, setLocationType] = useState<"" | "incall" | "outcall">("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
@@ -67,6 +85,7 @@ export function Contact() {
       if (!res.ok || !result.ok) throw new Error(result.error || "Failed to send");
       form.reset();
       setVerification("employment");
+      setLocationType("");
       toast.success("Inquiry received — I'll respond within 48 hours.");
     } catch {
       toast.error("Something went wrong sending your inquiry. Please try emailing directly.");
@@ -134,27 +153,43 @@ export function Contact() {
                   </select>
                 </div>
                 <div>
-                  <label className={labelClass} htmlFor="location">Location</label>
-                  <select id="location" name="location" className={inputClass} defaultValue="">
+                  <label className={labelClass} htmlFor="locationType">Location</label>
+                  <select
+                    id="locationType"
+                    name="locationType"
+                    className={inputClass}
+                    value={locationType}
+                    onChange={(e) => setLocationType(e.target.value as "" | "incall" | "outcall")}
+                  >
                     <option value="" disabled>Select…</option>
-                    <option value="scottsdale-incall">Scottsdale — Incall</option>
-                    <option value="scottsdale-outcall">Scottsdale — Outcall</option>
-                    <option value="phoenix-outcall">Phoenix — Outcall</option>
-                    <option value="sedona-outcall">Sedona — Outcall</option>
-                    <option value="flytome">Fly Me To You</option>
+                    <option value="incall">Incall</option>
+                    <option value="outcall">Outcall</option>
                   </select>
                 </div>
-                <div>
-                  <label className={labelClass} htmlFor="dateType">Type</label>
-                  <select id="dateType" name="dateType" className={inputClass} defaultValue="">
-                    <option value="" disabled>Select…</option>
-                    <option value="private">Private Time</option>
-                    <option value="social">Social / Dinner</option>
-                    <option value="event">Event Companion</option>
-                    <option value="travel">Travel</option>
-                    <option value="couple">Couple</option>
-                  </select>
-                </div>
+                {locationType === "outcall" && (
+                  <>
+                    <div>
+                      <label className={labelClass} htmlFor="outcallType">Outcall Type</label>
+                      <select id="outcallType" name="outcallType" className={inputClass} defaultValue="">
+                        <option value="" disabled>Select…</option>
+                        <option value="hotel">Hotel</option>
+                        <option value="residence">Private Residence</option>
+                        <option value="flytome">Fly Me To You</option>
+                      </select>
+                      {errors.outcallType && <p className="mt-1 text-xs text-destructive">{errors.outcallType}</p>}
+                    </div>
+                    <div>
+                      <label className={labelClass} htmlFor="outcallLocation">Location</label>
+                      <input
+                        id="outcallLocation"
+                        name="outcallLocation"
+                        className={inputClass}
+                        placeholder="City / area"
+                      />
+                      {errors.outcallLocation && <p className="mt-1 text-xs text-destructive">{errors.outcallLocation}</p>}
+                    </div>
+                  </>
+                )}
               </fieldset>
 
               <fieldset className="space-y-5">

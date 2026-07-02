@@ -19,8 +19,9 @@ $email = clean($_POST["email"] ?? "");
 $phone = clean($_POST["phone"] ?? "");
 $date = clean($_POST["date"] ?? "");
 $duration = clean($_POST["duration"] ?? "");
-$location = clean($_POST["location"] ?? "");
-$dateType = clean($_POST["dateType"] ?? "");
+$locationType = clean($_POST["locationType"] ?? "");
+$outcallType = clean($_POST["outcallType"] ?? "");
+$outcallLocation = clean($_POST["outcallLocation"] ?? "");
 $verificationType = clean($_POST["verificationType"] ?? "");
 $verificationDetail = trim($_POST["verificationDetail"] ?? "");
 
@@ -48,8 +49,11 @@ $body .= "Email: $email\n";
 $body .= "Phone: $phone\n";
 $body .= "Preferred date: " . ($date !== "" ? $date : "-") . "\n";
 $body .= "Duration: " . ($duration !== "" ? $duration : "-") . "\n";
-$body .= "Location: " . ($location !== "" ? $location : "-") . "\n";
-$body .= "Date type: " . ($dateType !== "" ? $dateType : "-") . "\n";
+$body .= "Location: " . ($locationType !== "" ? $locationType : "-") . "\n";
+if ($locationType === "outcall") {
+    $body .= "Outcall type: " . ($outcallType !== "" ? $outcallType : "-") . "\n";
+    $body .= "Outcall location: " . ($outcallLocation !== "" ? $outcallLocation : "-") . "\n";
+}
 $body .= "Verification method: " . ($verificationType !== "" ? $verificationType : "-") . "\n";
 $body .= "Verification details:\n" . $verificationDetail . "\n";
 
