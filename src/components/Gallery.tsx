@@ -6,25 +6,25 @@ const PHX = "/assets/images/Phoenix";
 const TH = "/assets/images/Thailand";
 
 const galleries = {
-  "Las Vegas": [
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_3.webp`, title: "Las Vegas I" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_5.webp`, title: "Las Vegas II" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_1.webp`, title: "Las Vegas III" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_14.webp`, title: "Las Vegas IV" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_24.webp`, title: "Las Vegas V" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_9_v3.webp`, title: "Las Vegas VI" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_16_v2.webp`, title: "Las Vegas VII" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_17.webp`, title: "Las Vegas VIII" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_25.webp`, title: "Las Vegas IX" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_26.webp`, title: "Las Vegas X" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jan23_WEB_27_v2.webp`, title: "Las Vegas XI" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_2.webp`, title: "Las Vegas XII" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_4_v2.webp`, title: "Las Vegas XIII" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_8.webp`, title: "Las Vegas XIV" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_20.webp`, title: "Las Vegas XV" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_23.webp`, title: "Las Vegas XVI" },
-    { src: `${LV}/VicWest6_2.webp`, title: "Las Vegas XVII" },
-    { src: `${LV}/VWest21.webp`, title: "Las Vegas XVIII" },
+  "Vegas": [
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_3.webp`, title: "Vegas I" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_5.webp`, title: "Vegas II" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_1.webp`, title: "Vegas III" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_14.webp`, title: "Vegas IV" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_24.webp`, title: "Vegas V" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_9_v3.webp`, title: "Vegas VI" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_16_v2.webp`, title: "Vegas VII" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_17.webp`, title: "Vegas VIII" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_25.webp`, title: "Vegas IX" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_26.webp`, title: "Vegas X" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jan23_WEB_27_v2.webp`, title: "Vegas XI" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_2.webp`, title: "Vegas XII" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_4_v2.webp`, title: "Vegas XIII" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_8.webp`, title: "Vegas XIV" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_20.webp`, title: "Vegas XV" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_23.webp`, title: "Vegas XVI" },
+    { src: `${LV}/VicWest6_2.webp`, title: "Vegas XVII" },
+    { src: `${LV}/VWest21.webp`, title: "Vegas XVIII" },
   ],
   "Phoenix": [
     { src: `${PHX}/DSC04466.webp`, title: "Phoenix I" },
@@ -56,7 +56,7 @@ type Location = keyof typeof galleries;
 const locations = Object.keys(galleries) as Location[];
 
 export function Gallery() {
-  const [activeLocation, setActiveLocation] = useState<Location>("Las Vegas");
+  const [activeLocation, setActiveLocation] = useState<Location>("Vegas");
   const [active, setActive] = useState<number | null>(null);
   const images = galleries[activeLocation];
 
