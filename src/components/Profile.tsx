@@ -26,7 +26,6 @@ export function Profile() {
         <Reveal className="order-1 md:order-1">
           <div className="md:pr-6">
             <div className="terra-divider mb-6 w-24" />
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
             <h2 className="font-display text-4xl text-espresso md:text-5xl">Statistics</h2>
 
             <ul className="mt-10 space-y-0">

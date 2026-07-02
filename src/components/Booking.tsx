@@ -43,7 +43,6 @@ export function Booking() {
     <section id="booking" className="bg-sand py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mb-16 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Arrangements</p>
           <h2 className="font-display text-4xl text-espresso md:text-5xl">Consideration</h2>
           <div className="terra-divider mx-auto mt-6 w-32" />
         </Reveal>

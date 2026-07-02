@@ -89,7 +89,6 @@ export function Gallery() {
     <section id="portfolio" className="relative -mb-20 bg-sand py-24 md:py-32">
       {/* Section header */}
       <Reveal className="mb-10 text-center">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Enticements</p>
         <h2 className="font-display text-4xl text-espresso md:text-5xl">Gallery</h2>
         <div className="terra-divider mx-auto mt-6 w-32" />
       </Reveal>
