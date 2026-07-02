@@ -1,9 +1,12 @@
 import { Reveal } from "@/components/Reveal";
 
-const terBadge = "/assets/ter-badge.webp";
-
 const badges = [
-  { type: "image" as const, src: terBadge, name: "The Erotic Review" },
+  {
+    type: "image" as const,
+    src: "https://www.theeroticreview.com/images/reviewed_seal.gif",
+    name: "The Erotic Review",
+    href: "https://www.theeroticreview.com",
+  },
   {
     type: "image" as const,
     src: "https://preferred411.com/a/preferredSeal-p.png",
