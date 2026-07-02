@@ -63,7 +63,7 @@ export function Booking() {
                 ))}
               </ul>
 
-              <div className="mt-6 space-y-3 text-xs text-espresso/55">
+              <div className="mt-6 space-y-3 text-sm text-espresso/55">
                 <div>
                   <p className="mb-0.5 text-[0.7rem] uppercase tracking-[0.2em] text-terracotta/60">Local — Scottsdale / Phoenix</p>
                   <p>Incall +$150 <span className="text-espresso/35">(day)</span> · +$200 <span className="text-espresso/35">(evening)</span></p>
