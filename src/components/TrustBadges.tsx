@@ -24,12 +24,20 @@ export function TrustBadges() {
         {badges.map((b) => {
           const content =
             b.type === "text" ? (
-              <span
-                className="font-['Helvetica',_sans-serif] text-lg italic text-sand-soft sm:text-xl md:text-2xl"
-                style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
-              >
-                {b.name}
-              </span>
+              <div className="flex flex-col items-start text-left">
+                <span
+                  className="mb-1 text-[0.6rem] uppercase tracking-[0.3em] text-sand-soft"
+                  style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
+                >
+                  Read review at
+                </span>
+                <span
+                  className="font-['Helvetica',_sans-serif] text-lg italic text-sand-soft sm:text-xl md:text-2xl"
+                  style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
+                >
+                  {b.name}
+                </span>
+              </div>
             ) : (
               <img
                 src={b.src}
