@@ -6,7 +6,6 @@ import { About } from "@/components/About";
 import { Profile } from "@/components/Profile";
 import { Gallery } from "@/components/Gallery";
 import { Booking } from "@/components/Booking";
-import { Policies } from "@/components/Policies";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FeatureImage } from "@/components/FeatureImage";
@@ -32,9 +31,8 @@ function Index() {
           label="Editorial"
           caption="Golden hour in the Sonoran desert"
         />
-        <Policies />
         <Contact />
-        <FeatureImage variant="two" label="Lifestyle" caption="Where warmth meets intention" />
+        <FeatureImage variant="two" label="Lifestyle" caption="Where warmth meets intention" heightClass="h-[70vh] md:h-screen" />
       </main>
       <Footer />
       <Toaster position="top-center" />

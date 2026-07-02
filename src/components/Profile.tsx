@@ -15,25 +15,10 @@ const stats = [
 export function Profile() {
   return (
     <section id="profile" className="relative overflow-hidden bg-sand-deep py-24 md:py-32">
-      <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-[2fr_3fr]">
-
-        {/* Image — first on mobile, second on desktop */}
-        <Reveal delay={120} className="order-1 md:order-2">
-          <div className="relative mx-auto w-full">
-            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
-            <img
-              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
-              alt="Victoria West"
-              loading="lazy"
-              width={800}
-              height={1000}
-              className="relative w-full rounded-[1.5rem] object-cover"
-            />
-          </div>
-        </Reveal>
+      <div className="grid items-center gap-16 md:grid-cols-[45%_55%]">
 
         {/* Stat list — second on mobile, first on desktop */}
-        <Reveal className="order-2 md:order-1">
+        <Reveal className="order-2 md:order-1 px-6 md:pl-16 md:pr-8">
           <div>
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
@@ -55,6 +40,21 @@ export function Profile() {
                 </li>
               ))}
             </ul>
+          </div>
+        </Reveal>
+
+        {/* Image — first on mobile, bleeds to right edge on desktop */}
+        <Reveal delay={120} className="order-1 md:order-2">
+          <div className="relative w-full px-4 md:px-0 md:pr-8">
+            <div className="absolute inset-0 md:translate-x-4 md:translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
+            <img
+              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
+              alt="Victoria West"
+              loading="lazy"
+              width={800}
+              height={1000}
+              className="relative w-full rounded-[1.5rem] object-cover"
+            />
           </div>
         </Reveal>
 
