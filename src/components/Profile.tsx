@@ -1,44 +1,64 @@
 import { Reveal } from "@/components/Reveal";
 
 const stats = [
-  { label: "Height", value: "5'8\" / 173 cm" },
-  { label: "Hair", value: "Warm Brunette" },
-  { label: "Eyes", value: "Hazel" },
-  { label: "Measurements", value: "34 — 26 — 36" },
-  { label: "Shoe / Dress", value: "US 8 / US 6" },
-  { label: "Languages", value: "English, Spanish" },
-  { label: "Base", value: "Scottsdale, AZ" },
-  { label: "Availability", value: "Nationwide Travel" },
+  { label: "Age", value: "37" },
+  { label: "Height", value: "5'7\"" },
+  { label: "Bust", value: "34\" Natural" },
+  { label: "Shoe", value: "US 7.5" },
+  { label: "Eyes", value: "Blue" },
+  { label: "Hair", value: "Blonde / Brown" },
+  { label: "Beverage", value: "Sparkling Water" },
+  { label: "Cuisine", value: "Japanese / Mexican" },
+  { label: "Color", value: "Red" },
 ];
 
 export function Profile() {
   return (
-    <section id="profile" className="relative overflow-hidden bg-sand-deep pt-8 py-24 md:pt-40 md:py-32">
-      {/* Background image — very low opacity so it doesn't compete */}
-      <img
-        src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-top opacity-[0.12]"
-      />
+    <section id="profile" className="relative overflow-hidden bg-sand-deep py-24 md:py-32">
+      <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <Reveal className="mb-16 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
-          <h2 className="font-display text-4xl text-espresso md:text-5xl">Statistics</h2>
-          <div className="terra-divider mx-auto mt-6 w-32" />
+        {/* Left — stat list */}
+        <Reveal>
+          <div>
+            <div className="terra-divider mb-6 w-24" />
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
+            <h2 className="font-display text-4xl text-espresso md:text-5xl">Statistics</h2>
+
+            <ul className="mt-10 space-y-0">
+              {stats.map((s) => (
+                <li
+                  key={s.label}
+                  className="flex items-baseline gap-2 border-b border-espresso/10 py-3"
+                >
+                  <span className="w-32 shrink-0 text-xs uppercase tracking-[0.15em] text-terracotta/80">
+                    {s.label}
+                  </span>
+                  {/* Dotted leader */}
+                  <span className="flex-1 border-b border-dotted border-espresso/25 mb-[3px]" />
+                  <span className="shrink-0 font-serif text-base text-espresso/80">
+                    {s.value}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 60}>
-              <div className="group flex aspect-square flex-col items-center justify-center rounded-xl border border-terracotta/20 bg-sand/70 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-terracotta/60 hover:bg-sand/90">
-                <p className="text-[0.65rem] uppercase tracking-[0.25em] text-terracotta/70">{s.label}</p>
-                <p className="mt-3 font-display text-xl text-espresso md:text-2xl">{s.value}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        {/* Right — large photo */}
+        <Reveal delay={120}>
+          <div className="relative mx-auto w-full max-w-sm md:max-w-full">
+            <div className="absolute inset-0 translate-x-4 translate-y-4 border border-terracotta/25" />
+            <img
+              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
+              alt="Victoria West"
+              loading="lazy"
+              width={800}
+              height={1000}
+              className="relative w-full object-cover"
+            />
+          </div>
+        </Reveal>
+
       </div>
     </section>
   );
