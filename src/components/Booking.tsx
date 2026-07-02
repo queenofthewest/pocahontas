@@ -73,15 +73,6 @@ export function Booking() {
                   <p>Outcall +$100 <span className="text-espresso/35">(travel)</span></p>
                 </div>
               </div>
-
-              <div className="mt-8">
-                <a
-                  href="#contact"
-                  className="inline-block border border-terracotta px-6 py-2.5 text-xs font-medium uppercase tracking-[0.25em] text-terracotta transition-all duration-300 hover:bg-terracotta hover:text-sand-soft"
-                >
-                  Book Me
-                </a>
-              </div>
             </div>
           </Reveal>
 

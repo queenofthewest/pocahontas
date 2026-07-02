@@ -175,7 +175,7 @@ export function Contact() {
                     <option value="phoenix-incall">Phoenix Local - Incall</option>
                     <option value="phoenix-outcall">Phoenix Local - Outcall</option>
                     <option value="touring">Touring Request</option>
-                    <option value="flytome">Fly Me To You</option>
+                    <option value="flytome">Fly Me To You (4+ hrs)</option>
                   </select>
                 </div>
                 {DETAIL_LOCATIONS.includes(locationType) && (
