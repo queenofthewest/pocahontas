@@ -5,7 +5,7 @@ const about = "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_9.webp";
 export function About() {
   return (
     <section id="about" className="relative top-20 mb-16 overflow-visible bg-sand-deep py-24 md:mb-40 md:py-32">
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-2">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-[3fr_2fr]">
         <Reveal>
           <div className="relative mx-auto w-full">
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />

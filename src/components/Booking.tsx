@@ -13,30 +13,11 @@ const rates = [
 
 export function Booking() {
   return (
-    <section id="booking" className="relative overflow-hidden py-24 md:py-32">
-      {/* Background image */}
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcSet="/assets/images/las-vegas/IseeSexy_OliviaC_WEB_4.webp"
-        />
-        <img
-          src="/assets/images/las-vegas/VWest21.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-top"
-        />
-      </picture>
-      {/* Overlay so text stays readable */}
-      <div className="pointer-events-none absolute inset-0 bg-sand/40" />
-
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-0 px-6 md:grid-cols-2">
-        {/* Left — transparent, shows background photo */}
-        <div className="hidden md:block" />
-
-        {/* Right — semi-transparent rates card */}
-        <Reveal>
-          <div className="rounded-2xl border border-terracotta/20 bg-sand/70 p-8 backdrop-blur-sm md:p-12">
+    <section id="booking" className="bg-sand py-24 md:py-32">
+      <div className="mx-auto flex max-w-6xl justify-center px-6">
+        {/* Centered rates card */}
+        <Reveal className="w-full max-w-xl">
+          <div className="rounded-2xl border border-terracotta/20 bg-sand-deep p-8 md:p-12">
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Arrangements</p>
             <h2 className="font-display text-4xl text-espresso md:text-5xl">Consideration</h2>
@@ -83,5 +64,6 @@ export function Booking() {
         </Reveal>
       </div>
     </section>
+
   );
 }

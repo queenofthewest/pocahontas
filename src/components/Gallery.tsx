@@ -124,7 +124,7 @@ export function Gallery() {
                   src={img.src}
                   alt={img.title}
                   loading="lazy"
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105 aspect-square md:aspect-auto"
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </button>
             </div>
@@ -147,7 +147,7 @@ export function Gallery() {
           </button>
           <button
             aria-label="Previous"
-            className="absolute left-4 text-4xl text-terracotta hover:text-terracotta-soft md:left-10"
+            className="absolute left-4 flex h-12 w-12 items-center justify-center rounded-full border border-terracotta/40 bg-white text-2xl text-terracotta transition-colors hover:bg-terracotta hover:text-white md:left-10"
             onClick={(e) => { e.stopPropagation(); prev(); }}
           >
             ‹
@@ -161,7 +161,7 @@ export function Gallery() {
           </figure>
           <button
             aria-label="Next"
-            className="absolute right-4 text-4xl text-terracotta hover:text-terracotta-soft md:right-10"
+            className="absolute right-4 flex h-12 w-12 items-center justify-center rounded-full border border-terracotta/40 bg-white text-2xl text-terracotta transition-colors hover:bg-terracotta hover:text-white md:right-10"
             onClick={(e) => { e.stopPropagation(); next(); }}
           >
             ›

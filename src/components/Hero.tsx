@@ -22,10 +22,16 @@ export function Hero() {
 
       {/* Content anchored to bottom */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-2xl flex-col items-center justify-end px-6 pb-20 text-center md:max-w-4xl md:pb-28">
-        <p className="mb-5 text-xs uppercase tracking-[0.35em] text-terracotta/90 drop-shadow">
+        <p
+          className="mb-5 text-xs uppercase tracking-[0.35em] text-sand-soft"
+          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5)" }}
+        >
           Scottsdale · Phoenix · Nationwide
         </p>
-        <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-terra-gradient drop-shadow sm:text-6xl lg:text-7xl">
+        <h1
+          className="font-display text-5xl leading-[1.02] tracking-tight text-terra-gradient sm:text-6xl lg:text-7xl"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.7), 0 4px 40px rgba(0,0,0,0.4)" }}
+        >
           Victoria West
         </h1>
         <div className="terra-divider mx-auto my-6 w-40" />
@@ -33,13 +39,14 @@ export function Hero() {
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#contact"
-            className="rounded-full bg-terracotta px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-sand-soft transition-transform hover:scale-105"
+            className="rounded-full border border-terracotta/70 bg-terracotta/80 px-8 py-3 text-xs font-light uppercase tracking-[0.2em] text-sand-soft backdrop-blur-sm transition-transform hover:scale-105"
           >
             Book an Encounter
           </a>
           <a
             href="#portfolio"
-            className="group inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-espresso/80 transition-colors hover:text-terracotta"
+            className="group inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-sand-soft transition-colors hover:text-terracotta"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
           >
             See Gallery
             <span className="transition-transform group-hover:translate-x-1">→</span>

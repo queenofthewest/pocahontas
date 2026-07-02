@@ -15,22 +15,17 @@ const badges = [
 export function TrustBadges() {
   return (
     <Reveal className="mt-12" delay={200}>
-      <p className="mb-5 text-center text-[0.6rem] uppercase tracking-[0.35em] text-terracotta/60">
-        My Verifications
-      </p>
-      <div className="flex flex-nowrap items-center justify-center gap-3 sm:gap-6 md:gap-8">
+      <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-7 md:gap-10">
         {badges.map((b) => (
-          <div key={b.name} className="group flex flex-col items-center">
-            <div className="badge-ring flex h-14 w-14 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 sm:h-20 sm:w-20 md:h-24 md:w-24">
-              <img
-                src={b.src}
-                alt={b.name}
-                loading="lazy"
-                width={96}
-                height={96}
-                className="h-[88%] w-[88%] object-contain"
-              />
-            </div>
+          <div key={b.name} className="transition-transform duration-300 hover:scale-110">
+            <img
+              src={b.src}
+              alt={b.name}
+              loading="lazy"
+              width={80}
+              height={80}
+              className="h-12 w-12 object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
+            />
           </div>
         ))}
       </div>
