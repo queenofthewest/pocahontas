@@ -13,16 +13,16 @@ const badges = [
 export function TrustBadges() {
   return (
     <Reveal className="mt-10" delay={200}>
-      <div className="flex flex-nowrap items-center justify-center gap-3 sm:gap-5">
+      <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-6">
         {badges.map((b) => (
           <div key={b.name} className="transition-transform duration-300 hover:scale-110">
             <img
               src={b.src}
               alt={b.name}
               loading="lazy"
-              width={80}
-              height={80}
-              className="h-12 w-12 object-contain sm:h-14 sm:w-14 md:h-16 md:w-16"
+              width={112}
+              height={112}
+              className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
             />
           </div>
         ))}

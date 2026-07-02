@@ -3,23 +3,17 @@ import { TrustBadges } from "@/components/TrustBadges";
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen w-full overflow-hidden">
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcSet="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_3.webp"
-        />
-        <img
-          src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_5.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_65%]"
-        />
-      </picture>
+      <img
+        src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_3.webp"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-[50%_65%]"
+      />
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-sand to-transparent" />
 
-      {/* Mobile: eyebrow + h1 near bottom, centered */}
-      <div className="md:hidden absolute z-10 bottom-[12%] left-0 right-0 px-6 text-center">
+      {/* Eyebrow + h1 — always left-anchored so it never crosses her face */}
+      <div className="absolute z-10 top-[20%] left-[6%] sm:left-[10%] md:left-[20%]">
         <p
           className="mb-5 text-xs uppercase tracking-[0.35em] text-sand-soft"
           style={{ textShadow: "0 2px 12px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5)" }}
@@ -27,25 +21,7 @@ export function Hero() {
           Scottsdale · Phoenix · Nationwide
         </p>
         <h1
-          className="font-display text-5xl leading-[1.02] tracking-tight text-terra-gradient"
-          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.7), 0 4px 40px rgba(0,0,0,0.4)" }}
-        >
-          Victoria West
-        </h1>
-        <div className="terra-divider mx-auto my-6 w-40" />
-        <TrustBadges />
-      </div>
-
-      {/* Desktop: eyebrow + h1 top-left */}
-      <div className="hidden md:block absolute z-10 top-[20%] left-[20%]">
-        <p
-          className="mb-5 text-xs uppercase tracking-[0.35em] text-sand-soft"
-          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5)" }}
-        >
-          Scottsdale · Phoenix · Nationwide
-        </p>
-        <h1
-          className="font-display text-5xl leading-[1.02] tracking-tight text-terra-gradient lg:text-7xl"
+          className="font-display text-4xl leading-[1.02] tracking-tight text-terra-gradient sm:text-5xl lg:text-7xl"
           style={{ textShadow: "0 2px 20px rgba(0,0,0,0.7), 0 4px 40px rgba(0,0,0,0.4)" }}
         >
           Victoria West
@@ -53,8 +29,8 @@ export function Hero() {
         <div className="terra-divider my-6 w-40" />
       </div>
 
-      {/* Desktop: badges bottom center */}
-      <div className="hidden md:flex absolute z-10 bottom-12 left-0 right-0 justify-center">
+      {/* Badges — bottom center, bigger on all sizes */}
+      <div className="absolute z-10 bottom-10 left-0 right-0 flex justify-center md:bottom-12">
         <TrustBadges />
       </div>
     </section>
