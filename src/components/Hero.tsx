@@ -21,7 +21,7 @@ export function Hero() {
           className="mb-5 text-xs uppercase tracking-[0.35em] text-sand-soft"
           style={{ textShadow: textShadowSmall }}
         >
-          Traveling Luxury Companion
+          Luxury Traveling Companion
         </p>
         <h1
           className="font-display text-5xl leading-[1.02] tracking-tight text-sand-soft"
