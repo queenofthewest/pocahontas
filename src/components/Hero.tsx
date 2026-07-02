@@ -24,7 +24,7 @@ export function Hero() {
           Traveling Luxury Companion
         </p>
         <h1
-          className="font-display text-4xl leading-[1.02] tracking-tight text-sand-soft sm:text-5xl md:text-5xl"
+          className="font-display text-5xl leading-[1.02] tracking-tight text-sand-soft"
           style={{ textShadow: textShadowLarge }}
         >
           Victoria West
