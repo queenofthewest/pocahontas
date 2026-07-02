@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
   email: z.string().trim().email("Enter a valid email").max(255),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
+  phone: z.string().trim().min(7, "Please enter your phone number").max(40),
   date: z.string().trim().max(40).optional().or(z.literal("")),
   duration: z.string().trim().max(60).optional().or(z.literal("")),
   location: z.string().trim().max(120).optional().or(z.literal("")),
@@ -92,7 +92,8 @@ export function Contact() {
                 </div>
                 <div>
                   <label className={labelClass} htmlFor="phone">Phone</label>
-                  <input id="phone" name="phone" className={inputClass} placeholder="Optional" />
+                  <input id="phone" name="phone" className={inputClass} placeholder="(555) 555-5555" />
+                  {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone}</p>}
                 </div>
               </fieldset>
 
@@ -190,8 +191,8 @@ export function Contact() {
               </button>
               <p className="text-sm text-espresso/45">
                 Or email directly:{" "}
-                <a href="mailto:hello@victoriawest.com" className="text-terracotta hover:text-terracotta-soft">
-                  hello@victoriawest.com
+                <a href="mailto:victoriawestvip@gmail.com" className="text-terracotta hover:text-terracotta-soft">
+                  victoriawestvip@gmail.com
                 </a>
               </p>
             </div>

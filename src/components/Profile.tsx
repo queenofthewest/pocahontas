@@ -17,8 +17,8 @@ export function Profile() {
     <section id="profile" className="relative overflow-hidden bg-sand-deep py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-10 md:grid-cols-[30%_70%]">
 
-        {/* Stat list — second on mobile, first on desktop */}
-        <Reveal className="order-2 md:order-1">
+        {/* Stat list — first on mobile, first on desktop */}
+        <Reveal className="order-1 md:order-1">
           <div className="md:pr-6">
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
@@ -42,8 +42,8 @@ export function Profile() {
           </div>
         </Reveal>
 
-        {/* Image — first on mobile, second on desktop */}
-        <Reveal delay={120} className="order-1 md:order-2">
+        {/* Image — second on mobile, second on desktop */}
+        <Reveal delay={120} className="order-2 md:order-2">
           <div className="relative mx-auto w-full">
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
             <img
