@@ -7,42 +7,48 @@ const TH = "/assets/images/Thailand";
 
 const galleries = {
   "Las Vegas": [
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_1.webp`, title: "Las Vegas I", span: "lg:row-span-2" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_14.webp`, title: "Las Vegas II", span: "" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_24.webp`, title: "Las Vegas III", span: "" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp`, title: "Las Vegas IV", span: "lg:row-span-2" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_17.webp`, title: "Las Vegas V", span: "" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_25.webp`, title: "Las Vegas VI", span: "" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_20.webp`, title: "Las Vegas VII", span: "" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_23.webp`, title: "Las Vegas VIII", span: "" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_4.webp`, title: "Las Vegas IX", span: "lg:row-span-2" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_8.webp`, title: "Las Vegas X", span: "" },
-    { src: `${LV}/VicWest6_2.webp`, title: "Las Vegas XI", span: "" },
-    { src: `${LV}/VWest21.webp`, title: "Las Vegas XII", span: "" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_3.webp`, title: "Las Vegas I" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_5.webp`, title: "Las Vegas II" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_1.webp`, title: "Las Vegas III" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_14.webp`, title: "Las Vegas IV" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_24.webp`, title: "Las Vegas V" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_9.webp`, title: "Las Vegas VI" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp`, title: "Las Vegas VII" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_17.webp`, title: "Las Vegas VIII" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_25.webp`, title: "Las Vegas IX" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_26.webp`, title: "Las Vegas X" },
+    { src: `${LV}/ISEESEXY_VictoriaWest_Jan23_WEB_27.webp`, title: "Las Vegas XI" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_2.webp`, title: "Las Vegas XII" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_4.webp`, title: "Las Vegas XIII" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_8.webp`, title: "Las Vegas XIV" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_20.webp`, title: "Las Vegas XV" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_23.webp`, title: "Las Vegas XVI" },
+    { src: `${LV}/VicWest6_2.webp`, title: "Las Vegas XVII" },
+    { src: `${LV}/VWest21.webp`, title: "Las Vegas XVIII" },
   ],
   "Phoenix": [
-    { src: `${PHX}/DSC04466.webp`, title: "Phoenix I", span: "lg:row-span-2" },
-    { src: `${PHX}/DSC04503.webp`, title: "Phoenix II", span: "" },
-    { src: `${PHX}/DSC04549.webp`, title: "Phoenix III", span: "" },
-    { src: `${PHX}/DSC04566.webp`, title: "Phoenix IV", span: "lg:row-span-2" },
-    { src: `${PHX}/FLF00960-Edit.webp`, title: "Phoenix V", span: "" },
-    { src: `${PHX}/_DSC3112-2.webp`, title: "Phoenix VI", span: "" },
-    { src: `${PHX}/_DSC3115.webp`, title: "Phoenix VII", span: "" },
-    { src: `${PHX}/downtown-1.webp`, title: "Phoenix VIII", span: "" },
-    { src: `${PHX}/downtown-2.webp`, title: "Phoenix IX", span: "" },
-    { src: `${PHX}/downtown-3.webp`, title: "Phoenix X", span: "" },
-    { src: `${PHX}/20201119_185323.webp`, title: "Phoenix XI", span: "" },
-    { src: `${PHX}/20201119_185347.webp`, title: "Phoenix XII", span: "" },
+    { src: `${PHX}/DSC04466.webp`, title: "Phoenix I" },
+    { src: `${PHX}/DSC04503.webp`, title: "Phoenix II" },
+    { src: `${PHX}/DSC04549.webp`, title: "Phoenix III" },
+    { src: `${PHX}/DSC04566.webp`, title: "Phoenix IV" },
+    { src: `${PHX}/FLF00960-Edit.webp`, title: "Phoenix V" },
+    { src: `${PHX}/_DSC3112-2.webp`, title: "Phoenix VI" },
+    { src: `${PHX}/_DSC3115.webp`, title: "Phoenix VII" },
+    { src: `${PHX}/downtown-1.webp`, title: "Phoenix VIII" },
+    { src: `${PHX}/downtown-2.webp`, title: "Phoenix IX" },
+    { src: `${PHX}/downtown-3.webp`, title: "Phoenix X" },
+    { src: `${PHX}/20201119_185323.webp`, title: "Phoenix XI" },
+    { src: `${PHX}/20201119_185347.webp`, title: "Phoenix XII" },
   ],
   "Thailand": [
-    { src: `${TH}/NOK_1193.webp`, title: "Thailand I", span: "lg:row-span-2" },
-    { src: `${TH}/NOK_1212.webp`, title: "Thailand II", span: "" },
-    { src: `${TH}/NOK_1213.webp`, title: "Thailand III", span: "" },
-    { src: `${TH}/NOK_1518-2.webp`, title: "Thailand IV", span: "lg:row-span-2" },
-    { src: `${TH}/NOK_1612-2-2.webp`, title: "Thailand V", span: "" },
-    { src: `${TH}/NOK_1627-2-2.webp`, title: "Thailand VI", span: "" },
-    { src: `${TH}/NOK_1643-2-2.webp`, title: "Thailand VII", span: "" },
-    { src: `${TH}/NOK_1655.webp`, title: "Thailand VIII", span: "" },
+    { src: `${TH}/NOK_1193.webp`, title: "Thailand I" },
+    { src: `${TH}/NOK_1212.webp`, title: "Thailand II" },
+    { src: `${TH}/NOK_1213.webp`, title: "Thailand III" },
+    { src: `${TH}/NOK_1518-2.webp`, title: "Thailand IV" },
+    { src: `${TH}/NOK_1612-2-2.webp`, title: "Thailand V" },
+    { src: `${TH}/NOK_1627-2-2.webp`, title: "Thailand VI" },
+    { src: `${TH}/NOK_1643-2-2.webp`, title: "Thailand VII" },
+    { src: `${TH}/NOK_1655.webp`, title: "Thailand VIII" },
   ],
 };
 
@@ -105,25 +111,20 @@ export function Gallery() {
         ))}
       </div>
 
-      {/* Full-width grid with side padding */}
+      {/* Masonry columns — natural aspect ratios, no cropping */}
       <div className="px-4 sm:px-6">
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:auto-rows-[22rem] lg:grid-cols-4">
+        <div className="columns-2 gap-2 sm:gap-3 md:columns-3 lg:columns-4">
           {images.map((img, i) => (
-            <div
-              key={img.title}
-              className={`h-full ${img.span} ${i % 2 === 1 ? "mt-8 lg:mt-0" : ""}`}
-            >
+            <div key={img.title} className="mb-2 break-inside-avoid sm:mb-3">
               <button
                 onClick={() => setActive(i)}
-                className="group relative block h-full w-full overflow-hidden rounded-lg border border-terracotta/15 transition-all duration-300 hover:border-terracotta/50"
+                className="group relative block w-full overflow-hidden rounded-lg border border-terracotta/15 transition-all duration-300 hover:border-terracotta/50"
               >
                 <img
                   src={img.src}
                   alt={img.title}
                   loading="lazy"
-                  width={800}
-                  height={1000}
-                  className="aspect-[4/5] h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 lg:aspect-auto"
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </button>
             </div>

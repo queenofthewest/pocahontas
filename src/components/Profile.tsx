@@ -13,7 +13,15 @@ const stats = [
 
 export function Profile() {
   return (
-    <section id="profile" className="relative overflow-visible bg-sand-deep pt-8 py-24 md:pt-40 md:py-32">
+    <section id="profile" className="relative overflow-hidden bg-sand-deep pt-8 py-24 md:pt-40 md:py-32">
+      {/* Background image — very low opacity so it doesn't compete */}
+      <img
+        src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-top opacity-[0.12]"
+      />
+
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <Reveal className="mb-16 text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
@@ -24,7 +32,7 @@ export function Profile() {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 60}>
-              <div className="group flex aspect-square flex-col items-center justify-center rounded-xl border border-terracotta/20 bg-sand/60 p-6 text-center transition-all duration-300 hover:border-terracotta/60 hover:bg-sand">
+              <div className="group flex aspect-square flex-col items-center justify-center rounded-xl border border-terracotta/20 bg-sand/70 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-terracotta/60 hover:bg-sand/90">
                 <p className="text-[0.65rem] uppercase tracking-[0.25em] text-terracotta/70">{s.label}</p>
                 <p className="mt-3 font-display text-xl text-espresso md:text-2xl">{s.value}</p>
               </div>
