@@ -13,7 +13,7 @@ const badges = [
 export function TrustBadges() {
   return (
     <Reveal className="mt-10" delay={200}>
-      <div className="flex flex-nowrap items-center justify-center gap-3 sm:gap-5 md:justify-start md:gap-4">
+      <div className="flex flex-nowrap items-center justify-center gap-3 sm:gap-5">
         {badges.map((b) => (
           <div key={b.name} className="transition-transform duration-300 hover:scale-110">
             <img

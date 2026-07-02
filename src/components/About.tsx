@@ -5,11 +5,10 @@ const about = "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_9.webp";
 export function About() {
   return (
     <section id="about" className="relative top-20 mb-16 overflow-visible bg-sand-deep py-24 md:mb-40 md:py-32">
-      <div className="relative z-10 grid items-center gap-14 md:grid-cols-[55%_45%]">
-        {/* Image — bleeds to left edge on desktop */}
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-14 px-6 md:px-12 md:grid-cols-[46%_54%]">
         <Reveal>
-          <div className="relative mx-auto w-full px-4 md:px-0 md:pl-8">
-            <div className="absolute inset-0 md:translate-x-4 md:translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
+          <div className="relative mx-auto w-full">
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
             <img
               src={about}
               alt="Portrait of Victoria West"
@@ -21,9 +20,8 @@ export function About() {
           </div>
         </Reveal>
 
-        {/* Text — keeps padding */}
         <Reveal delay={150}>
-          <div className="px-6 md:pr-16 md:pl-4">
+          <div className="md:pl-6">
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Meet Victoria</p>
             <h2 className="font-display text-4xl text-espresso md:text-5xl">

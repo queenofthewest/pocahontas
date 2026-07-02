@@ -41,7 +41,7 @@ function CardHeader({ label, title }: { label: string; title: string }) {
 export function Booking() {
   return (
     <section id="booking" className="bg-sand py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mb-16 text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Arrangements</p>
           <h2 className="font-display text-4xl text-espresso md:text-5xl">Consideration</h2>
@@ -56,10 +56,9 @@ export function Booking() {
 
               <ul className="space-y-0">
                 {rates.map((r) => (
-                  <li key={r.label} className="flex items-baseline gap-2 border-b border-espresso/10 py-2.5">
-                    <span className="shrink-0 text-xs uppercase tracking-[0.12em] text-terracotta/80">{r.label}</span>
-                    <span className="flex-1 border-b border-dotted border-espresso/20 mb-[3px]" />
-                    <span className="shrink-0 font-serif text-sm text-espresso/80">{r.price}</span>
+                  <li key={r.label} className="flex items-baseline justify-between border-b border-espresso/10 py-2.5">
+                    <span className="text-xs uppercase tracking-[0.12em] text-terracotta/80">{r.label}</span>
+                    <span className="font-serif text-sm text-espresso/80">{r.price}</span>
                   </li>
                 ))}
               </ul>

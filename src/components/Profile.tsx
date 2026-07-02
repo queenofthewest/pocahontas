@@ -15,11 +15,11 @@ const stats = [
 export function Profile() {
   return (
     <section id="profile" className="relative overflow-hidden bg-sand-deep py-24 md:py-32">
-      <div className="grid items-center gap-16 md:grid-cols-[45%_55%]">
+      <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:px-12 md:grid-cols-2">
 
         {/* Stat list — second on mobile, first on desktop */}
-        <Reveal className="order-2 md:order-1 px-6 md:pl-16 md:pr-8">
-          <div>
+        <Reveal className="order-2 md:order-1">
+          <div className="md:pr-6">
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
             <h2 className="font-display text-4xl text-espresso md:text-5xl">Statistics</h2>
@@ -28,13 +28,12 @@ export function Profile() {
               {stats.map((s) => (
                 <li
                   key={s.label}
-                  className="flex items-baseline gap-2 border-b border-espresso/10 py-3"
+                  className="flex items-baseline justify-between border-b border-espresso/10 py-3"
                 >
-                  <span className="w-32 shrink-0 text-xs uppercase tracking-[0.15em] text-terracotta/80">
+                  <span className="text-xs uppercase tracking-[0.15em] text-terracotta/80">
                     {s.label}
                   </span>
-                  <span className="flex-1 border-b border-dotted border-espresso/25 mb-[3px]" />
-                  <span className="shrink-0 font-serif text-base text-espresso/80">
+                  <span className="font-serif text-base text-espresso/80">
                     {s.value}
                   </span>
                 </li>
@@ -43,10 +42,10 @@ export function Profile() {
           </div>
         </Reveal>
 
-        {/* Image — first on mobile, bleeds to right edge on desktop */}
+        {/* Image — first on mobile, second on desktop */}
         <Reveal delay={120} className="order-1 md:order-2">
-          <div className="relative w-full px-4 md:px-0 md:pr-8">
-            <div className="absolute inset-0 md:translate-x-4 md:translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
+          <div className="relative mx-auto w-full">
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
             <img
               src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
               alt="Victoria West"
