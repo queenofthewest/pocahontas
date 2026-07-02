@@ -44,10 +44,10 @@ const galleries = {
     { src: `${TH}/NOK_1193.webp`, title: "Thailand I" },
     { src: `${TH}/NOK_1212_v2.webp`, title: "Thailand II" },
     { src: `${TH}/NOK_1213_v2.webp`, title: "Thailand III" },
-    { src: `${TH}/NOK_1518-2.webp`, title: "Thailand IV" },
+    { src: `${TH}/NOK_1518-2_v2.webp`, title: "Thailand IV" },
     { src: `${TH}/NOK_1612-2-2.webp`, title: "Thailand V" },
-    { src: `${TH}/NOK_1627-2-2.webp`, title: "Thailand VI" },
-    { src: `${TH}/NOK_1643-2-2.webp`, title: "Thailand VII" },
+    { src: `${TH}/NOK_1627-2-2_v2.webp`, title: "Thailand VI" },
+    { src: `${TH}/NOK_1643-2-2_v2.webp`, title: "Thailand VII" },
     { src: `${TH}/NOK_1655.webp`, title: "Thailand VIII" },
   ],
 };
