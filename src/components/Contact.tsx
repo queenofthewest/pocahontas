@@ -40,11 +40,13 @@ const verifyOptions = [
 export function Contact() {
   const [verification, setVerification] = useState<(typeof verifyOptions)[number]["id"]>("employment");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
     const parsed = schema.safeParse({ ...data, verification });
     if (!parsed.success) {
       const fieldErrors: Record<string, string> = {};
@@ -56,9 +58,21 @@ export function Contact() {
       return;
     }
     setErrors({});
-    form.reset();
-    setVerification("employment");
-    toast.success("Inquiry received — I'll respond within 48 hours.");
+    formData.set("verificationType", verification);
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/contact.php", { method: "POST", body: formData });
+      const result = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !result.ok) throw new Error(result.error || "Failed to send");
+      form.reset();
+      setVerification("employment");
+      toast.success("Inquiry received — I'll respond within 48 hours.");
+    } catch {
+      toast.error("Something went wrong sending your inquiry. Please try emailing directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const activeVerify = verifyOptions.find((r) => r.id === verification)!;
@@ -77,6 +91,7 @@ export function Contact() {
 
         <Reveal>
           <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-terracotta/20 bg-sand-soft/60 p-6 md:p-10">
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
             <div className="grid gap-10 lg:grid-cols-3">
               <fieldset className="space-y-5">
                 <legend className="mb-4 font-display text-lg text-terracotta">About You</legend>
@@ -185,9 +200,10 @@ export function Contact() {
             <div className="mt-10 flex flex-col items-center gap-4">
               <button
                 type="submit"
-                className="rounded-full bg-terracotta px-12 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-sand-soft transition-transform hover:scale-105"
+                disabled={submitting}
+                className="rounded-full bg-terracotta px-12 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-sand-soft transition-transform hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
               >
-                Send Inquiry
+                {submitting ? "Sending…" : "Send Inquiry"}
               </button>
               <p className="text-sm text-espresso/45">
                 Or email directly:{" "}
