@@ -19,7 +19,7 @@ const galleries = {
     { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_26.webp`, title: "Las Vegas X" },
     { src: `${LV}/ISEESEXY_VictoriaWest_Jan23_WEB_27_v2.webp`, title: "Las Vegas XI" },
     { src: `${LV}/IseeSexy_OliviaC_WEB_2.webp`, title: "Las Vegas XII" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_4.webp`, title: "Las Vegas XIII" },
+    { src: `${LV}/IseeSexy_OliviaC_WEB_4_v2.webp`, title: "Las Vegas XIII" },
     { src: `${LV}/IseeSexy_OliviaC_WEB_8.webp`, title: "Las Vegas XIV" },
     { src: `${LV}/IseeSexy_OliviaC_WEB_20.webp`, title: "Las Vegas XV" },
     { src: `${LV}/IseeSexy_OliviaC_WEB_23.webp`, title: "Las Vegas XVI" },
