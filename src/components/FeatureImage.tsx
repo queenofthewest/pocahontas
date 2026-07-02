@@ -4,8 +4,8 @@ const variants = {
     mobile: "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jan23_WEB_27_v2.webp",
   },
   two: {
-    desktop: "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_26.webp",
-    mobile: "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_17.webp",
+    desktop: "/assets/images/las-vegas/IseeSexy_OliviaC_WEB_4_v2.webp",
+    mobile: "/assets/images/las-vegas/IseeSexy_OliviaC_WEB_4_v2.webp",
   },
 };
 
