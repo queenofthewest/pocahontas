@@ -17,8 +17,23 @@ export function Profile() {
     <section id="profile" className="relative overflow-hidden bg-sand-deep py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
 
-        {/* Left — stat list */}
-        <Reveal>
+        {/* Image — first on mobile, second on desktop */}
+        <Reveal delay={120} className="order-1 md:order-2">
+          <div className="relative mx-auto w-full">
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
+            <img
+              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
+              alt="Victoria West"
+              loading="lazy"
+              width={800}
+              height={1000}
+              className="relative w-full rounded-[1.5rem] object-cover"
+            />
+          </div>
+        </Reveal>
+
+        {/* Stat list — second on mobile, first on desktop */}
+        <Reveal className="order-2 md:order-1">
           <div>
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">The Details</p>
@@ -33,7 +48,6 @@ export function Profile() {
                   <span className="w-32 shrink-0 text-xs uppercase tracking-[0.15em] text-terracotta/80">
                     {s.label}
                   </span>
-                  {/* Dotted leader */}
                   <span className="flex-1 border-b border-dotted border-espresso/25 mb-[3px]" />
                   <span className="shrink-0 font-serif text-base text-espresso/80">
                     {s.value}
@@ -41,21 +55,6 @@ export function Profile() {
                 </li>
               ))}
             </ul>
-          </div>
-        </Reveal>
-
-        {/* Right — large photo */}
-        <Reveal delay={120}>
-          <div className="relative mx-auto w-full max-w-sm md:max-w-full">
-            <div className="absolute inset-0 translate-x-4 translate-y-4 border border-terracotta/25" />
-            <img
-              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
-              alt="Victoria West"
-              loading="lazy"
-              width={800}
-              height={1000}
-              className="relative w-full object-cover"
-            />
           </div>
         </Reveal>
 

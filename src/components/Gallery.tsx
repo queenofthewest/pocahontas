@@ -124,7 +124,7 @@ export function Gallery() {
                   src={img.src}
                   alt={img.title}
                   loading="lazy"
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105 aspect-square md:aspect-auto"
                 />
               </button>
             </div>

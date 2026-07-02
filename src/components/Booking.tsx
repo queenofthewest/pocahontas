@@ -1,86 +1,85 @@
 import { Reveal } from "@/components/Reveal";
 
-const tiers = [
-  {
-    name: "Incall",
-    note: "Private residence — Scottsdale",
-    rates: [
-      { label: "1 Hour", price: "$600" },
-      { label: "90 Minutes", price: "$800" },
-      { label: "2 Hours", price: "$1,100" },
-      { label: "3 Hours", price: "$1,500" },
-    ],
-  },
-  {
-    name: "Outcall",
-    note: "Your hotel or residence — Phoenix metro",
-    rates: [
-      { label: "2 Hours", price: "$1,300" },
-      { label: "3 Hours", price: "$1,700" },
-      { label: "Dinner Date · 4 Hrs", price: "$2,100" },
-      { label: "Evening · 6 Hrs", price: "$2,600" },
-    ],
-  },
-  {
-    name: "Extended",
-    note: "Overnight, travel & multi-day",
-    rates: [
-      { label: "Overnight · 12 Hrs", price: "$3,800" },
-      { label: "Full Day · 24 Hrs", price: "$6,500" },
-      { label: "Weekend · 48 Hrs", price: "$9,500" },
-      { label: "Fly Me To You", price: "From $4,500" },
-    ],
-  },
+const rates = [
+  { label: "One hour", price: "$800" },
+  { label: "90 minutes", price: "$1,000" },
+  { label: "Two hours", price: "$1,300" },
+  { label: "Three hours", price: "$1,800" },
+  { label: "Four hours", price: "$2,200" },
+  { label: "Six hours", price: "$3,000" },
+  { label: "Twelve hours", price: "$5,000" },
+  { label: "Couples", price: "$1,000/hr" },
 ];
 
 export function Booking() {
   return (
-    <section id="booking" className="bg-gradient-to-b from-sand to-sand-deep py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <Reveal className="mb-16 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Arrangements</p>
-          <h2 className="font-display text-4xl text-espresso md:text-5xl">Investment</h2>
-          <div className="terra-divider mx-auto mt-6 w-32" />
-        </Reveal>
+    <section id="booking" className="relative overflow-hidden py-24 md:py-32">
+      {/* Background image */}
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcSet="/assets/images/las-vegas/IseeSexy_OliviaC_WEB_4.webp"
+        />
+        <img
+          src="/assets/images/las-vegas/VWest21.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+        />
+      </picture>
+      {/* Overlay so text stays readable */}
+      <div className="pointer-events-none absolute inset-0 bg-sand/40" />
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {tiers.map((tier, i) => (
-            <Reveal key={tier.name} delay={i * 100}>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-terracotta/30 bg-sand-soft/60 p-8 transition-all duration-300 hover:border-terracotta hover:bg-sand-soft hover:shadow-xl hover:shadow-terracotta/10">
-                <div className="relative z-10 flex h-full flex-col">
-                  <h3 className="font-display text-2xl text-terra-gradient">{tier.name}</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-espresso/40">{tier.note}</p>
-                  <ul className="mt-6 space-y-4">
-                    {tier.rates.map((r) => (
-                      <li
-                        key={r.label}
-                        className="flex items-center justify-between border-b border-terracotta/15 pb-3 text-sm"
-                      >
-                        <span className="text-espresso/65">{r.label}</span>
-                        <span className="font-serif text-lg text-espresso">{r.price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-0 px-6 md:grid-cols-2">
+        {/* Left — transparent, shows background photo */}
+        <div className="hidden md:block" />
+
+        {/* Right — semi-transparent rates card */}
+        <Reveal>
+          <div className="rounded-2xl border border-terracotta/20 bg-sand/70 p-8 backdrop-blur-sm md:p-12">
+            <div className="terra-divider mb-6 w-24" />
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Arrangements</p>
+            <h2 className="font-display text-4xl text-espresso md:text-5xl">Consideration</h2>
+
+            <ul className="mt-8 space-y-0">
+              {rates.map((r) => (
+                <li
+                  key={r.label}
+                  className="flex items-baseline gap-2 border-b border-espresso/10 py-3"
+                >
+                  <span className="w-36 shrink-0 text-xs uppercase tracking-[0.15em] text-terracotta/80">
+                    {r.label}
+                  </span>
+                  <span className="flex-1 border-b border-dotted border-espresso/25 mb-[3px]" />
+                  <span className="shrink-0 font-serif text-base text-espresso/80">{r.price}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 space-y-4 text-sm text-espresso/60">
+              <div>
+                <p className="mb-1 text-[0.65rem] uppercase tracking-[0.2em] text-terracotta/70">
+                  Local Admirers — Scottsdale / Phoenix
+                </p>
+                <p>Incall +$150 <span className="text-espresso/40">(day)</span> · +$200 <span className="text-espresso/40">(evening)</span></p>
               </div>
-            </Reveal>
-          ))}
-        </div>
+              <div>
+                <p className="mb-1 text-[0.65rem] uppercase tracking-[0.2em] text-terracotta/70">
+                  While on Tour
+                </p>
+                <p>Outcall +$100 <span className="text-espresso/40">(travel)</span></p>
+              </div>
+            </div>
 
-        <Reveal className="mt-12 text-center">
-          <a
-            href="#contact"
-            className="inline-block rounded-full bg-terracotta px-12 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-sand-soft transition-transform hover:scale-105"
-          >
-            Request a Date
-          </a>
-        </Reveal>
-
-        <Reveal className="mt-10 text-center">
-          <p className="text-sm text-espresso/45">
-            A <span className="text-terracotta">30% deposit</span> secures our time together.
-            Couples add 50%. Screening required for all new friends — see verification options below.
-          </p>
+            <div className="mt-8">
+              <a
+                href="#contact"
+                className="inline-block border border-terracotta px-8 py-3 text-xs font-medium uppercase tracking-[0.25em] text-terracotta transition-all duration-300 hover:bg-terracotta hover:text-sand-soft"
+              >
+                Book Me
+              </a>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>

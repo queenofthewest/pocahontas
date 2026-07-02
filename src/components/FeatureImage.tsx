@@ -13,7 +13,7 @@ export function FeatureImage({
   variant,
   caption,
   label,
-  heightClass = "h-[50vh] md:h-[65vh]",
+  heightClass = "h-[70vh] md:h-[85vh]",
 }: {
   variant: "one" | "two";
   caption: string;
@@ -33,8 +33,7 @@ export function FeatureImage({
           className="absolute inset-0 h-full w-full object-cover object-top"
         />
       </picture>
-      {/* Subtle vignette */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-sand/20 via-transparent to-sand/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-sand/15 via-transparent to-sand/20" />
     </section>
   );
 }
