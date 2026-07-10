@@ -58,14 +58,15 @@ export function PasswordGate({ children }: { children: ReactNode }) {
           </h1>
           <div className="terra-divider mx-auto mt-6 w-16" />
           <p className="mt-6 text-sm leading-relaxed text-sand-soft/80">
-            Thank you so much for stopping by. Please email{" "}
+            Thank you so much for stopping by. Please email 
+            {" "}
             <a
               href="mailto:alyssamayvip@gmail.com"
               className="text-terracotta-soft underline decoration-terracotta-soft/40 underline-offset-4 hover:decoration-terracotta-soft"
             >
               alyssamayvip@gmail.com
             </a>{" "}
-            to get the password for this website. Full screening not required.
+            with the username or link to your profile on P411, Private Delights, TER, or X. You will receive a message with the password. Thank you!
           </p>
         </Reveal>
 
