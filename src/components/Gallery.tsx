@@ -38,8 +38,7 @@ const galleries = {
     { src: `${PHX}/downtown-1.webp`, title: "Phoenix VIII" },
     { src: `${PHX}/downtown-2.webp`, title: "Phoenix IX" },
     { src: `${PHX}/downtown-3.webp`, title: "Phoenix X" },
-    { src: `${PHX}/20201119_185323.webp`, title: "Phoenix XI" },
-    { src: `${PHX}/20201119_185347.webp`, title: "Phoenix XII" },
+    { src: `${PHX}/2Q0A5057.webp`, title: "Phoenix XI" },
   ],
   "Thailand": [
     { src: `${TH}/NOK_1193.webp`, title: "Thailand I" },

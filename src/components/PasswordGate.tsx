@@ -7,24 +7,6 @@ const STORAGE_KEY = "vw_site_unlocked";
 const textShadowSmall = "0 1px 4px rgba(0,0,0,0.7)";
 const textShadowLarge = "0 2px 6px rgba(0,0,0,0.55)";
 
-// TODO: swap for the real profile photo when it's ready — just drop a src here.
-function PlaceholderAvatar() {
-  return (
-    <svg viewBox="0 0 200 200" className="h-full w-full" role="img" aria-label="Profile photo placeholder">
-      <circle cx="100" cy="100" r="100" fill="oklch(0.87 0.035 72)" />
-      <circle cx="100" cy="86" r="42" fill="oklch(0.80 0.07 60)" />
-      <path
-        d="M58 92 C56 48 78 26 100 26 C122 26 144 48 142 92 C142 74 128 78 122 62 C110 78 90 78 78 62 C72 78 58 74 58 92 Z"
-        fill="oklch(0.78 0.11 85)"
-      />
-      <path
-        d="M20 200 C20 148 54 138 100 138 C146 138 180 148 180 200 Z"
-        fill="oklch(0.60 0.14 38)"
-      />
-    </svg>
-  );
-}
-
 function isUnlocked() {
   if (typeof window === "undefined") return false;
   return window.localStorage.getItem(STORAGE_KEY) === "true";
@@ -53,7 +35,11 @@ export function PasswordGate({ children }: { children: ReactNode }) {
       <div className="relative z-10 w-full max-w-sm text-center">
         <Reveal>
           <div className="badge-ring mx-auto h-28 w-28 overflow-hidden rounded-full ring-4 ring-terracotta/25 md:h-36 md:w-36">
-            <PlaceholderAvatar />
+            <img
+              src="/assets/images/Phoenix/2Q0A5057.webp"
+              alt="Alyssa May"
+              className="h-full w-full object-cover object-center"
+            />
           </div>
         </Reveal>
 
