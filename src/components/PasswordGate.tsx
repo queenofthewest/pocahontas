@@ -79,7 +79,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
             >
               alyssamayvip@gmail.com
             </a>{" "}
-            to get the password for this website.
+            to get the password for this website. Full screening not required.
           </p>
         </Reveal>
 
