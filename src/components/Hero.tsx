@@ -12,7 +12,7 @@ export function Hero() {
           src="/assets/images/NOK_1331-hero-mobile.webp"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_65%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_80%] md:object-[50%_65%]"
         />
       </picture>
 
