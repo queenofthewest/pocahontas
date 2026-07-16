@@ -34,7 +34,7 @@ function Index() {
           caption="Golden hour in the Sonoran desert"
         />
         <Contact />
-        <FeatureImage variant="two" label="Lifestyle" caption="Where warmth meets intention" heightClass="h-[70vh] md:h-screen" />
+        <FeatureImage variant="two" label="Lifestyle" caption="Where warmth meets intention" heightClass="h-[70vh] md:h-[55vh]" />
       </main>
       <Footer />
       <Toaster position="top-center" />

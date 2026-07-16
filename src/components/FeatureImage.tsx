@@ -7,7 +7,7 @@ const variants = {
   two: {
     desktop: "/assets/images/2Q0A5375.webp",
     mobile: "/assets/images/NOK_1202.webp",
-    desktopPosition: "",
+    desktopPosition: "md:object-center",
   },
 };
 
