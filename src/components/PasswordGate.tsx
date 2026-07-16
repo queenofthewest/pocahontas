@@ -66,7 +66,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
             >
               alyssamayvip@gmail.com
             </a>{" "}
-            with the username or link to your profile on P411, Private Delights, TER, or X. You will receive a message with the password. Thank you!
+            with the username or link to your profile on P411, Private Delights, TER, or X. You will receive a message with the password.
           </p>
         </Reveal>
 
