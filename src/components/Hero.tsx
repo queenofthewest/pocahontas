@@ -12,6 +12,8 @@ export function Hero() {
           src="/assets/images/NOK_1331-hero-mobile.webp"
           alt=""
           aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-[50%_80%] md:object-[50%_65%]"
         />
       </picture>
@@ -21,27 +23,27 @@ export function Hero() {
       {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop */}
       <div className="absolute z-10 bottom-32 left-0 right-0 px-6 text-center md:bottom-auto md:top-[20%] md:left-[6%] md:right-auto md:px-0 md:text-left lg:left-[14%]">
         <p
-          className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-sand-soft md:mb-5"
-          style={{ textShadow: textShadowSmall }}
+          className="hero-fade-in mb-3 text-xs font-medium uppercase tracking-[0.35em] text-sand-soft md:mb-5"
+          style={{ textShadow: textShadowSmall, animationDelay: "150ms" }}
         >
           Luxury Traveling Companion
         </p>
         <h1
-          className="font-display text-6xl leading-[1.02] tracking-tight text-sand-soft"
-          style={{ textShadow: textShadowLarge }}
+          className="hero-fade-in font-display text-6xl leading-[1.02] tracking-tight text-sand-soft"
+          style={{ textShadow: textShadowLarge, animationDelay: "400ms" }}
         >
           Alyssa May
         </h1>
 
         {/* Badges — under the heading, left-aligned, smaller (desktop only) */}
         <div className="mt-8 hidden md:block">
-          <TrustBadges align="start" size="sm" className="" />
+          <TrustBadges align="start" size="sm" className="" delay={700} />
         </div>
       </div>
 
       {/* Badges — centered near the bottom (mobile only) */}
       <div className="absolute z-10 bottom-10 left-0 right-0 flex justify-center md:hidden">
-        <TrustBadges />
+        <TrustBadges delay={700} />
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
-import { Reveal } from "@/components/Reveal";
+import { useReveal } from "@/hooks/use-reveal";
+import { cn } from "@/lib/utils";
 
 const badges = [
   {
@@ -25,20 +26,30 @@ export function TrustBadges({
   className = "mt-10",
   align = "center",
   size = "default",
+  delay = 200,
 }: {
   exclude?: string[];
   className?: string;
   align?: "center" | "start";
   size?: "default" | "sm";
+  delay?: number;
 }) {
-  const visible = badges.filter((b) => !exclude.includes(b.name));
+  const { ref, visible } = useReveal<HTMLDivElement>();
+  const visibleBadges = badges.filter((b) => !exclude.includes(b.name));
   const imgSize = size === "sm" ? "h-12 w-12 md:h-16 md:w-16" : "h-16 w-16 md:h-24 md:w-24";
   const iconSize = size === "sm" ? "h-9 w-9 md:h-12 md:w-12" : "h-14 w-14 md:h-20 md:w-20";
   return (
-    <Reveal className={className} delay={200}>
+    <div ref={ref} className={className}>
       <div className={`flex flex-nowrap items-center gap-4 sm:gap-6 ${align === "start" ? "justify-start" : "justify-center"}`}>
-        {visible.map((b) => (
-          <div key={b.name} className="transition-transform duration-300 hover:scale-110">
+        {visibleBadges.map((b, i) => (
+          <div
+            key={b.name}
+            className={cn(
+              "transition-all duration-500 ease-out hover:scale-110 hover:duration-300",
+              visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+            )}
+            style={{ transitionDelay: `${delay + i * 150}ms` }}
+          >
             <a href={b.href} target="_blank" rel="noopener noreferrer">
               {b.type === "icon" ? (
                 <div className={`${iconSize} flex items-center justify-center rounded-full bg-black text-sand-soft`}>
@@ -60,6 +71,6 @@ export function TrustBadges({
           </div>
         ))}
       </div>
-    </Reveal>
+    </div>
   );
 }

@@ -197,3 +197,19 @@
     0 8px 22px oklch(0.22 0.025 45 / 0.15),
     inset 0 1px 0 oklch(0.94 0.015 65 / 0.8);
 }
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility hero-fade-in {
+  opacity: 0;
+  animation: hero-fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
