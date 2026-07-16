@@ -38,7 +38,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
             <img
               src="/assets/images/20A2607.webp"
               alt="Alyssa May"
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-cover object-[50%_80%]"
             />
           </div>
         </Reveal>
@@ -56,6 +56,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
           >
             Alyssa May
           </h1>
+          <TrustBadges className="mt-6" />
           <div className="terra-divider mx-auto mt-6 w-16" />
           <p className="mt-6 text-sm leading-relaxed text-sand-soft/80">
             Thank you so much for stopping by. Please email 
@@ -100,8 +101,6 @@ export function PasswordGate({ children }: { children: ReactNode }) {
             </button>
           </form>
         </Reveal>
-
-        <TrustBadges className="mt-12" />
       </div>
     </div>
   );
