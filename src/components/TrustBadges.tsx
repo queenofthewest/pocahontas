@@ -5,13 +5,13 @@ const badges = [
     type: "image" as const,
     src: "https://www.theeroticreview.com/images/reviewed_seal.gif",
     name: "The Erotic Review",
-    href: "https://www.theeroticreview.com",
+    href: "https://www.theeroticreview.com/reviews/alyssa-may-7028500103-418478",
   },
   {
     type: "image" as const,
     src: "https://preferred411.com/a/preferredSeal-p.png",
     name: "Preferred411.com",
-    href: "https://preferred411.com/admirer/register?ref=394699",
+    href: "https://preferred411.com/admirer/register?ref=P464877",
   },
 ];
 
