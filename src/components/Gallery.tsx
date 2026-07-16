@@ -17,8 +17,6 @@ const images = [
   { src: `${IMG}/2Q0A5919.webp`, title: "Alyssa IX" },
   { src: `${IMG}/20A2607.webp`, title: "Alyssa X" },
   { src: `${IMG}/20A2608.webp`, title: "Alyssa XI" },
-  { src: `${IMG}/13A2929.webp`, title: "Alyssa XII" },
-  { src: `${IMG}/13A2931.webp`, title: "Alyssa XIII" },
 ];
 
 function GalleryTile({
