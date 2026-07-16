@@ -13,6 +13,11 @@ const badges = [
     name: "Preferred411.com",
     href: "https://preferred411.com/admirer/register?ref=P464877",
   },
+  {
+    type: "icon" as const,
+    name: "X",
+    href: "https://x.com/alyssamayvip",
+  },
 ];
 
 export function TrustBadges({
@@ -34,14 +39,22 @@ export function TrustBadges({
         {visible.map((b) => (
           <div key={b.name} className="transition-transform duration-300 hover:scale-110">
             <a href={b.href} target="_blank" rel="noopener noreferrer">
-              <img
-                src={b.src}
-                alt={b.name}
-                loading="lazy"
-                width={112}
-                height={112}
-                className={`${imgSize} object-contain`}
-              />
+              {b.type === "icon" ? (
+                <div className={`${imgSize} flex items-center justify-center rounded-full bg-terracotta text-sand-soft`}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-[45%] w-[45%]">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </div>
+              ) : (
+                <img
+                  src={b.src}
+                  alt={b.name}
+                  loading="lazy"
+                  width={112}
+                  height={112}
+                  className={`${imgSize} object-contain`}
+                />
+              )}
             </a>
           </div>
         ))}
