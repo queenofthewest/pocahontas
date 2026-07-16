@@ -45,13 +45,13 @@ export function PasswordGate({ children }: { children: ReactNode }) {
 
         <Reveal delay={100}>
           <p
-            className="mt-8 text-xs uppercase tracking-[0.35em] text-sand-soft"
+            className="mt-8 text-xs uppercase tracking-[0.2em] text-sand-soft"
             style={{ textShadow: textShadowSmall }}
           >
             Luxury Traveling Companion
           </p>
           <h1
-            className="mt-5 font-display text-4xl leading-[1.02] tracking-tight text-sand-soft"
+            className="mt-5 font-display text-5xl leading-[1.02] tracking-tight text-sand-soft"
             style={{ textShadow: textShadowLarge }}
           >
             Alyssa May
