@@ -4,8 +4,8 @@ const variants = {
     mobile: "/assets/images/NOK_1171.webp",
   },
   two: {
-    desktop: "/assets/images/NOK_1331.webp",
-    mobile: "/assets/images/NOK_1331.webp",
+    desktop: "/assets/images/2Q0A5375.webp",
+    mobile: "/assets/images/NOK_1202.webp",
   },
 };
 

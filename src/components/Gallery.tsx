@@ -4,14 +4,14 @@ import { Reveal } from "@/components/Reveal";
 const IMG = "/assets/images";
 
 const images = [
-  { src: `${IMG}/NOK_1331.webp`, title: "Alyssa I" },
-  { src: `${IMG}/NOK_1477.webp`, title: "Alyssa II" },
-  { src: `${IMG}/NOK_1651.webp`, title: "Alyssa III" },
-  { src: `${IMG}/NOK_1507.webp`, title: "Alyssa IV" },
-  { src: `${IMG}/NOK_1627.webp`, title: "Alyssa V" },
-  { src: `${IMG}/NOK_1171.webp`, title: "Alyssa VI" },
-  { src: `${IMG}/NOK_1202.webp`, title: "Alyssa VII" },
-  { src: `${IMG}/2Q0A5270.webp`, title: "Alyssa VIII" },
+  { src: `${IMG}/2Q0A5270.webp`, title: "Alyssa I" },
+  { src: `${IMG}/NOK_1331.webp`, title: "Alyssa II", portrait: true },
+  { src: `${IMG}/NOK_1477.webp`, title: "Alyssa III" },
+  { src: `${IMG}/NOK_1651.webp`, title: "Alyssa IV" },
+  { src: `${IMG}/NOK_1507.webp`, title: "Alyssa V" },
+  { src: `${IMG}/NOK_1627.webp`, title: "Alyssa VI" },
+  { src: `${IMG}/NOK_1171.webp`, title: "Alyssa VII" },
+  { src: `${IMG}/NOK_1202.webp`, title: "Alyssa VIII" },
   { src: `${IMG}/2Q0A5919.webp`, title: "Alyssa IX" },
   { src: `${IMG}/20A2607.webp`, title: "Alyssa X" },
   { src: `${IMG}/20A2608.webp`, title: "Alyssa XI" },
@@ -71,7 +71,7 @@ export function Gallery() {
                   src={img.src}
                   alt={img.title}
                   loading="lazy"
-                  className="aspect-[2/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:aspect-auto"
+                  className={`aspect-[2/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${img.portrait ? "" : "md:aspect-auto"}`}
                 />
               </button>
             </div>

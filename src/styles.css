@@ -1,3 +1,12 @@
+@import "@fontsource/dm-sans/300.css";
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+@import "@fontsource/dm-sans/600.css";
+@import "@fontsource/dm-sans/700.css";
+@import "@fontsource/lora/400.css";
+@import "@fontsource/lora/400-italic.css";
+@import "@fontsource-variable/newsreader/wght.css";
+@import "@fontsource-variable/newsreader/wght-italic.css";
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -40,7 +49,7 @@
   --color-espresso-soft: var(--espresso-soft);
 
   --font-serif: "Lora", Georgia, serif;
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Newsreader Variable", Georgia, serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
