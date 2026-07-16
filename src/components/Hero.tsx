@@ -1,7 +1,7 @@
 import { TrustBadges } from "@/components/TrustBadges";
 
-const textShadowSmall = "0 1px 4px rgba(0,0,0,0.7)";
-const textShadowLarge = "0 2px 6px rgba(0,0,0,0.55)";
+const textShadowSmall = "0 2px 6px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)";
+const textShadowLarge = "0 4px 14px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9)";
 
 export function Hero() {
   return (
@@ -19,9 +19,9 @@ export function Hero() {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-sand to-transparent" />
 
       {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop */}
-      <div className="absolute z-10 bottom-44 left-0 right-0 px-6 text-center md:bottom-auto md:top-[20%] md:left-[6%] md:right-auto md:px-0 md:text-left lg:left-[14%]">
+      <div className="absolute z-10 bottom-32 left-0 right-0 px-6 text-center md:bottom-auto md:top-[20%] md:left-[6%] md:right-auto md:px-0 md:text-left lg:left-[14%]">
         <p
-          className="mb-5 text-xs uppercase tracking-[0.35em] text-sand-soft"
+          className="mb-3 text-xs uppercase tracking-[0.35em] text-sand-soft md:mb-5"
           style={{ textShadow: textShadowSmall }}
         >
           Luxury Traveling Companion
@@ -40,7 +40,7 @@ export function Hero() {
       </div>
 
       {/* Badges — centered near the bottom (mobile only) */}
-      <div className="absolute z-10 bottom-20 left-0 right-0 flex justify-center md:hidden">
+      <div className="absolute z-10 bottom-10 left-0 right-0 flex justify-center md:hidden">
         <TrustBadges />
       </div>
     </section>
