@@ -13,63 +13,38 @@ const badges = [
     name: "Preferred411.com",
     href: "https://preferred411.com/admirer/register?ref=394699",
   },
-  {
-    type: "text" as const,
-    name: "PrivateDelights",
-    href: "https://privatedelights.ch/profile/victoriawest",
-  },
 ];
 
 export function TrustBadges({
   exclude = [],
   className = "mt-10",
+  align = "center",
+  size = "default",
 }: {
   exclude?: string[];
   className?: string;
+  align?: "center" | "start";
+  size?: "default" | "sm";
 }) {
   const visible = badges.filter((b) => !exclude.includes(b.name));
+  const imgSize = size === "sm" ? "h-12 w-12 md:h-16 md:w-16" : "h-16 w-16 md:h-24 md:w-24";
   return (
     <Reveal className={className} delay={200}>
-      <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-6">
-        {visible.map((b) => {
-          const content =
-            b.type === "text" ? (
-              <div className="flex flex-col items-start text-left">
-                <span
-                  className="mb-1 text-[0.6rem] uppercase tracking-[0.3em] text-sand-soft"
-                  style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
-                >
-                  Reviews at
-                </span>
-                <span
-                  className="font-['Helvetica',_sans-serif] text-lg italic text-sand-soft md:text-2xl"
-                  style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
-                >
-                  {b.name}
-                </span>
-              </div>
-            ) : (
+      <div className={`flex flex-nowrap items-center gap-4 sm:gap-6 ${align === "start" ? "justify-start" : "justify-center"}`}>
+        {visible.map((b) => (
+          <div key={b.name} className="transition-transform duration-300 hover:scale-110">
+            <a href={b.href} target="_blank" rel="noopener noreferrer">
               <img
                 src={b.src}
                 alt={b.name}
                 loading="lazy"
                 width={112}
                 height={112}
-                className="h-16 w-16 object-contain md:h-24 md:w-24"
+                className={`${imgSize} object-contain`}
               />
-            );
-          return (
-            <div key={b.name} className="transition-transform duration-300 hover:scale-110">
-              {b.href ? (
-                <a href={b.href} target="_blank" rel="noopener noreferrer">
-                  {content}
-                </a>
-              ) : (
-                content
-              )}
-            </div>
-          );
-        })}
+            </a>
+          </div>
+        ))}
       </div>
     </Reveal>
   );

@@ -101,7 +101,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
           </form>
         </Reveal>
 
-        <TrustBadges exclude={["PrivateDelights"]} className="mt-12" />
+        <TrustBadges className="mt-12" />
       </div>
     </div>
   );

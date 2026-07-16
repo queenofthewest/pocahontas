@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
+import { useReveal } from "@/hooks/use-reveal";
+import { cn } from "@/lib/utils";
 
 const IMG = "/assets/images";
 
@@ -18,6 +20,41 @@ const images = [
   { src: `${IMG}/13A2929.webp`, title: "Alyssa XII" },
   { src: `${IMG}/13A2931.webp`, title: "Alyssa XIII" },
 ];
+
+function GalleryTile({
+  img,
+  index,
+  onOpen,
+}: {
+  img: (typeof images)[number];
+  index: number;
+  onOpen: () => void;
+}) {
+  const { ref, visible } = useReveal<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "break-inside-avoid md:mb-3 gallery-pop",
+        visible && "gallery-pop-in",
+        index % 2 === 1 ? "mt-8 md:mt-0" : ""
+      )}
+      style={{ transitionDelay: `${(index % 4) * 90}ms` }}
+    >
+      <button
+        onClick={onOpen}
+        className="group relative block w-full overflow-hidden rounded-lg border border-terracotta/15 transition-all duration-300 hover:border-terracotta/50"
+      >
+        <img
+          src={img.src}
+          alt={img.title}
+          loading="lazy"
+          className={`aspect-[2/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${img.portrait ? "" : "md:aspect-auto"}`}
+        />
+      </button>
+    </div>
+  );
+}
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
@@ -59,22 +96,7 @@ export function Gallery() {
       <div className="px-4 sm:px-6">
         <div className="grid grid-cols-2 gap-2 sm:gap-3 md:block md:columns-3 lg:columns-4">
           {images.map((img, i) => (
-            <div
-              key={img.title}
-              className={`break-inside-avoid md:mb-3 ${i % 2 === 1 ? "mt-8 md:mt-0" : ""}`}
-            >
-              <button
-                onClick={() => setActive(i)}
-                className="group relative block w-full overflow-hidden rounded-lg border border-terracotta/15 transition-all duration-300 hover:border-terracotta/50"
-              >
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  loading="lazy"
-                  className={`aspect-[2/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${img.portrait ? "" : "md:aspect-auto"}`}
-                />
-              </button>
-            </div>
+            <GalleryTile key={img.title} img={img} index={i} onOpen={() => setActive(i)} />
           ))}
         </div>
       </div>

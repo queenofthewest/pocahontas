@@ -6,12 +6,15 @@ const textShadowLarge = "0 2px 6px rgba(0,0,0,0.55)";
 export function Hero() {
   return (
     <section id="hero" className="relative h-[92vh] w-full overflow-hidden md:min-h-screen">
-      <img
-        src="/assets/images/NOK_1331-hero.webp"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_65%]"
-      />
+      <picture>
+        <source media="(min-width: 768px)" srcSet="/assets/images/NOK_1331-hero.webp" />
+        <img
+          src="/assets/images/NOK_1331-hero-mobile.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_65%]"
+        />
+      </picture>
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-sand to-transparent" />
 
@@ -29,10 +32,15 @@ export function Hero() {
         >
           Alyssa May
         </h1>
+
+        {/* Badges — under the heading, left-aligned, smaller (desktop only) */}
+        <div className="mt-8 hidden md:block">
+          <TrustBadges align="start" size="sm" className="" />
+        </div>
       </div>
 
-      {/* Badges — bottom center */}
-      <div className="absolute z-10 bottom-20 left-0 right-0 flex justify-center md:bottom-12">
+      {/* Badges — centered near the bottom (mobile only) */}
+      <div className="absolute z-10 bottom-20 left-0 right-0 flex justify-center md:hidden">
         <TrustBadges />
       </div>
     </section>
