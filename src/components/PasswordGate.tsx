@@ -2,7 +2,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { Reveal } from "@/components/Reveal";
 import { TrustBadges } from "@/components/TrustBadges";
 
-const SITE_PASSWORD = "partylikeits1999";
+const SITE_PASSWORDS = ["partylikeits1999", "desertdelight"];
 const STORAGE_KEY = "vw_site_unlocked";
 const textShadowSmall = "0 1px 4px rgba(0,0,0,0.7)";
 const textShadowLarge = "0 2px 6px rgba(0,0,0,0.55)";
@@ -19,7 +19,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (password === SITE_PASSWORD) {
+    if (SITE_PASSWORDS.includes(password)) {
       window.localStorage.setItem(STORAGE_KEY, "true");
       setUnlocked(true);
       setError(false);
