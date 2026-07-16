@@ -4,7 +4,12 @@ import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
 
 const LONG_DURATIONS = ["dinner", "evening", "overnight", "fullday", "weekend", "custom"];
-const DETAIL_LOCATIONS = ["touring", "flytome"];
+const LOCATION_DETAIL_CONFIG: Record<string, { label: string; placeholder: string }> = {
+  "phoenix-outcall": { label: "Outcall Location", placeholder: "Hotel name or address" },
+  touring: { label: "Location (City, State)", placeholder: "City, State" },
+  flytome: { label: "Location (City, State)", placeholder: "City, State" },
+};
+const DETAIL_LOCATIONS = Object.keys(LOCATION_DETAIL_CONFIG);
 
 const schema = z
   .object({
@@ -179,12 +184,12 @@ export function Contact() {
                 </div>
                 {DETAIL_LOCATIONS.includes(locationType) && (
                   <div>
-                    <label className={labelClass} htmlFor="locationDetail">Location (City, State)</label>
+                    <label className={labelClass} htmlFor="locationDetail">{LOCATION_DETAIL_CONFIG[locationType].label}</label>
                     <input
                       id="locationDetail"
                       name="locationDetail"
                       className={inputClass}
-                      placeholder="City, State"
+                      placeholder={LOCATION_DETAIL_CONFIG[locationType].placeholder}
                     />
                     {errors.locationDetail && <p className="mt-1 text-xs text-destructive">{errors.locationDetail}</p>}
                   </div>
