@@ -32,7 +32,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black px-6 py-16">
-      <div className="relative z-10 w-full max-w-sm text-center">
+      <div className="relative z-10 w-full max-w-sm -translate-y-10 text-center md:translate-y-0">
         <Reveal>
           <div className="badge-ring mx-auto h-28 w-28 overflow-hidden rounded-full ring-4 ring-terracotta/25 md:h-36 md:w-36">
             <img
