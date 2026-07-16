@@ -1,64 +1,26 @@
 import { useCallback, useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
-const LV = "/assets/images/las-vegas";
-const PHX = "/assets/images/Phoenix";
-const TH = "/assets/images/Thailand";
+const IMG = "/assets/images";
 
-const galleries = {
-  "Vegas": [
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_3.webp`, title: "Vegas I" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_5.webp`, title: "Vegas II" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_1.webp`, title: "Vegas III" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_14.webp`, title: "Vegas IV" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_24.webp`, title: "Vegas V" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_9_v3.webp`, title: "Vegas VI" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_16_v2.webp`, title: "Vegas VII" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_17.webp`, title: "Vegas VIII" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_25.webp`, title: "Vegas IX" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jun23_WEB_26.webp`, title: "Vegas X" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jan23_WEB_27_v2.webp`, title: "Vegas XI" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_2.webp`, title: "Vegas XII" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_4_v2.webp`, title: "Vegas XIII" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_8.webp`, title: "Vegas XIV" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_20.webp`, title: "Vegas XV" },
-    { src: `${LV}/IseeSexy_OliviaC_WEB_23.webp`, title: "Vegas XVI" },
-    { src: `${LV}/VicWest6_2.webp`, title: "Vegas XVII" },
-    { src: `${LV}/VWest21.webp`, title: "Vegas XVIII" },
-    { src: `${LV}/ISEESEXY_VictoriaWest_Jan23_WEB_7.webp`, title: "Vegas XIX" },
-  ],
-  "Phoenix": [
-    { src: `${PHX}/DSC04466.webp`, title: "Phoenix I" },
-    { src: `${PHX}/DSC04503.webp`, title: "Phoenix II" },
-    { src: `${PHX}/DSC04549.webp`, title: "Phoenix III" },
-    { src: `${PHX}/DSC04566.webp`, title: "Phoenix IV" },
-    { src: `${PHX}/FLF00960-Edit.webp`, title: "Phoenix V" },
-    { src: `${PHX}/_DSC3112-2.webp`, title: "Phoenix VI" },
-    { src: `${PHX}/_DSC3115.webp`, title: "Phoenix VII" },
-    { src: `${PHX}/downtown-1.webp`, title: "Phoenix VIII" },
-    { src: `${PHX}/downtown-2.webp`, title: "Phoenix IX" },
-    { src: `${PHX}/downtown-3.webp`, title: "Phoenix X" },
-    { src: `${PHX}/2Q0A5057.webp`, title: "Phoenix XI" },
-  ],
-  "Thailand": [
-    { src: `${TH}/NOK_1193.webp`, title: "Thailand I" },
-    { src: `${TH}/NOK_1212_v2.webp`, title: "Thailand II" },
-    { src: `${TH}/NOK_1213_v2.webp`, title: "Thailand III" },
-    { src: `${TH}/NOK_1518-2_v2.webp`, title: "Thailand IV" },
-    { src: `${TH}/NOK_1612-2-2.webp`, title: "Thailand V" },
-    { src: `${TH}/NOK_1627-2-2_v2.webp`, title: "Thailand VI" },
-    { src: `${TH}/NOK_1643-2-2_v2.webp`, title: "Thailand VII" },
-    { src: `${TH}/NOK_1655.webp`, title: "Thailand VIII" },
-  ],
-};
-
-type Location = keyof typeof galleries;
-const locations = Object.keys(galleries) as Location[];
+const images = [
+  { src: `${IMG}/NOK_1331.webp`, title: "Alyssa I" },
+  { src: `${IMG}/NOK_1477.webp`, title: "Alyssa II" },
+  { src: `${IMG}/NOK_1651.webp`, title: "Alyssa III" },
+  { src: `${IMG}/NOK_1507.webp`, title: "Alyssa IV" },
+  { src: `${IMG}/NOK_1627.webp`, title: "Alyssa V" },
+  { src: `${IMG}/NOK_1171.webp`, title: "Alyssa VI" },
+  { src: `${IMG}/NOK_1202.webp`, title: "Alyssa VII" },
+  { src: `${IMG}/2Q0A5270.webp`, title: "Alyssa VIII" },
+  { src: `${IMG}/2Q0A5919.webp`, title: "Alyssa IX" },
+  { src: `${IMG}/20A2607.webp`, title: "Alyssa X" },
+  { src: `${IMG}/20A2608.webp`, title: "Alyssa XI" },
+  { src: `${IMG}/13A2929.webp`, title: "Alyssa XII" },
+  { src: `${IMG}/13A2931.webp`, title: "Alyssa XIII" },
+];
 
 export function Gallery() {
-  const [activeLocation, setActiveLocation] = useState<Location>("Vegas");
   const [active, setActive] = useState<number | null>(null);
-  const images = galleries[activeLocation];
 
   const close = useCallback(() => setActive(null), []);
   const next = useCallback(
@@ -92,23 +54,6 @@ export function Gallery() {
         <h2 className="font-display text-4xl text-espresso md:text-5xl">Gallery</h2>
         <div className="terra-divider mx-auto mt-6 w-32" />
       </Reveal>
-
-      {/* Location tabs */}
-      <div className="mb-8 flex justify-center gap-1 px-6">
-        {locations.map((loc) => (
-          <button
-            key={loc}
-            onClick={() => { setActiveLocation(loc); setActive(null); }}
-            className={`px-6 py-2 text-[0.7rem] uppercase tracking-[0.2em] transition-all duration-200 border ${
-              activeLocation === loc
-                ? "border-terracotta bg-terracotta text-sand-soft"
-                : "border-terracotta/25 text-espresso/55 hover:border-terracotta/60 hover:text-terracotta"
-            }`}
-          >
-            {loc}
-          </button>
-        ))}
-      </div>
 
       {/* Staggered 2-col grid on mobile (uniform 2:3 crop), masonry columns from md up */}
       <div className="px-4 sm:px-6">

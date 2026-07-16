@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section id="hero" className="relative h-[92vh] w-full overflow-hidden md:min-h-screen">
       <img
-        src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_3.webp"
+        src="/assets/images/NOK_1331.webp"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_65%]"

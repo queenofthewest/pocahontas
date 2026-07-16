@@ -1,11 +1,11 @@
 const variants = {
   one: {
-    desktop: "/assets/images/las-vegas/IseeSexy_OliviaC_WEB_2.webp",
-    mobile: "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jan23_WEB_27_v2.webp",
+    desktop: "/assets/images/NOK_1171.webp",
+    mobile: "/assets/images/NOK_1171.webp",
   },
   two: {
-    desktop: "/assets/images/las-vegas/IseeSexy_OliviaC_WEB_4_v2.webp",
-    mobile: "/assets/images/las-vegas/IseeSexy_OliviaC_WEB_4_v2.webp",
+    desktop: "/assets/images/NOK_1331.webp",
+    mobile: "/assets/images/NOK_1331.webp",
   },
 };
 
