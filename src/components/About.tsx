@@ -31,7 +31,7 @@ export function About() {
                 It's lovely to meet you. My name is Alyssa and I am a Southern California transplant in the beautiful desert of Arizona I now call my home. Let me tell you a little bit about myself.
               </p>
               <p>
-                I'm a private person — I keep my circle small and my volume low. You may recognize me from a former name as I renew my identity every couple of years for privacy and safety. I keep my personal and professional life safely separated. Discretion is of the utmost importance. 
+                I'm a private person — I keep my circle small and my volume low. I keep my personal and professional life safely separated. Discretion is of the utmost importance. 
                 </p>
                 <p> 
                 My life is filled with doing things I enjoy. I'm an entrepreneur, always building something new and chasing the next idea that catches my interest. I'm rarely still for long. The world is my playground and traveling is how I fill my cup. My favorite dates are the ones where we try something new together — light-hearted, a little unexpected, the kind that turns into a good story later.
