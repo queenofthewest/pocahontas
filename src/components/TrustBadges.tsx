@@ -23,13 +23,13 @@ const badges = [
     type: "image" as const,
     src: "/assets/icons/slixa-badge.png",
     name: "Slixa",
-    href: "/",
+    href: "https://www.slixa.com/arizona/phoenix/alyssa-may-5",
   },
   {
     type: "image" as const,
     src: "/assets/icons/tryst-badge.png",
     name: "Tryst",
-    href: "/",
+    href: "https://tryst.link/escort/alyssamay",
   },
 ];
 
