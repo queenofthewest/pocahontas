@@ -37,7 +37,9 @@ export function Profile() {
                   <span className="text-xs uppercase tracking-[0.15em] text-terracotta/80">
                     {s.label}
                   </span>
-                  <span className="font-serif text-base text-espresso/80">
+                  <span
+                    className={`font-serif text-espresso/80 ${s.label === "Brands" ? "text-sm md:text-base" : "text-base"}`}
+                  >
                     {s.value}
                   </span>
                 </li>

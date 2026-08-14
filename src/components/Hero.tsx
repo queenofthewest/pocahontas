@@ -14,7 +14,7 @@ export function Hero() {
           aria-hidden="true"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_80%] md:object-[50%_65%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_95%] md:object-[50%_65%]"
         />
       </picture>
 
