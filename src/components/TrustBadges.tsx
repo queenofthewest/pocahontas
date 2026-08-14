@@ -41,14 +41,24 @@ export function TrustBadges({
   exclude?: string[];
   className?: string;
   align?: "center" | "start";
-  size?: "default" | "sm";
+  size?: "default" | "sm" | "footer";
   delay?: number;
 }) {
   const { ref, visible } = useReveal<HTMLDivElement>();
   const visibleBadges = badges.filter((b) => !exclude.includes(b.name));
-  const imgSize = size === "sm" ? "h-12 w-12 md:h-16 md:w-16" : "h-20 w-20 md:h-24 md:w-24";
-  const iconSize = size === "sm" ? "h-9 w-9 md:h-12 md:w-12" : "h-11 w-11 md:h-20 md:w-20";
-  const slixaSize = size === "sm" ? { width: 90, height: 45 } : { width: 80, height: 40 };
+  const imgSize =
+    size === "sm"
+      ? "h-12 w-12 md:h-16 md:w-16"
+      : size === "footer"
+        ? "h-20 w-20 md:h-14 md:w-14"
+        : "h-20 w-20 md:h-24 md:w-24";
+  const iconSize =
+    size === "sm"
+      ? "h-9 w-9 md:h-12 md:w-12"
+      : size === "footer"
+        ? "h-11 w-11 md:h-8 md:w-8"
+        : "h-11 w-11 md:h-20 md:w-20";
+  const slixaWidthClass = size === "sm" ? "w-[90px]" : size === "footer" ? "w-20 md:w-14" : "w-20";
   return (
     <div ref={ref} className={className}>
       <div className={`flex flex-nowrap items-center gap-4 sm:gap-6 ${align === "start" ? "justify-start" : "justify-center"}`}>
@@ -62,23 +72,12 @@ export function TrustBadges({
             style={{ transitionDelay: `${delay + i * 150}ms` }}
           >
             {b.type === "embed" ? (
-              <div style={{ textAlign: "center", minWidth: slixaSize.width, minHeight: slixaSize.height }}>
-                <a
-                  href="https://www.slixa.com/"
-                  target="_top"
-                  style={{
-                    display: "inline-block",
-                    whiteSpace: "nowrap",
-                    minWidth: slixaSize.width,
-                    minHeight: slixaSize.height,
-                    margin: "0px auto",
-                  }}
-                >
+              <div className={`text-center ${slixaWidthClass}`}>
+                <a href="https://www.slixa.com/" target="_top" className="inline-block w-full whitespace-nowrap">
                   <img
                     src="https://badge.slixa.com/alyssa-may-5/slixa_badge120x60.jpg"
                     alt="Slixa"
-                    width={slixaSize.width}
-                    height={slixaSize.height}
+                    className="h-auto w-full"
                   />
                 </a>
               </div>

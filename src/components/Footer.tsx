@@ -8,11 +8,11 @@ export function Footer() {
           <img
             src="/assets/logo/alyssa-may-dark.webp"
             alt="Alyssa May"
-            className="h-auto w-40 md:w-48"
+            className="h-auto w-64 md:w-80"
           />
         </a>
         <div className="terra-divider w-40" />
-        <TrustBadges className="mt-2" delay={0} />
+        <TrustBadges className="mt-2" size="footer" delay={0} />
         <div className="mt-2 flex flex-col items-center gap-2 text-sm text-espresso/50">
           <a href="mailto:alyssamayvip@gmail.com" className="text-terracotta hover:text-terracotta-soft">
             alyssamayvip@gmail.com

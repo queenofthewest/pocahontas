@@ -2,7 +2,7 @@ const variants = {
   featureOne: {
     desktop: "/assets/images/feature-one-desktop.webp",
     mobile: "/assets/images/feature-one-mobile.webp",
-    desktopPosition: "md:object-center",
+    desktopPosition: "md:object-center md:scale-125",
   },
   featureTwo: {
     desktop: "/assets/images/feature-two-desktop.webp",
