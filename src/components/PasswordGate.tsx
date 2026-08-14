@@ -37,7 +37,7 @@ export function PasswordGate({ children }: { children: ReactNode }) {
         <Reveal>
           <div className="badge-ring mx-auto h-28 w-28 overflow-hidden rounded-full ring-4 ring-terracotta/25 md:h-36 md:w-36">
             <img
-              src="/assets/images/20A2607.webp"
+              src="/assets/images/gallery-13.webp"
               alt="Alyssa May"
               className="h-full w-full object-cover object-[50%_80%]"
             />

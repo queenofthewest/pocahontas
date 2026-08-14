@@ -6,17 +6,21 @@ import { cn } from "@/lib/utils";
 const IMG = "/assets/images";
 
 const images = [
-  { src: `${IMG}/2Q0A5270.webp`, title: "Alyssa I" },
-  { src: `${IMG}/NOK_1331.webp`, title: "Alyssa II", portrait: true },
-  { src: `${IMG}/NOK_1477.webp`, title: "Alyssa III" },
-  { src: `${IMG}/NOK_1651.webp`, title: "Alyssa IV" },
-  { src: `${IMG}/NOK_1507.webp`, title: "Alyssa V" },
-  { src: `${IMG}/NOK_1627.webp`, title: "Alyssa VI" },
-  { src: `${IMG}/NOK_1171.webp`, title: "Alyssa VII" },
-  { src: `${IMG}/NOK_1202.webp`, title: "Alyssa VIII" },
-  { src: `${IMG}/2Q0A5919.webp`, title: "Alyssa IX" },
-  { src: `${IMG}/20A2607.webp`, title: "Alyssa X" },
-  { src: `${IMG}/20A2608.webp`, title: "Alyssa XI" },
+  { src: `${IMG}/gallery-01.webp`, title: "Alyssa I" },
+  { src: `${IMG}/gallery-02.webp`, title: "Alyssa II" },
+  { src: `${IMG}/gallery-03.webp`, title: "Alyssa III" },
+  { src: `${IMG}/gallery-04.webp`, title: "Alyssa IV" },
+  { src: `${IMG}/gallery-05.webp`, title: "Alyssa V" },
+  { src: `${IMG}/gallery-06.webp`, title: "Alyssa VI" },
+  { src: `${IMG}/gallery-07.webp`, title: "Alyssa VII", portrait: true },
+  { src: `${IMG}/gallery-08.webp`, title: "Alyssa VIII" },
+  { src: `${IMG}/gallery-09.webp`, title: "Alyssa IX" },
+  { src: `${IMG}/gallery-10.webp`, title: "Alyssa X" },
+  { src: `${IMG}/gallery-11.webp`, title: "Alyssa XI" },
+  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII" },
+  { src: `${IMG}/gallery-13.webp`, title: "Alyssa XIII" },
+  { src: `${IMG}/gallery-14.webp`, title: "Alyssa XIV" },
+  { src: `${IMG}/gallery-15.webp`, title: "Alyssa XV" },
 ];
 
 function GalleryTile({

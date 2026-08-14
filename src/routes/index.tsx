@@ -23,6 +23,12 @@ function Index() {
         <div className="bg-sand-deep">
           <About />
         </div>
+        <FeatureImage
+          variant="three"
+          label="Portrait"
+          caption="Soft light, quiet moments"
+          heightClass="h-[70vh] md:h-[55vh]"
+        />
         <Gallery />
         <div className="bg-sand-deep">
           <Profile />
@@ -34,6 +40,12 @@ function Index() {
           caption="Golden hour in the Sonoran desert"
         />
         <Contact />
+        <FeatureImage
+          variant="four"
+          label="Candid"
+          caption="Effortless, unposed elegance"
+          heightClass="h-[70vh] md:h-[55vh]"
+        />
         <FeatureImage variant="two" label="Lifestyle" caption="Where warmth meets intention" heightClass="h-[70vh] md:h-[55vh]" />
       </main>
       <Footer />

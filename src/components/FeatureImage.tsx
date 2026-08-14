@@ -1,12 +1,22 @@
 const variants = {
   one: {
-    desktop: "/assets/images/NOK_1171.webp",
-    mobile: "/assets/images/NOK_1171.webp",
-    desktopPosition: "md:object-[50%_80%]",
+    desktop: "/assets/images/feature-one-desktop.webp",
+    mobile: "/assets/images/feature-one-mobile.webp",
+    desktopPosition: "md:object-center",
   },
   two: {
-    desktop: "/assets/images/2Q0A5375.webp",
-    mobile: "/assets/images/NOK_1202.webp",
+    desktop: "/assets/images/feature-footer-desktop.webp",
+    mobile: "/assets/images/feature-footer-mobile.webp",
+    desktopPosition: "md:object-center",
+  },
+  three: {
+    desktop: "/assets/images/feature-two-desktop.webp",
+    mobile: "/assets/images/feature-two-mobile.webp",
+    desktopPosition: "md:object-center",
+  },
+  four: {
+    desktop: "/assets/images/feature-three-desktop.webp",
+    mobile: "/assets/images/feature-three-mobile.webp",
     desktopPosition: "md:object-center",
   },
 };
@@ -17,7 +27,7 @@ export function FeatureImage({
   label,
   heightClass = "h-[70vh] md:h-[85vh]",
 }: {
-  variant: "one" | "two";
+  variant: "one" | "two" | "three" | "four";
   caption: string;
   label: string;
   heightClass?: string;

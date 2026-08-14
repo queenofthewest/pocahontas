@@ -7,9 +7,9 @@ export function Hero() {
   return (
     <section id="hero" className="relative h-[92vh] w-full overflow-hidden md:min-h-screen">
       <picture>
-        <source media="(min-width: 768px)" srcSet="/assets/images/NOK_1331-hero.webp" />
+        <source media="(min-width: 768px)" srcSet="/assets/images/hero-desktop.webp" />
         <img
-          src="/assets/images/NOK_1331-hero-mobile.webp"
+          src="/assets/images/hero-mobile.webp"
           alt=""
           aria-hidden="true"
           fetchPriority="high"
