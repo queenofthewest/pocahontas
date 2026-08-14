@@ -21,6 +21,16 @@ const images = [
   { src: `${IMG}/gallery-13.webp`, title: "Alyssa XIII" },
   { src: `${IMG}/gallery-14.webp`, title: "Alyssa XIV" },
   { src: `${IMG}/gallery-15.webp`, title: "Alyssa XV" },
+  { src: `${IMG}/hero-desktop.webp`, title: "Alyssa XVI" },
+  { src: `${IMG}/hero-mobile.webp`, title: "Alyssa XVII", portrait: true },
+  { src: `${IMG}/feature-one-desktop.webp`, title: "Alyssa XVIII" },
+  { src: `${IMG}/feature-one-mobile.webp`, title: "Alyssa XIX", portrait: true },
+  { src: `${IMG}/feature-two-desktop.webp`, title: "Alyssa XX" },
+  { src: `${IMG}/feature-two-mobile.webp`, title: "Alyssa XXI", portrait: true },
+  { src: `${IMG}/feature-three-desktop.webp`, title: "Alyssa XXII" },
+  { src: `${IMG}/feature-three-mobile.webp`, title: "Alyssa XXIII", portrait: true },
+  { src: `${IMG}/feature-footer-desktop.webp`, title: "Alyssa XXIV" },
+  { src: `${IMG}/feature-footer-mobile.webp`, title: "Alyssa XXV", portrait: true },
 ];
 
 function GalleryTile({

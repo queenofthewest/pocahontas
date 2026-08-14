@@ -23,30 +23,40 @@ function Index() {
         <div className="bg-sand-deep">
           <About />
         </div>
-        <FeatureImage
-          variant="three"
-          label="Portrait"
-          caption="Soft light, quiet moments"
-          heightClass="h-[70vh] md:h-[55vh]"
-        />
+        <div className="md:hidden">
+          <FeatureImage
+            variant="featureTwo"
+            label="Portrait"
+            caption="Soft light, quiet moments"
+            heightClass="h-[85vh]"
+          />
+        </div>
         <Gallery />
         <div className="bg-sand-deep">
           <Profile />
         </div>
-        <Booking />
         <FeatureImage
-          variant="one"
-          label="Editorial"
-          caption="Golden hour in the Sonoran desert"
-        />
-        <Contact />
-        <FeatureImage
-          variant="four"
+          variant="featureThree"
           label="Candid"
           caption="Effortless, unposed elegance"
-          heightClass="h-[70vh] md:h-[55vh]"
+          heightClass="h-[85vh] md:h-[90vh]"
         />
-        <FeatureImage variant="two" label="Lifestyle" caption="Where warmth meets intention" heightClass="h-[70vh] md:h-[55vh]" />
+        <Booking />
+        <FeatureImage
+          variant="featureOne"
+          label="Editorial"
+          caption="Golden hour in the Sonoran desert"
+          heightClass="h-[70vh] md:h-[90vh]"
+        />
+        <Contact />
+        <div className="hidden md:block">
+          <FeatureImage
+            variant="footer"
+            label="Lifestyle"
+            caption="Where warmth meets intention"
+            heightClass="md:h-[90vh]"
+          />
+        </div>
       </main>
       <Footer />
       <Toaster position="top-center" />
