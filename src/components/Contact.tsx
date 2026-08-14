@@ -108,7 +108,7 @@ export function Contact() {
       setLocationType("");
       setDuration("");
       setPhone("");
-      toast.success("Inquiry received — I'll respond within 48 hours.");
+      toast.success("Thank you for your inquiry. I will respond as soon as possible.");
     } catch (err) {
       const message = err instanceof Error ? err.message : "Something went wrong sending your inquiry. Please try emailing directly.";
       toast.error(message);
