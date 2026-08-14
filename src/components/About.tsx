@@ -40,7 +40,11 @@ export function About() {
                 I'm warm, easygoing, and I show up as myself. If what I've described sounds like your kind of energy, I'd love to hear from you.
               </p>
             </div>
-            <p className="mt-6 font-display text-2xl italic text-terracotta md:mt-8 md:text-3xl">~ Alyssa</p>
+            <img
+              src="/assets/logo/signature.webp"
+              alt="Alyssa"
+              className="mt-6 h-auto w-40 md:mt-8 md:w-48"
+            />
           </div>
         </Reveal>
       </div>

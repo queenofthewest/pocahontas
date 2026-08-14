@@ -1,7 +1,6 @@
 import { TrustBadges } from "@/components/TrustBadges";
 
 const textShadowSmall = "0 2px 6px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)";
-const textShadowLarge = "0 4px 14px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9)";
 
 export function Hero() {
   return (
@@ -29,11 +28,12 @@ export function Hero() {
           >
             Luxury Traveling Companion
           </p>
-          <h1
-            className="hero-fade-in font-display text-6xl leading-[1.02] tracking-tight text-sand-soft"
-            style={{ textShadow: textShadowLarge, animationDelay: "400ms" }}
-          >
-            Alyssa May
+          <h1 className="hero-fade-in mx-auto md:mx-0" style={{ animationDelay: "400ms" }}>
+            <img
+              src="/assets/logo/alyssa-may-light.webp"
+              alt="Alyssa May"
+              className="h-auto w-64 drop-shadow-[0_4px_14px_rgba(0,0,0,0.8)] md:w-80 lg:w-[26rem]"
+            />
           </h1>
 
           {/* Badges — under the heading, left-aligned, smaller (desktop only) */}
@@ -44,8 +44,8 @@ export function Hero() {
       </div>
 
       {/* Badges — centered near the bottom (mobile only) */}
-      <div className="absolute z-10 bottom-10 left-0 right-0 flex justify-center md:hidden">
-        <TrustBadges delay={700} />
+      <div className="absolute z-10 bottom-10 left-0 right-0 flex justify-center px-6 md:hidden">
+        <TrustBadges size="sm" delay={700} />
       </div>
     </section>
   );
