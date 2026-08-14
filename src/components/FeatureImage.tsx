@@ -10,7 +10,7 @@ const variants = {
     desktopPosition: "md:object-center",
   },
   featureThree: {
-    desktop: "/assets/images/feature-three-desktop.webp",
+    desktop: "/assets/images/gallery-13.webp",
     mobile: "/assets/images/feature-three-mobile.webp",
     desktopPosition: "md:object-center",
   },
@@ -46,6 +46,9 @@ export function FeatureImage({
         />
       </picture>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-sand/15 via-transparent to-sand/20" />
+      {variant === "footer" && (
+        <div className="pointer-events-none absolute inset-0 hidden md:block md:bg-black/45" />
+      )}
     </section>
   );
 }

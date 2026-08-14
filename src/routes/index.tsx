@@ -40,7 +40,7 @@ function Index() {
             variant="featureThree"
             label="Candid"
             caption="Effortless, unposed elegance"
-            heightClass="md:h-[95vh]"
+            heightClass="md:h-screen"
           />
         </div>
         <Booking />

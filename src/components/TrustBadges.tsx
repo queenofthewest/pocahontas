@@ -19,6 +19,18 @@ const badges = [
     name: "X",
     href: "https://x.com/alyssamayvip",
   },
+  {
+    type: "image" as const,
+    src: "/assets/icons/slixa-badge.png",
+    name: "Slixa",
+    href: "/",
+  },
+  {
+    type: "image" as const,
+    src: "/assets/icons/tryst-badge.png",
+    name: "Tryst",
+    href: "/",
+  },
 ];
 
 export function TrustBadges({
