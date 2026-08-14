@@ -14,30 +14,32 @@ export function Hero() {
           aria-hidden="true"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_95%] md:object-[50%_65%]"
+          className="absolute inset-0 h-full w-full scale-125 object-cover object-[50%_95%] translate-y-[-10%] md:translate-y-0 md:scale-100 md:object-[50%_82%]"
         />
       </picture>
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-sand to-transparent" />
 
-      {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop */}
-      <div className="absolute z-10 bottom-32 left-0 right-0 px-6 text-center md:bottom-auto md:top-[20%] md:left-[6%] md:right-auto md:px-0 md:text-left lg:left-[14%]">
-        <p
-          className="hero-fade-in mb-3 text-xs font-medium uppercase tracking-[0.35em] text-sand-soft md:mb-5"
-          style={{ textShadow: textShadowSmall, animationDelay: "150ms" }}
-        >
-          Luxury Traveling Companion
-        </p>
-        <h1
-          className="hero-fade-in font-display text-6xl leading-[1.02] tracking-tight text-sand-soft"
-          style={{ textShadow: textShadowLarge, animationDelay: "400ms" }}
-        >
-          Alyssa May
-        </h1>
+      {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop, aligned with the navbar container */}
+      <div className="absolute z-10 inset-x-0 bottom-32 md:bottom-auto md:top-[20%]">
+        <div className="mx-auto max-w-7xl px-6 text-center md:text-left">
+          <p
+            className="hero-fade-in mb-3 text-xs font-medium uppercase tracking-[0.35em] text-sand-soft md:mb-5"
+            style={{ textShadow: textShadowSmall, animationDelay: "150ms" }}
+          >
+            Luxury Traveling Companion
+          </p>
+          <h1
+            className="hero-fade-in font-display text-6xl leading-[1.02] tracking-tight text-sand-soft"
+            style={{ textShadow: textShadowLarge, animationDelay: "400ms" }}
+          >
+            Alyssa May
+          </h1>
 
-        {/* Badges — under the heading, left-aligned, smaller (desktop only) */}
-        <div className="mt-8 hidden md:block">
-          <TrustBadges align="start" size="sm" className="" delay={700} />
+          {/* Badges — under the heading, left-aligned, smaller (desktop only) */}
+          <div className="mt-8 hidden md:block">
+            <TrustBadges align="start" size="sm" className="" delay={700} />
+          </div>
         </div>
       </div>
 
