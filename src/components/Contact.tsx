@@ -124,9 +124,8 @@ export function Contact() {
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <Reveal className="mb-16 text-center">
           <h2>
-            <img src="/assets/logo/booking.webp" alt="Booking" className="mx-auto h-auto w-48 md:w-56" />
+            <img src="/assets/logo/booking.webp" alt="Booking" className="mx-auto h-auto w-64 md:w-72" />
           </h2>
-          <div className="terra-divider mx-auto mt-6 w-32" />
           <p className="mx-auto mt-6 max-w-lg text-sm text-espresso/55">
             Screening is required for all new friends. Any information shared through this form is transferred privately and securely.
           </p>
@@ -277,7 +276,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="rounded-full bg-terracotta px-12 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-sand-soft transition-transform hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
+                className="rounded-full bg-terracotta px-12 py-3.5 text-xs font-medium uppercase tracking-[0.25em] text-sand-soft transition-transform hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
               >
                 {submitting ? "Sending…" : "Send Inquiry"}
               </button>

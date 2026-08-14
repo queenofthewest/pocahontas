@@ -21,23 +21,20 @@ export function Hero() {
 
       {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop, aligned with the navbar container */}
       <div className="absolute z-10 inset-x-0 bottom-32 md:bottom-auto md:top-[20%]">
-        <div className="mx-auto max-w-7xl px-6">
-          {/* Eyebrow + logo share a fit-content box so the eyebrow centers above the logo, while the box itself sits left on desktop */}
-          <div className="mx-auto w-fit md:mx-0">
-            <p
-              className="hero-fade-in mb-3 text-center text-xs font-medium uppercase tracking-[0.35em] text-sand-soft md:mb-5"
-              style={{ textShadow: textShadowSmall, animationDelay: "150ms" }}
-            >
-              Luxury Traveling Companion
-            </p>
-            <h1 className="hero-fade-in" style={{ animationDelay: "400ms" }}>
-              <img
-                src="/assets/logo/alyssa-may-light.webp"
-                alt="Alyssa May"
-                className="h-auto w-80 drop-shadow-[0_4px_14px_rgba(0,0,0,0.8)] md:w-80 lg:w-[26rem]"
-              />
-            </h1>
-          </div>
+        <div className="mx-auto max-w-7xl px-6 text-center md:text-left">
+          <p
+            className="hero-fade-in mb-3 text-xs font-medium uppercase tracking-[0.35em] text-sand-soft md:mb-5"
+            style={{ textShadow: textShadowSmall, animationDelay: "150ms" }}
+          >
+            Luxury Traveling Companion
+          </p>
+          <h1 className="hero-fade-in mx-auto md:mx-0" style={{ animationDelay: "400ms" }}>
+            <img
+              src="/assets/logo/alyssa-may-light.webp"
+              alt="Alyssa May"
+              className="h-auto w-80 drop-shadow-[0_4px_14px_rgba(0,0,0,0.8)] md:w-80 lg:w-[26rem]"
+            />
+          </h1>
 
           {/* Badges — under the heading, left-aligned, smaller (desktop only) */}
           <div className="mt-8 hidden md:block">

@@ -42,7 +42,7 @@ export function Booking() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mb-16 text-center">
           <h2>
-            <img src="/assets/logo/consideration.webp" alt="Consideration" className="mx-auto h-auto w-56 md:w-64" />
+            <img src="/assets/logo/consideration.webp" alt="Consideration" className="mx-auto h-auto w-72 md:w-80" />
           </h2>
         </Reveal>
 

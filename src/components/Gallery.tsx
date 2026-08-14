@@ -100,9 +100,8 @@ export function Gallery() {
       {/* Section header */}
       <Reveal className="mb-10 text-center">
         <h2>
-          <img src="/assets/logo/gallery.webp" alt="Gallery" className="mx-auto h-auto w-48 md:w-56" />
+          <img src="/assets/logo/gallery.webp" alt="Gallery" className="mx-auto h-auto w-64 md:w-72" />
         </h2>
-        <div className="terra-divider mx-auto mt-6 w-32" />
       </Reveal>
 
       {/* Staggered 2-col grid on mobile (uniform 2:3 crop), masonry columns from md up */}

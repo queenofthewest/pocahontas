@@ -40,7 +40,7 @@ function Index() {
             variant="featureThree"
             label="Candid"
             caption="Effortless, unposed elegance"
-            heightClass="md:h-[145vh]"
+            heightClass="md:h-[100vh]"
           />
         </div>
         <Booking />
@@ -48,7 +48,7 @@ function Index() {
           variant="featureOne"
           label="Editorial"
           caption="Golden hour in the Sonoran desert"
-          heightClass="h-[85vh] md:h-[90vh]"
+          heightClass="h-[85vh] md:h-[130vh]"
         />
         <Contact />
         <FeatureImage

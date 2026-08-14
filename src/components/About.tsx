@@ -29,7 +29,6 @@ export function About() {
                 className="h-auto w-64 md:w-72 lg:w-80"
               />
             </h2>
-            <div className="terra-divider mt-6 w-24" />
             <div className="mt-6 space-y-4 font-serif text-base leading-relaxed text-espresso/65 md:mt-8 md:space-y-4 md:text-base lg:text-lg lg:leading-relaxed">
               <p>
                 It's lovely to meet you. My name is Alyssa and I am a Southern California transplant in the beautiful desert of Arizona I now call my home. Let me tell you a little bit about myself.
