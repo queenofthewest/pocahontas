@@ -51,7 +51,7 @@ const verifyOptions = [
   {
     id: "p411",
     label: "P411",
-    placeholder: "Please type your P411 handle and submit a request through P411",
+    placeholder: "Please submit a request through P411.",
   },
   {
     id: "employment",
@@ -69,7 +69,7 @@ function formatPhone(raw: string) {
 }
 
 export function Contact() {
-  const [verification, setVerification] = useState<(typeof verifyOptions)[number]["id"]>("employment");
+  const [verification, setVerification] = useState<(typeof verifyOptions)[number]["id"]>("references");
   const [locationType, setLocationType] = useState("");
   const [duration, setDuration] = useState("");
   const [phone, setPhone] = useState("");
@@ -104,7 +104,7 @@ export function Contact() {
       const result = await res.json().catch(() => ({ ok: false }));
       if (!res.ok || !result.ok) throw new Error(result.error || "Failed to send");
       form.reset();
-      setVerification("employment");
+      setVerification("references");
       setLocationType("");
       setDuration("");
       setPhone("");
