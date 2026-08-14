@@ -12,7 +12,7 @@ const variants = {
   featureThree: {
     desktop: "/assets/images/gallery-13.webp",
     mobile: "/assets/images/feature-three-mobile.webp",
-    desktopPosition: "md:object-center",
+    desktopPosition: "md:object-center md:scale-125",
   },
   footer: {
     desktop: "/assets/images/feature-footer-desktop.webp",

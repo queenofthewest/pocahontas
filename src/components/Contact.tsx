@@ -122,7 +122,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative overflow-visible bg-gradient-to-b from-sand to-sand-deep py-24 md:py-32">
       <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <Reveal className="mb-16 text-center">
+        <Reveal className="mb-10 text-center md:mb-16">
           <h2>
             <img src="/assets/logo/booking.webp" alt="Booking" className="mx-auto h-auto w-64 md:w-72" />
           </h2>

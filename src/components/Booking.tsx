@@ -40,7 +40,7 @@ export function Booking() {
   return (
     <section id="booking" className="bg-sand py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <Reveal className="mb-16 text-center">
+        <Reveal className="mb-10 text-center md:mb-16">
           <h2>
             <img src="/assets/logo/consideration.webp" alt="Consideration" className="mx-auto h-auto w-72 md:w-80" />
           </h2>

@@ -48,7 +48,7 @@ function Index() {
           variant="featureOne"
           label="Editorial"
           caption="Golden hour in the Sonoran desert"
-          heightClass="h-[85vh] md:h-[130vh]"
+          heightClass="h-[85vh] md:h-[91vh]"
         />
         <Contact />
         <FeatureImage

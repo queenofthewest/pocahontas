@@ -13,7 +13,7 @@ export function Hero() {
           aria-hidden="true"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full scale-125 object-cover object-[50%_95%] translate-y-[-10%] md:translate-y-0 md:scale-100 md:object-[50%_82%]"
+          className="absolute inset-0 h-full w-full scale-125 object-cover object-[50%_95%] translate-y-[-10%] md:translate-y-0 md:scale-100 md:object-[50%_92%]"
         />
       </picture>
 
@@ -22,19 +22,22 @@ export function Hero() {
       {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop, aligned with the navbar container */}
       <div className="absolute z-10 inset-x-0 bottom-32 md:bottom-auto md:top-[20%]">
         <div className="mx-auto max-w-7xl px-6 text-center md:text-left">
-          <p
-            className="hero-fade-in mb-3 text-xs font-medium uppercase tracking-[0.35em] text-sand-soft md:mb-5"
-            style={{ textShadow: textShadowSmall, animationDelay: "150ms" }}
-          >
-            Luxury Traveling Companion
-          </p>
-          <h1 className="hero-fade-in mx-auto md:mx-0" style={{ animationDelay: "400ms" }}>
-            <img
-              src="/assets/logo/alyssa-may-light.webp"
-              alt="Alyssa May"
-              className="h-auto w-80 drop-shadow-[0_4px_14px_rgba(0,0,0,0.8)] md:w-80 lg:w-[26rem]"
-            />
-          </h1>
+          {/* Mobile: logo above eyebrow; desktop: eyebrow above logo */}
+          <div className="flex flex-col-reverse gap-3 md:flex-col md:gap-5">
+            <p
+              className="hero-fade-in text-xs font-medium uppercase tracking-[0.35em] text-sand-soft"
+              style={{ textShadow: textShadowSmall, animationDelay: "150ms" }}
+            >
+              Luxury Traveling Companion
+            </p>
+            <h1 className="hero-fade-in mx-auto md:mx-0" style={{ animationDelay: "400ms" }}>
+              <img
+                src="/assets/logo/alyssa-may-light.webp"
+                alt="Alyssa May"
+                className="h-auto w-80 drop-shadow-[0_4px_14px_rgba(0,0,0,0.8)] md:w-80 lg:w-[26rem]"
+              />
+            </h1>
+          </div>
 
           {/* Badges — under the heading, left-aligned, smaller (desktop only) */}
           <div className="mt-8 hidden md:block">
