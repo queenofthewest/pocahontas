@@ -13,7 +13,7 @@ export function Hero() {
           aria-hidden="true"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-bottom translate-y-[-15%] md:translate-y-0 md:scale-100 md:object-[50%_92%]"
+          className="absolute inset-0 h-full w-full scale-[1.15] object-cover object-bottom translate-y-[-7.5%] md:translate-y-0 md:scale-100 md:object-[50%_92%]"
         />
       </picture>
 
