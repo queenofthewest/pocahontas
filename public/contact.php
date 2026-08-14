@@ -71,6 +71,27 @@ if ($name === "" || $email === "" || !filter_var($email, FILTER_VALIDATE_EMAIL) 
     exit;
 }
 
+// Mirror the client-side length limits so direct POSTs can't bypass them
+function tooLong($value, $max) {
+    return mb_strlen($value) > $max;
+}
+if (
+    tooLong($name, 100) ||
+    tooLong($email, 255) ||
+    tooLong($phone, 20) ||
+    tooLong($date, 40) ||
+    tooLong($duration, 60) ||
+    tooLong($durationDetail, 500) ||
+    tooLong($locationType, 40) ||
+    tooLong($locationDetail, 120) ||
+    tooLong($verificationType, 40) ||
+    tooLong($verificationDetail, 500)
+) {
+    http_response_code(422);
+    echo json_encode(["ok" => false, "error" => "One or more fields exceed the maximum length."]);
+    exit;
+}
+
 $dateTypeLabels = [
     "phoenix-incall" => "Phoenix Local - Incall",
     "phoenix-outcall" => "Phoenix Local - Outcall",
