@@ -20,10 +20,8 @@ const badges = [
     href: "https://x.com/alyssamayvip",
   },
   {
-    type: "image" as const,
-    src: "/assets/icons/slixa-badge.png",
+    type: "embed" as const,
     name: "Slixa",
-    href: "https://www.slixa.com/arizona/phoenix/alyssa-may-5",
   },
   {
     type: "image" as const,
@@ -62,24 +60,47 @@ export function TrustBadges({
             )}
             style={{ transitionDelay: `${delay + i * 150}ms` }}
           >
-            <a href={b.href} target="_blank" rel="noopener noreferrer">
-              {b.type === "icon" ? (
-                <div className={`${iconSize} flex items-center justify-center rounded-full bg-black text-sand-soft`}>
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-[45%] w-[45%]">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </div>
-              ) : (
-                <img
-                  src={b.src}
-                  alt={b.name}
-                  loading="lazy"
-                  width={112}
-                  height={112}
-                  className={`${imgSize} object-contain`}
-                />
-              )}
-            </a>
+            {b.type === "embed" ? (
+              <div style={{ textAlign: "center", minWidth: 120, minHeight: 60 }}>
+                <a
+                  href="https://www.slixa.com/"
+                  target="_top"
+                  style={{
+                    display: "inline-block",
+                    whiteSpace: "nowrap",
+                    minWidth: 120,
+                    minHeight: 60,
+                    margin: "0px auto",
+                  }}
+                >
+                  <img
+                    src="https://badge.slixa.com/alyssa-may-5/slixa_badge120x60.jpg"
+                    alt="Slixa"
+                    width={120}
+                    height={60}
+                  />
+                </a>
+              </div>
+            ) : (
+              <a href={b.href} target="_blank" rel="noopener noreferrer">
+                {b.type === "icon" ? (
+                  <div className={`${iconSize} flex items-center justify-center rounded-full bg-black text-sand-soft`}>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="h-[45%] w-[45%]">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </div>
+                ) : (
+                  <img
+                    src={b.src}
+                    alt={b.name}
+                    loading="lazy"
+                    width={112}
+                    height={112}
+                    className={`${imgSize} object-contain`}
+                  />
+                )}
+              </a>
+            )}
           </div>
         ))}
       </div>
