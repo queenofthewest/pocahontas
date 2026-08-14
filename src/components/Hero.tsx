@@ -4,22 +4,20 @@ const textShadowSmall = "0 2px 6px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative z-10 h-[85vh] w-full md:min-h-screen">
-      <div className="absolute inset-0 overflow-hidden">
-        <picture>
-          <source media="(min-width: 768px)" srcSet="/assets/images/hero-desktop.webp" />
-          <img
-            src="/assets/images/feature-three-mobile.webp"
-            alt=""
-            aria-hidden="true"
-            fetchPriority="high"
-            decoding="async"
-            className="absolute inset-0 h-full w-full scale-[1.15] object-cover object-[50%_95%] translate-y-[-6%] md:translate-y-0 md:scale-100 md:object-[50%_92%]"
-          />
-        </picture>
+    <section id="hero" className="relative h-[92vh] w-full overflow-hidden md:min-h-screen">
+      <picture>
+        <source media="(min-width: 768px)" srcSet="/assets/images/hero-desktop.webp" />
+        <img
+          src="/assets/images/feature-three-mobile.webp"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-bottom md:object-[50%_92%]"
+        />
+      </picture>
 
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent" />
-      </div>
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent" />
 
       {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop, aligned with the navbar container */}
       <div className="absolute z-10 inset-x-0 bottom-32 md:bottom-auto md:top-[20%]">
@@ -52,26 +50,6 @@ export function Hero() {
       <div className="absolute z-10 bottom-10 left-0 right-0 flex justify-center px-6 md:hidden">
         <TrustBadges delay={700} />
       </div>
-
-      {/* Scroll cue — straddles the seam into the next section */}
-      <a
-        href="#about"
-        aria-label="Scroll to next section"
-        className="absolute -bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-terracotta transition-colors hover:text-terracotta-soft"
-      >
-        <span className="text-xs font-medium uppercase tracking-[0.35em]">Enter</span>
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-5 w-5 animate-bounce"
-        >
-          <path d="m6 9 6 6 6-6" />
-        </svg>
-      </a>
     </section>
   );
 }
