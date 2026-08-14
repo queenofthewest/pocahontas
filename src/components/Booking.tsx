@@ -28,11 +28,9 @@ const extended = [
   "Time extensions are welcome upon availability at +$500/hr.",
 ];
 
-function CardHeader({ label, title }: { label: string; title: string }) {
+function CardHeader({ title }: { title: string }) {
   return (
     <div className="mb-8">
-      <div className="terra-divider mb-5 w-16" />
-      <p className="mb-2 text-[0.65rem] uppercase tracking-[0.3em] text-terracotta/70">{label}</p>
       <h3 className="font-display text-2xl text-espresso">{title}</h3>
     </div>
   );
@@ -43,15 +41,16 @@ export function Booking() {
     <section id="booking" className="bg-sand py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mb-16 text-center">
-          <h2 className="font-display text-4xl text-espresso md:text-5xl">Consideration</h2>
-          <div className="terra-divider mx-auto mt-6 w-32" />
+          <h2>
+            <img src="/assets/logo/consideration.webp" alt="Consideration" className="mx-auto h-auto w-56 md:w-64" />
+          </h2>
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-3">
           {/* Card 1: Rates */}
           <Reveal>
             <div className="flex h-full flex-col rounded-2xl border border-terracotta/20 bg-sand-deep p-8">
-              <CardHeader label="Investment" title="Rates" />
+              <CardHeader title="Investment" />
 
               <ul className="space-y-0">
                 {rates.map((r) => (
@@ -67,7 +66,7 @@ export function Booking() {
           {/* Card 2: Etiquette */}
           <Reveal delay={100}>
             <div className="flex h-full flex-col rounded-2xl border border-terracotta/20 bg-sand-deep p-8">
-              <CardHeader label="Please Note" title="Etiquette" />
+              <CardHeader title="Etiquette" />
               <ul className="space-y-4">
                 {etiquette.map((item, i) => (
                   <li key={i} className="flex gap-3 text-sm leading-relaxed text-espresso/65">
@@ -82,7 +81,7 @@ export function Booking() {
           {/* Card 3: Extended Dates */}
           <Reveal delay={200}>
             <div className="flex h-full flex-col rounded-2xl border border-terracotta/20 bg-sand-deep p-8">
-              <CardHeader label="Travel & Long Engagements" title="Extended Dates" />
+              <CardHeader title="Extended Dates" />
               <ul className="space-y-4">
                 {extended.map((item, i) => (
                   <li key={i} className="flex gap-3 text-sm leading-relaxed text-espresso/65">

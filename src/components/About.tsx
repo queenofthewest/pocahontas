@@ -22,8 +22,12 @@ export function About() {
 
         <Reveal delay={150}>
           <div className="mx-4 md:mx-0 md:pl-6">
-            <h2 className="font-display text-3xl text-espresso md:text-4xl lg:text-5xl">
-              Hey there, <span className="text-terra-gradient italic">Handsome.</span>
+            <h2>
+              <img
+                src="/assets/logo/hi-handsome.webp"
+                alt="Hey there, Handsome."
+                className="h-auto w-64 md:w-72 lg:w-80"
+              />
             </h2>
             <div className="terra-divider mt-6 w-24" />
             <div className="mt-6 space-y-4 font-serif text-base leading-relaxed text-espresso/65 md:mt-8 md:space-y-4 md:text-base lg:text-lg lg:leading-relaxed">

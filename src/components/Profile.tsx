@@ -25,7 +25,9 @@ export function Profile() {
         {/* Stat list — first on mobile, first on desktop */}
         <Reveal className="order-1 md:order-1">
           <div className="md:pr-6">
-            <h2 className="font-display text-4xl text-espresso md:text-5xl">Statistics</h2>
+            <h2>
+              <img src="/assets/logo/statistics.webp" alt="Statistics" className="h-auto w-48 md:w-56" />
+            </h2>
             <div className="terra-divider mt-6 w-24" />
 
             <ul className="mt-10 space-y-0">

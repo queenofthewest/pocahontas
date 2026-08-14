@@ -39,11 +39,6 @@ const labelClass = "mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-te
 
 const verifyOptions = [
   {
-    id: "employment",
-    label: "Employment + Photo ID",
-    placeholder: "Please type your LinkedIn URL and have a selfie with photo ID ready, along with your cell phone number",
-  },
-  {
     id: "references",
     label: "Provider References",
     placeholder: "Two established providers you've seen (name, email, website/advertising link, approximate date seen)",
@@ -57,6 +52,11 @@ const verifyOptions = [
     id: "p411",
     label: "P411",
     placeholder: "Please type your P411 handle and submit a request through P411",
+  },
+  {
+    id: "employment",
+    label: "Employment + Photo ID",
+    placeholder: "Please type your LinkedIn URL and have a selfie with photo ID ready, along with your cell phone number",
   },
 ] as const;
 
@@ -123,10 +123,12 @@ export function Contact() {
     <section id="contact" className="relative overflow-visible bg-gradient-to-b from-sand to-sand-deep py-24 md:py-32">
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <Reveal className="mb-16 text-center">
-          <h2 className="font-display text-4xl text-espresso md:text-5xl">Booking Inquiry</h2>
+          <h2>
+            <img src="/assets/logo/booking.webp" alt="Booking" className="mx-auto h-auto w-48 md:w-56" />
+          </h2>
           <div className="terra-divider mx-auto mt-6 w-32" />
           <p className="mx-auto mt-6 max-w-lg text-sm text-espresso/55">
-            Share a few details and I'll respond personally within 48 hours. Screening is required for all new friends. Any information shared through this form is transferred privately and securely.
+            Screening is required for all new friends. Any information shared through this form is transferred privately and securely.
           </p>
         </Reveal>
 

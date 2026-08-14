@@ -42,7 +42,7 @@ export function FeatureImage({
           src={imgs.mobile}
           alt={caption}
           loading="lazy"
-          className={`absolute inset-0 h-full w-full object-cover ${variant === "footer" ? "object-bottom" : "object-top"} ${imgs.desktopPosition}`}
+          className={`absolute inset-0 h-full w-full object-cover ${variant === "footer" ? "object-[50%_15%]" : "object-top"} ${imgs.desktopPosition}`}
         />
       </picture>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-sand/15 via-transparent to-sand/20" />

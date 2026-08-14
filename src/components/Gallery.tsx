@@ -99,7 +99,9 @@ export function Gallery() {
     <section id="portfolio" className="relative -mb-20 bg-sand py-24 md:py-32">
       {/* Section header */}
       <Reveal className="mb-10 text-center">
-        <h2 className="font-display text-4xl text-espresso md:text-5xl">Gallery</h2>
+        <h2>
+          <img src="/assets/logo/gallery.webp" alt="Gallery" className="mx-auto h-auto w-48 md:w-56" />
+        </h2>
         <div className="terra-divider mx-auto mt-6 w-32" />
       </Reveal>
 
