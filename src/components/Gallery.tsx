@@ -23,14 +23,13 @@ const images = [
   { src: `${IMG}/gallery-15.webp`, title: "Alyssa XV" },
   { src: `${IMG}/hero-desktop.webp`, title: "Alyssa XVI" },
   { src: `${IMG}/hero-mobile.webp`, title: "Alyssa XVII", portrait: true },
-  { src: `${IMG}/feature-one-desktop.webp`, title: "Alyssa XVIII" },
-  { src: `${IMG}/feature-one-mobile.webp`, title: "Alyssa XIX", portrait: true },
-  { src: `${IMG}/feature-two-desktop.webp`, title: "Alyssa XX" },
-  { src: `${IMG}/feature-two-mobile.webp`, title: "Alyssa XXI", portrait: true },
-  { src: `${IMG}/feature-three-desktop.webp`, title: "Alyssa XXII" },
-  { src: `${IMG}/feature-three-mobile.webp`, title: "Alyssa XXIII", portrait: true },
-  { src: `${IMG}/feature-footer-desktop.webp`, title: "Alyssa XXIV" },
-  { src: `${IMG}/feature-footer-mobile.webp`, title: "Alyssa XXV", portrait: true },
+  { src: `${IMG}/feature-one-mobile.webp`, title: "Alyssa XVIII", portrait: true },
+  { src: `${IMG}/feature-two-desktop.webp`, title: "Alyssa XIX" },
+  { src: `${IMG}/feature-two-mobile.webp`, title: "Alyssa XX", portrait: true },
+  { src: `${IMG}/feature-three-desktop.webp`, title: "Alyssa XXI" },
+  { src: `${IMG}/feature-three-mobile.webp`, title: "Alyssa XXII", portrait: true },
+  { src: `${IMG}/feature-footer-desktop.webp`, title: "Alyssa XXIII" },
+  { src: `${IMG}/feature-footer-mobile.webp`, title: "Alyssa XXIV", portrait: true },
 ];
 
 function GalleryTile({

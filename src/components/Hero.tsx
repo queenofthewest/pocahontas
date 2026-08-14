@@ -9,7 +9,7 @@ export function Hero() {
       <picture>
         <source media="(min-width: 768px)" srcSet="/assets/images/hero-desktop.webp" />
         <img
-          src="/assets/images/hero-mobile.webp"
+          src="/assets/images/feature-three-mobile.webp"
           alt=""
           aria-hidden="true"
           fetchPriority="high"

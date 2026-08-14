@@ -35,28 +35,28 @@ function Index() {
         <div className="bg-sand-deep">
           <Profile />
         </div>
-        <FeatureImage
-          variant="featureThree"
-          label="Candid"
-          caption="Effortless, unposed elegance"
-          heightClass="h-[85vh] md:h-[90vh]"
-        />
+        <div className="hidden md:block">
+          <FeatureImage
+            variant="featureThree"
+            label="Candid"
+            caption="Effortless, unposed elegance"
+            heightClass="md:h-[95vh]"
+          />
+        </div>
         <Booking />
         <FeatureImage
           variant="featureOne"
           label="Editorial"
           caption="Golden hour in the Sonoran desert"
-          heightClass="h-[70vh] md:h-[90vh]"
+          heightClass="h-[85vh] md:h-[90vh]"
         />
         <Contact />
-        <div className="hidden md:block">
-          <FeatureImage
-            variant="footer"
-            label="Lifestyle"
-            caption="Where warmth meets intention"
-            heightClass="md:h-[90vh]"
-          />
-        </div>
+        <FeatureImage
+          variant="footer"
+          label="Lifestyle"
+          caption="Where warmth meets intention"
+          heightClass="h-[70vh] md:h-[90vh]"
+        />
       </main>
       <Footer />
       <Toaster position="top-center" />
