@@ -11,7 +11,7 @@ export function About() {
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
             <img
               src={about}
-              alt="Portrait of Alyssa May."
+              alt=""
               loading="lazy"
               width={800}
               height={1000}
