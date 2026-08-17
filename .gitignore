@@ -5,6 +5,7 @@ dist
 .DS_Store
 public/assets/images/**/*.jpg
 public/assets/images/**/*.JPG
+!public/assets/images/feature-two-mobile.jpg
 public/assets/images/**/*.jpeg
 public/assets/images/**/*.JPEG
 public/assets/images/**/*.png
