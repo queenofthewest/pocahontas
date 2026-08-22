@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 
 const stats = [
-  { label: "Age", value: "37" },
+  { label: "Age", value: "30s" },
   { label: "Height", value: "5'7\"" },
   { label: "Measurements", value: "28\" Waist 38\" Hips" },
   { label: "Bust", value: "34B Natural" },
@@ -13,7 +13,7 @@ const stats = [
   { label: "Cuisine", value: "Japanese / Mexican" },
   { label: "Color", value: "Red" },
   { label: "Flower", value: "Sunflowers" },
-  { label: "Scents", value: "Rose, Ylang Ylang, Palo Santo" },
+  { label: "Scents", value: "Rose, Black Opium, Obsession" },
   { label: "Brands", value: "Honey Birdette, Classic Rock Couture" },
 ];
 
