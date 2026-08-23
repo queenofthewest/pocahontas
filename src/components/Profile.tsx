@@ -13,7 +13,7 @@ const stats = [
   { label: "Cuisine", value: "Japanese / Mexican" },
   { label: "Color", value: "Red" },
   { label: "Flower", value: "Sunflowers" },
-  { label: "Scents", value: "Rose, Black Opium, Obsession" },
+  { label: "Scents", value: "Rose, Black Opium, Palo Santo" },
   { label: "Brands", value: "Honey Birdette, Classic Rock Couture" },
 ];
 
