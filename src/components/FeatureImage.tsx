@@ -10,7 +10,7 @@ const variants = {
     desktopPosition: "md:object-center",
   },
   featureThree: {
-    desktop: "/assets/images/gallery-13.webp",
+    desktop: "/assets/images/feature-three-desktop.webp",
     mobile: "/assets/images/feature-three-mobile.webp",
     desktopPosition: "md:object-center md:scale-125",
   },

@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 
-const about = "/assets/images/hero-mobile.webp";
+const about = "/assets/images/about-me.webp";
 
 export function About() {
   return (

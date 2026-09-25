@@ -6,30 +6,18 @@ import { cn } from "@/lib/utils";
 const IMG = "/assets/images";
 
 const images = [
-  { src: `${IMG}/gallery-01.webp`, title: "Alyssa I" },
+  { src: `${IMG}/gallery-01.webp`, title: "Alyssa I", portrait: true },
   { src: `${IMG}/gallery-02.webp`, title: "Alyssa II" },
-  { src: `${IMG}/gallery-03.webp`, title: "Alyssa III" },
+  { src: `${IMG}/gallery-03.webp`, title: "Alyssa III", portrait: true },
   { src: `${IMG}/gallery-04.webp`, title: "Alyssa IV" },
   { src: `${IMG}/gallery-05.webp`, title: "Alyssa V" },
-  { src: `${IMG}/gallery-06.webp`, title: "Alyssa VI" },
+  { src: `${IMG}/gallery-06.webp`, title: "Alyssa VI", portrait: true },
   { src: `${IMG}/gallery-07.webp`, title: "Alyssa VII", portrait: true },
-  { src: `${IMG}/gallery-08.webp`, title: "Alyssa VIII" },
-  { src: `${IMG}/gallery-09.webp`, title: "Alyssa IX" },
+  { src: `${IMG}/gallery-08.webp`, title: "Alyssa VIII", portrait: true },
+  { src: `${IMG}/gallery-09.webp`, title: "Alyssa IX", portrait: true },
   { src: `${IMG}/gallery-10.webp`, title: "Alyssa X" },
-  { src: `${IMG}/gallery-11.webp`, title: "Alyssa XI" },
-  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII" },
-  { src: `${IMG}/gallery-13.webp`, title: "Alyssa XIII" },
-  { src: `${IMG}/gallery-14.webp`, title: "Alyssa XIV" },
-  { src: `${IMG}/gallery-15.webp`, title: "Alyssa XV" },
-  { src: `${IMG}/hero-desktop.webp`, title: "Alyssa XVI" },
-  { src: `${IMG}/hero-mobile.webp`, title: "Alyssa XVII", portrait: true },
-  { src: `${IMG}/feature-one-mobile.webp`, title: "Alyssa XVIII", portrait: true },
-  { src: `${IMG}/feature-two-desktop.webp`, title: "Alyssa XIX" },
-  { src: `${IMG}/feature-two-mobile.webp`, title: "Alyssa XX", portrait: true },
-  { src: `${IMG}/feature-three-desktop.webp`, title: "Alyssa XXI" },
-  { src: `${IMG}/feature-three-mobile.webp`, title: "Alyssa XXII", portrait: true },
-  { src: `${IMG}/feature-footer-desktop.webp`, title: "Alyssa XXIII" },
-  { src: `${IMG}/feature-footer-mobile.webp`, title: "Alyssa XXIV", portrait: true },
+  { src: `${IMG}/gallery-11.webp`, title: "Alyssa XI", portrait: true },
+  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII", portrait: true },
 ];
 
 function GalleryTile({
