@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { useReveal } from "@/hooks/use-reveal";
 import { cn } from "@/lib/utils";
+import { versioned } from "@/lib/assets";
 
 const IMG = "/assets/images";
 const SPRING = `${IMG}/spring-2026`;
@@ -79,7 +80,7 @@ function GalleryTile({
         className="group relative block w-full overflow-hidden rounded-lg border border-terracotta/15 transition-all duration-300 hover:border-terracotta/50"
       >
         <img
-          src={img.src}
+          src={versioned(img.src)}
           alt={img.title}
           loading="lazy"
           className={`aspect-[2/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${img.portrait ? "" : "md:aspect-auto"}`}
@@ -179,7 +180,7 @@ export function Gallery() {
           </button>
           <figure className="max-h-[85vh] text-center" onClick={(e) => e.stopPropagation()}>
             <img
-              src={images[active].src}
+              src={versioned(images[active].src)}
               alt={images[active].title}
               className="mx-auto max-h-[78vh] rounded-lg border border-terracotta/20 object-contain"
             />

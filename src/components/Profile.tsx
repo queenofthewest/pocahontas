@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { versioned } from "@/lib/assets";
 
 const stats = [
   { label: "Age", value: "30s" },
@@ -54,7 +55,7 @@ export function Profile() {
           <div className="relative mx-auto w-full">
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
             <img
-              src="/assets/images/stats.webp"
+              src={versioned("/assets/images/stats.webp")}
               alt="Alyssa May"
               loading="lazy"
               width={800}

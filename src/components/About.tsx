@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/Reveal";
+import { versioned } from "@/lib/assets";
 
-const about = "/assets/images/about-me.webp";
+const about = versioned("/assets/images/about-me.webp");
 
 export function About() {
   return (

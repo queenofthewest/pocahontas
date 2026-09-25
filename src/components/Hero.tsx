@@ -1,4 +1,5 @@
 import { TrustBadges } from "@/components/TrustBadges";
+import { versioned } from "@/lib/assets";
 
 const textShadowSmall = "0 2px 6px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)";
 
@@ -6,9 +7,9 @@ export function Hero() {
   return (
     <section id="hero" className="relative h-[92vh] w-full overflow-hidden md:min-h-screen">
       <picture>
-        <source media="(min-width: 768px)" srcSet="/assets/images/hero-desktop.webp" />
+        <source media="(min-width: 768px)" srcSet={versioned("/assets/images/hero-desktop.webp")} />
         <img
-          src="/assets/images/hero-mobile.webp"
+          src={versioned("/assets/images/hero-mobile.webp")}
           alt=""
           aria-hidden="true"
           fetchPriority="high"

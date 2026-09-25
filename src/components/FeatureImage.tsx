@@ -1,3 +1,5 @@
+import { versioned } from "@/lib/assets";
+
 const variants = {
   featureOne: {
     desktop: "/assets/images/feature-one-desktop.webp",
@@ -37,9 +39,9 @@ export function FeatureImage({
   return (
     <section className={`relative overflow-hidden ${heightClass}`}>
       <picture>
-        <source media="(min-width: 768px)" srcSet={imgs.desktop} />
+        <source media="(min-width: 768px)" srcSet={versioned(imgs.desktop)} />
         <img
-          src={imgs.mobile}
+          src={versioned(imgs.mobile)}
           alt={caption}
           loading="lazy"
           className={`absolute inset-0 h-full w-full object-cover ${variant === "footer" ? "object-[50%_58%]" : "object-top"} ${imgs.desktopPosition}`}
