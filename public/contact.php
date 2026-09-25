@@ -117,7 +117,7 @@ $durationLabels = [
     "custom" => "Custom Request",
 ];
 $verificationLabels = [
-    "employment" => "Verify Through Models Online",
+    "employment" => "Models Online",
     "references" => "Provider References",
     "id" => "Government ID",
     "p411" => "P411",

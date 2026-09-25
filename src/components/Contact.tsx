@@ -55,7 +55,7 @@ const verifyOptions = [
   },
   {
     id: "employment",
-    label: "Verify Through Models Online",
+    label: "Models Online",
     placeholder: "Please provide the link to your account",
   },
 ] as const;
