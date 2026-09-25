@@ -55,7 +55,7 @@ function Index() {
           variant="footer"
           label="Lifestyle"
           caption="Where warmth meets intention"
-          heightClass="h-[58vh] md:h-[60vh]"
+          heightClass="h-[58vh] md:h-[90vh]"
         />
       </main>
       <Footer />
