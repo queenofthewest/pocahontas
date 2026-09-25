@@ -7,7 +7,7 @@ import { versioned } from "@/lib/assets";
 const IMG = "/assets/images";
 const SPRING = `${IMG}/spring-2026`;
 
-type ImageItem = { src: string; title: string; portrait?: boolean };
+type ImageItem = { src: string; title: string; portrait?: boolean; objectPosition?: string };
 
 const summerImages: ImageItem[] = [
   { src: `${IMG}/gallery-01.webp`, title: "Alyssa I" },
@@ -21,7 +21,7 @@ const summerImages: ImageItem[] = [
   { src: `${IMG}/gallery-09.webp`, title: "Alyssa IX" },
   { src: `${IMG}/gallery-10.webp`, title: "Alyssa X" },
   { src: `${IMG}/gallery-11.webp`, title: "Alyssa XI" },
-  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII" },
+  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII", objectPosition: "100% 58%" },
 ];
 
 const springImages: ImageItem[] = [
@@ -84,6 +84,7 @@ function GalleryTile({
           src={versioned(img.src)}
           alt={img.title}
           loading="lazy"
+          style={img.objectPosition ? { objectPosition: img.objectPosition } : undefined}
           className={`aspect-[2/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${img.portrait ? "" : "md:aspect-auto"}`}
         />
       </button>
