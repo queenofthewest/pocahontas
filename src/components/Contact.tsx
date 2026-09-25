@@ -55,8 +55,8 @@ const verifyOptions = [
   },
   {
     id: "employment",
-    label: "Employment + Photo ID",
-    placeholder: "Please type your LinkedIn URL and have a selfie with photo ID ready, along with your cell phone number",
+    label: "Verify Through Models Online",
+    placeholder: "Please provide the link to your account",
   },
 ] as const;
 

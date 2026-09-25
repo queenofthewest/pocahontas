@@ -3,31 +3,14 @@ import { cn } from "@/lib/utils";
 
 const badges = [
   {
-    type: "image" as const,
     src: "https://www.theeroticreview.com/images/reviewed_seal.gif",
     name: "The Erotic Review",
     href: "https://www.theeroticreview.com/reviews/alyssa-may-7028500103-418478",
   },
   {
-    type: "image" as const,
     src: "https://preferred411.com/a/preferredSeal-p.png",
     name: "Preferred411.com",
     href: "https://preferred411.com/admirer/register?ref=P464877",
-  },
-  {
-    type: "icon" as const,
-    name: "X",
-    href: "https://x.com/alyssamayvip",
-  },
-  {
-    type: "embed" as const,
-    name: "Slixa",
-  },
-  {
-    type: "image" as const,
-    src: "/assets/icons/tryst-badge.png",
-    name: "Tryst",
-    href: "https://tryst.link/escort/alyssamay",
   },
 ];
 
@@ -52,13 +35,6 @@ export function TrustBadges({
       : size === "footer"
         ? "h-20 w-20 md:h-14 md:w-14"
         : "h-20 w-20 md:h-24 md:w-24";
-  const iconSize =
-    size === "sm"
-      ? "h-9 w-9 md:h-12 md:w-12"
-      : size === "footer"
-        ? "h-11 w-11 md:h-8 md:w-8"
-        : "h-11 w-11 md:h-20 md:w-20";
-  const slixaWidthClass = size === "sm" ? "w-[90px]" : size === "footer" ? "w-20 md:w-14" : "w-20";
   return (
     <div ref={ref} className={className}>
       <div className={`flex flex-nowrap items-center gap-4 sm:gap-6 ${align === "start" ? "justify-start" : "justify-center"}`}>
@@ -71,36 +47,16 @@ export function TrustBadges({
             )}
             style={{ transitionDelay: `${delay + i * 150}ms` }}
           >
-            {b.type === "embed" ? (
-              <div className={`text-center ${slixaWidthClass}`}>
-                <a href="https://www.slixa.com/" target="_top" className="inline-block w-full whitespace-nowrap">
-                  <img
-                    src="https://badge.slixa.com/alyssa-may-5/slixa_badge120x60.jpg"
-                    alt="Slixa"
-                    className="h-auto w-full"
-                  />
-                </a>
-              </div>
-            ) : (
-              <a href={b.href} target="_blank" rel="noopener noreferrer">
-                {b.type === "icon" ? (
-                  <div className={`${iconSize} flex items-center justify-center rounded-full bg-black text-sand-soft`}>
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="h-[45%] w-[45%]">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  </div>
-                ) : (
-                  <img
-                    src={b.src}
-                    alt={b.name}
-                    loading="lazy"
-                    width={112}
-                    height={112}
-                    className={`${imgSize} object-contain`}
-                  />
-                )}
-              </a>
-            )}
+            <a href={b.href} target="_blank" rel="noopener noreferrer">
+              <img
+                src={b.src}
+                alt={b.name}
+                loading="lazy"
+                width={112}
+                height={112}
+                className={`${imgSize} object-contain`}
+              />
+            </a>
           </div>
         ))}
       </div>

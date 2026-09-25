@@ -14,8 +14,8 @@ export function Footer() {
         <div className="terra-divider w-40" />
         <TrustBadges className="mt-2" size="footer" delay={0} />
         <div className="mt-2 flex flex-col items-center gap-2 text-sm text-espresso/50">
-          <a href="mailto:alyssamayvip@gmail.com" className="text-terracotta hover:text-terracotta-soft">
-            alyssamayvip@gmail.com
+          <a href="mailto:meetalyssamay@gmail.com" className="text-terracotta hover:text-terracotta-soft">
+            meetalyssamay@gmail.com
           </a>
           <p>© 2026 Alyssa May</p>
         </div>
