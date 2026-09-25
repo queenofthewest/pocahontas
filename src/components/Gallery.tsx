@@ -4,28 +4,63 @@ import { useReveal } from "@/hooks/use-reveal";
 import { cn } from "@/lib/utils";
 
 const IMG = "/assets/images";
+const SPRING = `${IMG}/spring-2026`;
 
-const images = [
-  { src: `${IMG}/gallery-01.webp`, title: "Alyssa I", portrait: true },
+type ImageItem = { src: string; title: string; portrait?: boolean };
+
+const summerImages: ImageItem[] = [
+  { src: `${IMG}/gallery-01.webp`, title: "Alyssa I" },
   { src: `${IMG}/gallery-02.webp`, title: "Alyssa II" },
-  { src: `${IMG}/gallery-03.webp`, title: "Alyssa III", portrait: true },
+  { src: `${IMG}/gallery-03.webp`, title: "Alyssa III" },
   { src: `${IMG}/gallery-04.webp`, title: "Alyssa IV" },
   { src: `${IMG}/gallery-05.webp`, title: "Alyssa V" },
-  { src: `${IMG}/gallery-06.webp`, title: "Alyssa VI", portrait: true },
-  { src: `${IMG}/gallery-07.webp`, title: "Alyssa VII", portrait: true },
-  { src: `${IMG}/gallery-08.webp`, title: "Alyssa VIII", portrait: true },
-  { src: `${IMG}/gallery-09.webp`, title: "Alyssa IX", portrait: true },
+  { src: `${IMG}/gallery-06.webp`, title: "Alyssa VI" },
+  { src: `${IMG}/gallery-07.webp`, title: "Alyssa VII" },
+  { src: `${IMG}/gallery-08.webp`, title: "Alyssa VIII" },
+  { src: `${IMG}/gallery-09.webp`, title: "Alyssa IX" },
   { src: `${IMG}/gallery-10.webp`, title: "Alyssa X" },
-  { src: `${IMG}/gallery-11.webp`, title: "Alyssa XI", portrait: true },
-  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII", portrait: true },
+  { src: `${IMG}/gallery-11.webp`, title: "Alyssa XI" },
+  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII" },
 ];
+
+const springImages: ImageItem[] = [
+  { src: `${SPRING}/gallery-01.webp`, title: "Alyssa I" },
+  { src: `${SPRING}/gallery-02.webp`, title: "Alyssa II" },
+  { src: `${SPRING}/gallery-03.webp`, title: "Alyssa III" },
+  { src: `${SPRING}/gallery-04.webp`, title: "Alyssa IV" },
+  { src: `${SPRING}/gallery-05.webp`, title: "Alyssa V" },
+  { src: `${SPRING}/gallery-06.webp`, title: "Alyssa VI" },
+  { src: `${SPRING}/gallery-07.webp`, title: "Alyssa VII", portrait: true },
+  { src: `${SPRING}/gallery-08.webp`, title: "Alyssa VIII" },
+  { src: `${SPRING}/gallery-09.webp`, title: "Alyssa IX" },
+  { src: `${SPRING}/gallery-10.webp`, title: "Alyssa X" },
+  { src: `${SPRING}/gallery-11.webp`, title: "Alyssa XI" },
+  { src: `${SPRING}/gallery-12.webp`, title: "Alyssa XII" },
+  { src: `${SPRING}/gallery-13.webp`, title: "Alyssa XIII" },
+  { src: `${SPRING}/gallery-14.webp`, title: "Alyssa XIV" },
+  { src: `${SPRING}/gallery-15.webp`, title: "Alyssa XV" },
+  { src: `${SPRING}/hero-desktop.webp`, title: "Alyssa XVI" },
+  { src: `${SPRING}/hero-mobile.webp`, title: "Alyssa XVII", portrait: true },
+  { src: `${SPRING}/feature-one-mobile.webp`, title: "Alyssa XVIII", portrait: true },
+  { src: `${SPRING}/feature-two-desktop.webp`, title: "Alyssa XIX" },
+  { src: `${SPRING}/feature-two-mobile.webp`, title: "Alyssa XX", portrait: true },
+  { src: `${SPRING}/feature-three-desktop.webp`, title: "Alyssa XXI" },
+  { src: `${SPRING}/feature-three-mobile.webp`, title: "Alyssa XXII", portrait: true },
+  { src: `${SPRING}/feature-footer-desktop.webp`, title: "Alyssa XXIII" },
+  { src: `${SPRING}/feature-footer-mobile.webp`, title: "Alyssa XXIV", portrait: true },
+];
+
+const seasons = [
+  { id: "summer", label: "Summer 2026", images: summerImages },
+  { id: "spring", label: "Spring 2026", images: springImages },
+] as const;
 
 function GalleryTile({
   img,
   index,
   onOpen,
 }: {
-  img: (typeof images)[number];
+  img: ImageItem;
   index: number;
   onOpen: () => void;
 }) {
@@ -56,6 +91,8 @@ function GalleryTile({
 }
 
 export function Gallery() {
+  const [seasonId, setSeasonId] = useState<(typeof seasons)[number]["id"]>("summer");
+  const images = seasons.find((s) => s.id === seasonId)!.images;
   const [active, setActive] = useState<number | null>(null);
 
   const close = useCallback(() => setActive(null), []);
@@ -92,9 +129,29 @@ export function Gallery() {
         </h2>
       </Reveal>
 
+      {/* Season toggle */}
+      <Reveal className="mb-8 flex justify-center gap-3">
+        {seasons.map((s) => (
+          <button
+            key={s.id}
+            onClick={() => {
+              setSeasonId(s.id);
+              setActive(null);
+            }}
+            className={`rounded-full border px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] transition-colors ${
+              seasonId === s.id
+                ? "border-terracotta bg-terracotta text-sand-soft"
+                : "border-terracotta/30 text-terracotta/70 hover:border-terracotta/60"
+            }`}
+          >
+            {s.label}
+          </button>
+        ))}
+      </Reveal>
+
       {/* Staggered 2-col grid on mobile (uniform 2:3 crop), masonry columns from md up */}
       <div className="px-4 sm:px-6">
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 md:block md:columns-3 lg:columns-4">
+        <div key={seasonId} className="grid grid-cols-2 gap-2 sm:gap-3 md:block md:columns-3 lg:columns-4">
           {images.map((img, i) => (
             <GalleryTile key={img.title} img={img} index={i} onOpen={() => setActive(i)} />
           ))}
