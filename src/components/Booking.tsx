@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 
 const rates = [
-  { label: "One hour", price: "$800" },
+  { label: "One hour", price: "$700" },
   { label: "90 minutes", price: "$1,000" },
   { label: "Two hours", price: "$1,300" },
   { label: "Three hours", price: "$1,800" },
