@@ -20,7 +20,6 @@ const summerImages: ImageItem[] = [
   { src: `${IMG}/gallery-09.webp`, title: "Alyssa IX" },
   { src: `${IMG}/gallery-10.webp`, title: "Alyssa X" },
   { src: `${IMG}/gallery-11.webp`, title: "Alyssa XI" },
-  { src: `${IMG}/gallery-12.webp`, title: "Alyssa XII" },
 ];
 
 const springImages: ImageItem[] = [
